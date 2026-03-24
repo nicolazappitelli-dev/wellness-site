@@ -43,7 +43,7 @@
 }
 
 .bk-demo__tab {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 12px;
   font-weight: 500;
   padding: 5px 14px;
@@ -158,7 +158,7 @@
 }
 
 .bk-locked__title {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 20px;
   font-weight: 600;
   letter-spacing: -0.02em;
@@ -249,7 +249,7 @@
 }
 
 .bk-day {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   background: var(--linen);
   border: 1px solid rgba(255,255,255,0.06);
   border-radius: 14px;
@@ -349,7 +349,7 @@
 }
 
 .bk-mod {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   background: var(--linen);
   border: 1px solid rgba(255,255,255,0.06);
   border-radius: 14px;
@@ -480,7 +480,7 @@
 
 /* ── Slot buttons ── */
 .bk-slot {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 12px;
   font-weight: 500;
   border-radius: 9px;

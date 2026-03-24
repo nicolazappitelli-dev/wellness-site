@@ -41,12 +41,11 @@ const modalities = [
 
 const steps = [
   {
-    num: '01',
-    label: 'Join',
+    num: '1',
     title: 'Choose your membership',
     desc: 'Pick a monthly plan that fits your recovery routine. Essential or Unlimited — both unlock the portal.',
     icon: (
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
         <circle cx="9" cy="7" r="4"/>
         <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
@@ -55,12 +54,11 @@ const steps = [
     ),
   },
   {
-    num: '02',
-    label: 'Book',
+    num: '2',
     title: 'Reserve your session',
     desc: 'Book up to 4 days ahead through your member portal. Guaranteed time, guaranteed modality.',
     icon: (
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
         <rect x="3" y="4" width="18" height="18" rx="2"/>
         <path d="M16 2v4M8 2v4M3 10h18"/>
         <path d="M9 16l2 2 4-4"/>
@@ -68,12 +66,11 @@ const steps = [
     ),
   },
   {
-    num: '03',
-    label: 'Recover',
+    num: '3',
     title: 'Restore & repeat',
     desc: 'Leave reset. Come back stronger. Each session compounds — this is recovery as a practice.',
     icon: (
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
         <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 1-6.74 2.74L3 8"/>
         <path d="M3 3v5h5"/>
       </svg>
@@ -98,24 +95,6 @@ const plans = [
     desc: 'Layer every modality in a single visit. Maximum restoration, maximum value.',
     cta: 'Start Unlimited',
     featured: true,
-  },
-]
-
-const reviews = [
-  {
-    text: '"Three weeks in and my post-workout recovery has completely transformed. I sleep deeper, move better, and actually look forward to rest days."',
-    name: 'A.M.',
-    detail: 'Unlimited Member',
-  },
-  {
-    text: `"The combination of cryo and red light has done more for my energy than anything else I've tried. This place is exceptional."`,
-    name: 'T.R.',
-    detail: 'Essential Member',
-  },
-  {
-    text: '"Clean, calm, and genuinely effective. The staff understands wellness at a deep level. Worth every penny."',
-    name: 'L.S.',
-    detail: 'Unlimited Member',
   },
 ]
 
@@ -209,28 +188,19 @@ export default function Home() {
         <div className="container">
           <Reveal>
             <div className="opening-card">
-              <div className="opening-card__left">
-                <div className="opening-card__chip">
-                  <span className="opening-card__pulse" />
-                  Opening Soon
-                </div>
-                <h2 className="opening-card__title">Concord's new recovery sanctuary.</h2>
-                <p className="opening-card__body">
-                  Membership booking opens soon. Join the waitlist for first access and opening specials.
-                </p>
+              <div className="opening-card__chip">
+                <span className="opening-card__pulse" />
+                Opening Soon
               </div>
-              <div className="opening-card__right">
-                <div className="opening-card__details">
-                  <div className="opening-card__detail">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
-                    8019 Crile Road, Concord, OH
-                  </div>
-                  <div className="opening-card__detail">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-                    Hours &amp; opening date coming soon
-                  </div>
-                </div>
-                <Link to="/#waitlist" className="btn-primary opening-card__cta">Join the Waitlist</Link>
+              <h2 className="opening-card__title">Opening Summer 2026.</h2>
+              <p className="opening-card__subhead">Elevate Cryo &amp; Wellness is coming to Concord.</p>
+              <p className="opening-card__body">
+                Join the waitlist for first access to memberships and opening specials.
+              </p>
+              <Link to="/#waitlist" className="btn-primary opening-card__cta">Join the Waitlist</Link>
+              <div className="opening-card__address">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                8019 Crile Road, Concord, OH 44077
               </div>
             </div>
           </Reveal>
@@ -257,10 +227,8 @@ export default function Home() {
             {steps.map((s, i) => (
               <Reveal key={s.num} delay={i * 110}>
                 <div className="step">
-                  <div className="step__top">
-                    <span className="step__badge">{s.num}</span>
-                    <div className="step__icon">{s.icon}</div>
-                  </div>
+                  <div className="step__pill">Step {s.num}</div>
+                  <div className="step__icon">{s.icon}</div>
                   <h3 className="step__title">{s.title}</h3>
                   <p className="step__desc">{s.desc}</p>
                 </div>
@@ -343,33 +311,6 @@ export default function Home() {
               All plans require account creation and renew monthly. Prefer no commitment? Walk-ins welcome at $25 + tax per modality — no booking needed.
             </p>
           </Reveal>
-        </div>
-      </section>
-
-      {/* Social Proof */}
-      <section className="section social-proof">
-        <div className="container">
-          <Reveal>
-            <span className="section-label">Member Stories</span>
-            <h2 className="section-title">Trusted by those who&nbsp;demand more.</h2>
-          </Reveal>
-          <div className="reviews-grid">
-            {reviews.map((r, i) => (
-              <Reveal key={i} delay={i * 100}>
-                <div className="review-card">
-                  <div className="review-card__stars">{'★'.repeat(5)}</div>
-                  <blockquote className="review-card__text">{r.text}</blockquote>
-                  <div className="review-card__author">
-                    <div className="review-card__avatar">{r.name[0]}</div>
-                    <div>
-                      <div className="review-card__name">{r.name}</div>
-                      <div className="review-card__detail">{r.detail}</div>
-                    </div>
-                  </div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
         </div>
       </section>
 

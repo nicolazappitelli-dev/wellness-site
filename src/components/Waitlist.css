@@ -27,9 +27,9 @@
 
 /* Copy */
 .waitlist__title {
-  font-family: var(--font-serif);
+  font-family: var(--font-heading);
   font-size: clamp(36px, 5vw, 56px);
-  font-weight: 300;
+  font-weight: 500;
   line-height: 1.05;
   letter-spacing: -0.02em;
   color: var(--charcoal);
@@ -78,7 +78,7 @@
   background: transparent;
   border: none;
   outline: none;
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 15px;
   color: var(--charcoal);
   padding: 10px 0;

@@ -9,9 +9,9 @@
 }
 
 .memb-hero__title {
-  font-family: var(--font-serif);
+  font-family: var(--font-heading);
   font-size: clamp(40px, 5.5vw, 68px);
-  font-weight: 300;
+  font-weight: 500;
   line-height: 1.08;
   letter-spacing: -0.02em;
   color: var(--charcoal);
@@ -118,7 +118,7 @@
 }
 
 .memb-plan__name {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.2em;
@@ -139,9 +139,9 @@
 }
 
 .memb-plan__amount {
-  font-family: var(--font-serif);
+  font-family: var(--font-heading);
   font-size: 60px;
-  font-weight: 300;
+  font-weight: 500;
   line-height: 1;
   color: var(--charcoal);
 }
@@ -160,7 +160,7 @@
 }
 
 .memb-plan__sessions {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 14px;
   font-weight: 600;
   color: var(--charcoal);
@@ -172,7 +172,7 @@
 }
 
 .memb-plan__tagline {
-  font-family: var(--font-serif);
+  font-family: var(--font-heading);
   font-size: 17px;
   font-style: italic;
   color: var(--charcoal-muted);
@@ -338,7 +338,7 @@
 
 .compare-table__plan-col {
   padding: 20px 24px;
-  font-family: var(--font-serif);
+  font-family: var(--font-heading);
   font-size: 18px;
   font-weight: 400;
   line-height: 1.2;
@@ -347,7 +347,7 @@
 
 .compare-table__plan-col span {
   display: block;
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 11px;
   font-weight: 400;
   color: rgba(253,252,250,0.4);
@@ -431,7 +431,7 @@
   justify-content: space-between;
   gap: 20px;
   padding: 24px 0;
-  font-family: var(--font-serif);
+  font-family: var(--font-heading);
   font-size: 18px;
   font-weight: 400;
   color: var(--charcoal);
@@ -476,9 +476,9 @@
 }
 
 .memb-cta__title {
-  font-family: var(--font-serif);
+  font-family: var(--font-heading);
   font-size: clamp(32px, 4vw, 52px);
-  font-weight: 300;
+  font-weight: 500;
   color: var(--charcoal);
   margin-bottom: 16px;
   line-height: 1.1;

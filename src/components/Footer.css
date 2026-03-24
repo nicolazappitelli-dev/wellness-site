@@ -37,7 +37,7 @@
 }
 
 .footer__heading {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.2em;
