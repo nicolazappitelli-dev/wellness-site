@@ -909,6 +909,57 @@
   }
 }
 
+/* ───── Eligibility & Requirements ───── */
+.eligibility {
+  background: var(--linen);
+}
+
+.eligibility__inner {
+  max-width: 720px;
+}
+
+.eligibility__intro {
+  font-size: 16px;
+  color: var(--charcoal-light);
+  line-height: 1.8;
+  margin-bottom: 36px;
+}
+
+.eligibility__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 32px;
+}
+
+.eligibility__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  font-size: 15px;
+  color: var(--charcoal-light);
+  line-height: 1.65;
+}
+
+.eligibility__dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--sage);
+  margin-top: 9px;
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+.eligibility__disclaimer {
+  font-size: 13px;
+  color: var(--charcoal-muted);
+  line-height: 1.7;
+  padding-top: 24px;
+  border-top: 1px solid rgba(84,184,224,0.1);
+}
+
 /* ───── Mobile performance ───── */
 @media (max-width: 768px) {
   /* Stop orb float animations + reduce blur on mobile — large blur filters are GPU-intensive */

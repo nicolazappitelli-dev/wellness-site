@@ -301,16 +301,51 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Limited Founding Members */}
-      <section className="founding-banner">
+      {/* Eligibility & Requirements */}
+      <section className="section eligibility">
         <div className="container">
           <Reveal>
-            <div className="founding-banner__inner">
-              <div className="founding-banner__text">
-                <h3 className="founding-banner__title">Limited Founding Members</h3>
-                <p className="founding-banner__body">Priority access + exclusive pricing before we open.</p>
-              </div>
-              <Link to="/#waitlist" className="btn-primary">Join the Waitlist</Link>
+            <div className="eligibility__inner">
+              <span className="section-label">Before You Visit</span>
+              <h2 className="section-title">Eligibility &amp; Requirements</h2>
+              <p className="eligibility__intro">
+                To ensure a safe and effective experience for every client, please review the following requirements before your first visit.
+              </p>
+              <ul className="eligibility__list">
+                <li className="eligibility__item">
+                  <span className="eligibility__dot" aria-hidden="true" />
+                  Membership is available to individuals 18 years of age or older.
+                </li>
+                <li className="eligibility__item">
+                  <span className="eligibility__dot" aria-hidden="true" />
+                  All members must complete a health intake form and acknowledge any applicable health contraindications prior to activating their account.
+                </li>
+                <li className="eligibility__item">
+                  <span className="eligibility__dot" aria-hidden="true" />
+                  Clients must be at least 16 years of age to use any services at Elevate Cryo &amp; Wellness.
+                </li>
+                <li className="eligibility__item">
+                  <span className="eligibility__dot" aria-hidden="true" />
+                  Clients under the age of 18 must have a parent or legal guardian present to sign a consent form prior to receiving services.
+                </li>
+                <li className="eligibility__item">
+                  <span className="eligibility__dot" aria-hidden="true" />
+                  A parent or guardian may be required to remain on-site during the session at the discretion of staff.
+                </li>
+                <li className="eligibility__item">
+                  <span className="eligibility__dot" aria-hidden="true" />
+                  Elevate Cryo &amp; Wellness reserves the right to request valid identification and to refuse service if age or consent requirements are not met.
+                </li>
+                <li className="eligibility__item">
+                  <span className="eligibility__dot" aria-hidden="true" />
+                  All clients are required to complete a waiver and health screening prior to participation.
+                </li>
+                <li className="eligibility__item">
+                  <span className="eligibility__dot" aria-hidden="true" />
+                  Certain services may not be suitable for individuals with specific medical conditions.
+                </li>
+              </ul>
+              <p className="eligibility__disclaimer">Please consult your physician if you have any medical concerns.</p>
             </div>
           </Reveal>
         </div>

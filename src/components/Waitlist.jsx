@@ -66,10 +66,10 @@ export default function Waitlist() {
         <div className="waitlist__inner">
 
           <div className="waitlist__copy">
-            <span className="section-label">Early Access</span>
+            <span className="section-label">Founding Members</span>
             <h2 className="waitlist__title">Join the waitlist.</h2>
             <p className="waitlist__sub">
-              Be first to access membership booking and opening specials.
+              Be first through our doors. Founding members lock in exclusive pricing before we open.
             </p>
           </div>
 
