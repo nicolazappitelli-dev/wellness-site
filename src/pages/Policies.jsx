@@ -5,6 +5,9 @@ const sections = [
     title: 'Membership Terms',
     content: [
       { heading: 'Eligibility', text: 'Membership is available to individuals 18 years of age or older. All members must complete a health intake form and acknowledge any applicable health contraindications prior to activating their account.' },
+      { heading: 'Minor Clients', text: 'Clients must be at least 16 years of age to use any services at Elevate Cryo & Wellness. Clients under the age of 18 must have a parent or legal guardian present to sign a consent form prior to receiving services. A parent or guardian may be required to remain on-site during the session at the discretion of staff.' },
+      { heading: 'Right to Refuse', text: 'Elevate Cryo & Wellness reserves the right to request valid identification and to refuse service if age or consent requirements are not met.' },
+      { heading: 'Waiver & Health Screening', text: 'All clients are required to complete a waiver and health screening prior to participation. Certain services may not be suitable for individuals with specific medical conditions.' },
       { heading: 'Billing & Renewal', text: 'Memberships are billed monthly on the activation date and renew automatically. All rates are subject to applicable sales tax. Elevate reserves the right to update pricing with 30 days written notice to members.' },
       { heading: 'Cancellation', text: 'Members may cancel at any time with no cancellation fee. Cancellations take effect at the end of the current billing period. No partial refunds are issued for unused days within a billing cycle.' },
       { heading: 'Pausing Membership', text: 'Members may pause their membership for up to 60 consecutive days per calendar year. Sessions cannot be booked during a paused period. Pauses take effect at the start of the next billing cycle when requested mid-cycle.' },
