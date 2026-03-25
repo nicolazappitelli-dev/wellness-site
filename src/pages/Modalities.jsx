@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom'
+import { useEffect } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import Reveal from '../components/Reveal'
 import './Modalities.css'
 
@@ -88,6 +89,36 @@ const modalities = [
 ]
 
 export default function Modalities() {
+  const location = useLocation()
+
+  useEffect(() => {
+    if (!location.hash) return
+    const id = location.hash.slice(1)
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    let cancelled = false
+    let scrolled = false
+    const deadline = Date.now() + 1200
+
+    function attempt() {
+      if (cancelled || scrolled) return
+      const el = document.getElementById(id)
+      if (el) {
+        const nav = document.querySelector('.nav')
+        const navHeight = nav ? nav.getBoundingClientRect().height : 80
+        const top = el.getBoundingClientRect().top + window.scrollY - navHeight
+        window.scrollTo({ top, behavior: prefersReduced ? 'instant' : 'smooth' })
+        scrolled = true
+        return
+      }
+      if (Date.now() < deadline) {
+        requestAnimationFrame(attempt)
+      }
+    }
+
+    requestAnimationFrame(attempt)
+    return () => { cancelled = true }
+  }, [location.hash])
+
   return (
     <main className="modalities-page">
       {/* Hero */}

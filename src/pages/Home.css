@@ -563,7 +563,7 @@
   padding: 48px 44px;
   position: relative;
   border: 1.5px solid transparent;
-  transition: all 0.3s ease;
+  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
   gap: 0;
@@ -911,12 +911,20 @@
 
 /* ───── Mobile performance ───── */
 @media (max-width: 768px) {
-  /* Stop orb float animations — blur+animation is too costly on mobile */
+  /* Stop orb float animations + reduce blur on mobile — large blur filters are GPU-intensive */
   .hero__orb--1,
   .hero__orb--2 {
     animation: none;
-    filter: blur(60px);
-    opacity: 0.15;
+    filter: blur(40px);
+    opacity: 0.12;
+  }
+  /* Hide scroll-line indicator — stops its continuous animation */
+  .hero__scroll {
+    display: none;
+  }
+  /* Stop pulse dot animation — static dot is fine */
+  .opening-card__pulse {
+    animation: none;
   }
   /* Step cards: remove hover transform on touch devices */
   .step:hover {

@@ -10,23 +10,38 @@ import Account from './pages/Account'
 import Policies from './pages/Policies'
 import Contact from './pages/Contact'
 
+function ScrollToTop() {
+  const location = useLocation()
+  useEffect(() => {
+    if (location.hash) return
+    window.scrollTo(0, 0)
+  }, [location.pathname])
+  return null
+}
+
 // Handles cross-page hash navigation reliably (iOS Safari + Chrome)
 function HashScrollHandler() {
   const location = useLocation()
   useEffect(() => {
     if (!location.hash) return
     const id = location.hash.slice(1)
-    const scroll = () => {
+    const scrollTo = () => {
       const el = document.getElementById(id)
       if (el) {
         const navHeight = 80
         const top = el.getBoundingClientRect().top + window.scrollY - navHeight
         window.scrollTo({ top, behavior: 'smooth' })
+        return true
       }
+      return false
     }
-    // Delay ensures the page has rendered before scrolling
-    const timer = setTimeout(scroll, 80)
-    return () => clearTimeout(timer)
+    // First attempt at 100ms; second attempt at 300ms covers slow mobile renders
+    const t1 = setTimeout(() => {
+      if (!scrollTo()) {
+        setTimeout(scrollTo, 200)
+      }
+    }, 100)
+    return () => clearTimeout(t1)
   }, [location])
   return null
 }
@@ -34,6 +49,7 @@ function HashScrollHandler() {
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <HashScrollHandler />
       <Nav />
       <Routes>

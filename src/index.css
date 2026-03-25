@@ -43,7 +43,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto; /* JS handles all smooth scrolling — prevents browser native scroll conflicting with our handler */
   scroll-padding-top: 80px; /* offset for sticky nav */
 }
 
@@ -259,11 +259,12 @@ button {
   transform: translateY(0);
 }
 
-/* On mobile: opacity-only reveal, no translate — reduces paint work */
+/* On mobile: opacity-only reveal, no translate, no will-change — avoids dozens of GPU compositor layers */
 @media (max-width: 768px) {
   .reveal {
     transform: none;
     transition: opacity 0.5s ease;
+    will-change: auto;
   }
 }
 
