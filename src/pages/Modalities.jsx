@@ -12,7 +12,7 @@ const modalities = [
     image: '/cryo-chamber.jpg',
     gradient: 'radial-gradient(ellipse at 60% 30%, #c8dff0 0%, #a0c0e0 45%, #7098b8 100%)',
     accentColor: '#4A7FA8',
-    intro: `Whole-body cryotherapy is one of the most powerful recovery modalities in modern wellness. In just ten minutes, your body is exposed to temperatures as low as -220°F in our state-of-the-art cryo chamber—triggering a profound physiological cascade that accelerates healing, reduces inflammation, and leaves you sharply energized.`,
+    intro: `Experience ultra-cold, dry air in our advanced electric cryotherapy chamber—engineered to accelerate recovery, reduce inflammation, and leave you energized.`,
     benefits: [
       'Dramatically reduces systemic inflammation and joint pain',
       'Accelerates athletic recovery and reduces DOMS',
@@ -32,7 +32,7 @@ const modalities = [
     image: '/red-light-bed.jpg',
     gradient: 'radial-gradient(ellipse at 40% 55%, #f5dfc0 0%, #e0a060 45%, #c07838 100%)',
     accentColor: '#C07830',
-    intro: `Red light therapy—also known as photobiomodulation—harnesses specific wavelengths of red (630–700nm) and near-infrared (800–1100nm) light to stimulate cellular function at a mitochondrial level. Reclining in our full-body red light bed is a profoundly restorative experience: quiet, warm, deeply healing.`,
+    intro: `Red and near-infrared wavelengths (630–660nm and up to 940nm) penetrate deep into tissue to support cellular repair, reduce inflammation, and enhance recovery.`,
     benefits: [
       'Stimulates collagen production for smoother, firmer skin',
       'Accelerates wound healing and tissue repair',
@@ -172,13 +172,13 @@ export default function Modalities() {
         <div className="container">
           <Reveal>
             <div className="mod-cta__inner">
-              <span className="section-label">Ready to Begin</span>
-              <h2 className="section-title">Membership unlocks everything.</h2>
+              <span className="section-label">Coming Soon</span>
+              <h2 className="section-title">Founding Memberships Coming Soon</h2>
               <p className="section-subtitle">
-                All modalities are exclusively available to Elevate members. Choose your plan and begin booking today.
+                Be one of the first to experience all four modalities. Join the waitlist for priority access and exclusive founding member pricing.
               </p>
               <div className="mod-cta__actions">
-                <Link to="/memberships" className="btn-primary">View Memberships</Link>
+                <Link to="/#waitlist" className="btn-primary">Join the Waitlist</Link>
                 <Link to="/contact" className="btn-secondary">Ask a Question</Link>
               </div>
             </div>

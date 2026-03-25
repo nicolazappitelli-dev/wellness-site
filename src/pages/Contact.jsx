@@ -78,16 +78,8 @@ export default function Contact() {
               <h3 className="contact-info__heading">Hours of Operation</h3>
               <div className="contact-info__hours">
                 <div className="contact-info__hours-row">
-                  <span>Monday – Friday</span>
-                  <span>7:00 AM – 8:00 PM</span>
-                </div>
-                <div className="contact-info__hours-row">
-                  <span>Saturday</span>
-                  <span>8:00 AM – 6:00 PM</span>
-                </div>
-                <div className="contact-info__hours-row">
-                  <span>Sunday</span>
-                  <span>9:00 AM – 5:00 PM</span>
+                  <span>Hours</span>
+                  <span>Coming Soon</span>
                 </div>
               </div>
             </div>
@@ -95,13 +87,13 @@ export default function Contact() {
             <div className="contact-info__block">
               <h3 className="contact-info__heading">Direct Contact</h3>
               <div className="contact-info__links">
-                <a href="tel:+14406979104" className="contact-info__link">
+                <a href="tel:+14406679104" className="contact-info__link">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12.1 19.79 19.79 0 0 1 1.61 3.5 2 2 0 0 1 3.59 1.32h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6.06 6.06l1.06-1.06a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                  440-697-9104
+                  440-667-9104
                 </a>
-                <a href="mailto:hello@elevatecryo.com" className="contact-info__link">
+                <a href="mailto:elevatecryowellness@gmail.com" className="contact-info__link">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                  hello@elevatecryo.com
+                  elevatecryowellness@gmail.com
                 </a>
               </div>
             </div>

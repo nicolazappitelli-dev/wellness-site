@@ -497,6 +497,73 @@
   flex-wrap: wrap;
 }
 
+/* Founding Membership Card */
+.founding-memb-card {
+  max-width: 600px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, rgba(15,30,50,0.96) 0%, rgba(8,18,35,0.99) 100%);
+  border: 1px solid rgba(130,206,242,0.15);
+  border-radius: 20px;
+  padding: clamp(48px, 6vw, 80px) clamp(32px, 5vw, 64px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.35), 0 0 0 1px rgba(130,206,242,0.08);
+}
+
+.founding-memb-card__eyebrow {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--sage);
+}
+
+.founding-memb-card__title {
+  font-family: var(--font-heading);
+  font-size: clamp(24px, 3.5vw, 40px);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #f5f2ed;
+  margin: 0;
+}
+
+.founding-memb-card__body {
+  font-size: 16px;
+  color: rgba(245,242,237,0.6);
+  line-height: 1.75;
+  max-width: 420px;
+  margin: 0;
+}
+
+.founding-memb-card__perks {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  text-align: left;
+}
+
+.founding-memb-card__perks li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  color: rgba(245,242,237,0.75);
+}
+
+.founding-memb-card__perks li svg {
+  color: var(--sage);
+  flex-shrink: 0;
+}
+
 /* Responsive */
 @media (max-width: 900px) {
   .memb-plans__grid {

@@ -815,6 +815,104 @@
   flex-wrap: wrap;
 }
 
+/* ───── Hero founding note ───── */
+.hero__ctas {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.hero__founding-note {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin: 0;
+}
+
+/* ───── Founding CTA ───── */
+.founding-cta {
+  background: var(--cream);
+}
+
+.founding-cta__card {
+  background: linear-gradient(135deg, rgba(15,30,50,0.96) 0%, rgba(8,18,35,0.99) 100%);
+  border: 1px solid rgba(130,206,242,0.15);
+  border-radius: 20px;
+  padding: clamp(52px, 7vw, 88px) clamp(32px, 5vw, 72px);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.35), 0 0 0 1px rgba(130,206,242,0.08);
+}
+
+.founding-cta__title {
+  font-family: var(--font-heading);
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #f5f2ed;
+  margin: 0;
+}
+
+.founding-cta__body {
+  font-size: 16px;
+  color: rgba(245,242,237,0.6);
+  line-height: 1.75;
+  max-width: 460px;
+  margin: 0;
+}
+
+.founding-cta__btn {
+  margin-top: 8px;
+}
+
+/* ───── Founding Banner ───── */
+.founding-banner {
+  background: var(--charcoal);
+  padding: 64px 0;
+}
+
+.founding-banner__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.founding-banner__title {
+  font-family: var(--font-heading);
+  font-size: clamp(22px, 3vw, 32px);
+  font-weight: 500;
+  color: #f5f2ed;
+  margin: 0 0 8px;
+  letter-spacing: -0.01em;
+}
+
+.founding-banner__body {
+  font-size: 15px;
+  color: rgba(245,242,237,0.55);
+  margin: 0;
+  line-height: 1.6;
+}
+
+@media (max-width: 640px) {
+  .founding-banner__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .hero__ctas {
+    align-items: flex-start;
+  }
+}
+
 /* ───── Responsive ───── */
 @media (max-width: 1024px) {
   .modalities-preview__grid {

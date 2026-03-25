@@ -9,7 +9,7 @@ const modalities = [
     icon: '❄',
     name: 'Cryotherapy',
     duration: '10 min',
-    desc: 'Step into restorative cold. Whole-body cryo triggers deep cellular recovery, reduces inflammation, and resets your nervous system—leaving you energized and sharply focused.',
+    desc: 'Experience ultra-cold, dry air in our advanced electric cryotherapy chamber—engineered to accelerate recovery, reduce inflammation, and leave you energized.',
     color: 'rgba(15,40,72,0.75)',
     iconColor: '#82CEF2',
   },
@@ -42,8 +42,8 @@ const modalities = [
 const steps = [
   {
     num: '1',
-    title: 'Choose your membership',
-    desc: 'Pick a monthly plan that fits your recovery routine. Essential or Unlimited — both unlock the portal.',
+    title: 'Join the waitlist for early access',
+    desc: 'Sign up to be among the first through our doors. Founding members lock in exclusive pricing before we open.',
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
@@ -78,50 +78,30 @@ const steps = [
   },
 ]
 
-const plans = [
-  {
-    name: 'Essential',
-    price: '$99',
-    billing: '+ tax / month',
-    feature: '1 modality per day',
-    desc: 'One session daily—the ideal entry point for consistent, focused recovery.',
-    cta: 'Start Essential',
-  },
-  {
-    name: 'Unlimited',
-    price: '$129',
-    billing: '+ tax / month',
-    feature: 'Unlimited modalities per day',
-    desc: 'Layer every modality in a single visit. Maximum restoration, maximum value.',
-    cta: 'Start Unlimited',
-    featured: true,
-  },
-]
-
 const faqs = [
   {
-    q: 'Do I need a membership to visit?',
-    a: 'No. Walk-ins are welcome at $25 + tax per modality — no account, no booking, no commitment required. Simply arrive during operating hours. Membership is only required to book online in advance.',
+    q: 'When are you opening?',
+    a: "We're targeting Summer 2026 in Concord, Ohio. Join the waitlist to be the first to know and secure founding member pricing.",
   },
   {
-    q: 'How do I book a session online?',
-    a: 'Online booking is available exclusively to active members. Create an account, activate an Essential or Unlimited plan, and schedule sessions up to 4 days ahead through the member portal.',
+    q: 'What is cryotherapy?',
+    a: 'Whole-body cryotherapy involves brief exposure to ultra-cold, dry air in an advanced electric chamber. The rapid cooling triggers deep physiological responses that reduce inflammation, accelerate recovery, and leave you energized.',
   },
   {
-    q: 'Can I use multiple modalities in one visit?',
-    a: 'With the Unlimited plan, yes — you may use all available modalities in a single day. The Essential plan allows one modality session per day. Walk-in guests pay $25 + tax per modality per visit.',
-  },
-  {
-    q: "What's included in a membership?",
-    a: "The Essential plan ($99 + tax/mo) gives you one modality session per day. The Unlimited plan ($129 + tax/mo) lets you stack all four modalities in a single visit. Both plans include full access to the online booking portal and a 4-day advance booking window.",
+    q: 'What modalities will you offer?',
+    a: 'We offer four modalities: whole-body Cryotherapy, Red Light Bed Therapy, Infrared Sauna, and Compression Therapy. Each is independently powerful — together, they form a complete recovery protocol.',
   },
   {
     q: 'What should I bring?',
-    a: 'We provide everything you need. For cryo, wear minimal clothing. For the sauna, bring a towel or use ours. Compression suits and red light beds are private and fully equipped.',
+    a: 'We provide everything you need. For cryo, wear minimal clothing. For the sauna, a towel is provided. Compression suits and red light beds are private and fully equipped.',
   },
   {
     q: 'Are there any health contraindications?',
     a: 'Certain conditions may be contraindicated with some modalities. We recommend reviewing our full health guidelines in the Policies section and consulting your physician if you have any concerns.',
+  },
+  {
+    q: 'How do founding memberships work?',
+    a: 'Join the waitlist now to secure founding member status. When we open, founding members will have first access to memberships and exclusive pricing locked in before public rates are announced.',
   },
 ]
 
@@ -136,19 +116,18 @@ export default function Home() {
           <div className="hero__orb hero__orb--2" />
         </div>
         <div className="container hero__content">
-          <span className="section-label fade-up">Concord, Ohio</span>
+          <span className="section-label fade-up">Coming Soon — Concord, Ohio</span>
           <h1 className="hero__title fade-up-1">
-            Recover.<br />
-            Restore.<br />
-            <em>Elevate.</em>
+            Recover Faster.<br />
+            Feel Better.<br />
+            <em>Age Better.</em>
           </h1>
           <p className="hero__sub fade-up-2">
-            A sanctuary where whole-body cryotherapy, red light healing, infrared heat,
-            and compression therapy converge—so you can perform, feel, and live at your peak.
+            Cryotherapy, Sauna &amp; Recovery — Coming Soon to Concord, Ohio.
           </p>
           <div className="hero__ctas fade-up-3">
+            <p className="hero__founding-note">Be First In — Founding Members Get Exclusive Pricing</p>
             <Link to="/#waitlist" className="btn-primary">Join the Waitlist</Link>
-            <Link to="/account" className="btn-secondary">Log In</Link>
           </div>
         </div>
         <div className="hero__scroll">
@@ -274,42 +253,18 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Membership Teaser */}
-      <section className="section memberships-teaser">
+      {/* Founding Memberships */}
+      <section className="section founding-cta">
         <div className="container">
           <Reveal>
-            <div className="memberships-teaser__header">
-              <span className="section-label">Membership</span>
-              <h2 className="section-title">Invest in your recovery.</h2>
-              <p className="section-subtitle">
-                Walk-ins welcome at $25 + tax per modality. Or commit to a membership for
-                unlimited online booking and the best value per session.
+            <div className="founding-cta__card">
+              <span className="section-label">Founding Members</span>
+              <h2 className="founding-cta__title">Founding Memberships Coming Soon</h2>
+              <p className="founding-cta__body">
+                Be one of the first to experience Elevate Cryo &amp; Wellness and lock in exclusive rates before we open.
               </p>
+              <Link to="/#waitlist" className="btn-primary founding-cta__btn">Join the Waitlist</Link>
             </div>
-          </Reveal>
-          <div className="memberships-teaser__plans">
-            {plans.map((p, i) => (
-              <Reveal key={p.name} delay={i * 120}>
-                <div className={`plan-card${p.featured ? ' plan-card--featured' : ''}`}>
-                  {p.featured && <div className="plan-card__badge">Most Popular</div>}
-                  <div className="plan-card__name">{p.name}</div>
-                  <div className="plan-card__price">
-                    <span className="plan-card__amount">{p.price}</span>
-                    <span className="plan-card__billing">{p.billing}</span>
-                  </div>
-                  <div className="plan-card__feature">{p.feature}</div>
-                  <p className="plan-card__desc">{p.desc}</p>
-                  <Link to="/#waitlist" className={p.featured ? 'btn-primary' : 'btn-secondary'}>
-                    {p.cta}
-                  </Link>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-          <Reveal delay={150}>
-            <p className="memberships-teaser__note">
-              All plans require account creation and renew monthly. Prefer no commitment? Walk-ins welcome at $25 + tax per modality — no booking needed.
-            </p>
           </Reveal>
         </div>
       </section>
@@ -339,6 +294,21 @@ export default function Home() {
               </div>
             </Reveal>
           </div>
+        </div>
+      </section>
+
+      {/* Limited Founding Members */}
+      <section className="founding-banner">
+        <div className="container">
+          <Reveal>
+            <div className="founding-banner__inner">
+              <div className="founding-banner__text">
+                <h3 className="founding-banner__title">Limited Founding Members</h3>
+                <p className="founding-banner__body">Priority access + exclusive pricing before we open.</p>
+              </div>
+              <Link to="/#waitlist" className="btn-primary">Join the Waitlist</Link>
+            </div>
+          </Reveal>
         </div>
       </section>
 

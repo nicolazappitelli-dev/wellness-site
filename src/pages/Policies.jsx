@@ -14,7 +14,7 @@ const sections = [
     title: 'Booking & Cancellation Policy',
     content: [
       { heading: 'Advance Booking', text: 'All members (Essential and Unlimited) may book sessions up to 4 days in advance through the online member portal. The booking window is a rolling 4-day window that refreshes daily. Online booking is available to active members only.' },
-      { heading: 'Walk-In Access', text: 'Walk-ins are welcome at $25 + tax per modality during all operating hours. No membership, account, or advance booking is required. Walk-in access is first-come, first-served and subject to availability. Elevate does not guarantee availability for walk-in guests during peak hours.' },
+      { heading: 'Walk-In Access', text: 'Walk-in access details and pricing will be available when we open. No membership is required to walk in. Walk-in access is first-come, first-served and subject to availability.' },
       { heading: 'Cancellation Window', text: 'Sessions must be cancelled at least 4 hours prior to the scheduled start time. Late cancellations (under 4 hours) and no-shows will be counted as a used session under the Essential plan. Repeated no-shows may result in temporary booking restrictions.' },
       { heading: 'Rescheduling', text: 'Sessions may be rescheduled through the member portal up to 4 hours before the scheduled time, subject to availability.' },
     ],
