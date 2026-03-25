@@ -14,7 +14,7 @@ export default function Reveal({ children, delay = 0, className = '', threshold 
           observer.unobserve(el)
         }
       },
-      { threshold, rootMargin: '0px 0px -48px 0px' }
+      { threshold, rootMargin: '0px 0px -16px 0px' }
     )
     observer.observe(el)
     return () => observer.disconnect()

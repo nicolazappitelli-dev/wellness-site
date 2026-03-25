@@ -28,6 +28,7 @@
   filter: blur(100px);
   opacity: 0.2;
   pointer-events: none;
+  will-change: transform;
 }
 
 .hero__orb--1 {
@@ -137,17 +138,14 @@
   text-align: center;
   gap: 0;
   padding: clamp(52px, 7vw, 88px) clamp(32px, 6vw, 96px);
-  background: rgba(84,184,224,0.03);
+  background: rgba(84,184,224,0.04);
   border: 1px solid rgba(84,184,224,0.2);
   border-radius: 24px;
   position: relative;
   overflow: hidden;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
   box-shadow:
     0 0 0 1px rgba(84,184,224,0.07),
-    0 0 80px rgba(84,184,224,0.06),
-    0 16px 64px rgba(0,0,0,0.4);
+    0 16px 48px rgba(0,0,0,0.35);
 }
 
 /* Ambient center glow */
@@ -345,13 +343,11 @@
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--sage);
-  background: rgba(84,184,224,0.07);
+  background: rgba(84,184,224,0.08);
   border: 1px solid rgba(84,184,224,0.28);
   padding: 5px 14px;
   border-radius: 100px;
   margin-bottom: 20px;
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
 }
 
 .step__icon {
@@ -910,6 +906,26 @@
   }
   .hero__ctas {
     align-items: flex-start;
+  }
+}
+
+/* ───── Mobile performance ───── */
+@media (max-width: 768px) {
+  /* Stop orb float animations — blur+animation is too costly on mobile */
+  .hero__orb--1,
+  .hero__orb--2 {
+    animation: none;
+    filter: blur(60px);
+    opacity: 0.15;
+  }
+  /* Step cards: remove hover transform on touch devices */
+  .step:hover {
+    transform: none;
+    box-shadow: none;
+  }
+  /* Reduce founding card box-shadow complexity */
+  .founding-cta__card {
+    box-shadow: 0 12px 40px rgba(0,0,0,0.3);
   }
 }
 

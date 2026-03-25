@@ -3,6 +3,7 @@
   padding: 100px 0;
   position: relative;
   overflow: hidden;
+  scroll-margin-top: 80px;
 }
 
 /* Ambient ice-blue glow behind the form */

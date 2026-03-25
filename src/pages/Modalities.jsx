@@ -5,6 +5,7 @@ import './Modalities.css'
 const modalities = [
   {
     id: 'cryo',
+    anchor: 'cryotherapy',
     name: 'Cryotherapy',
     tagline: 'The power of cold. Redefined.',
     duration: '10 Minutes',
@@ -25,6 +26,7 @@ const modalities = [
   },
   {
     id: 'redlight',
+    anchor: 'red-light',
     name: 'Red Light Bed Therapy',
     tagline: 'Heal from the inside out.',
     duration: '20 Minutes',
@@ -45,6 +47,7 @@ const modalities = [
   },
   {
     id: 'sauna',
+    anchor: 'sauna',
     name: 'Infrared Sauna',
     tagline: 'Sweat deeply. Release fully.',
     duration: '40 Minutes',
@@ -64,6 +67,7 @@ const modalities = [
   },
   {
     id: 'compression',
+    anchor: 'compression',
     name: 'Compression Therapy',
     tagline: 'Restore your circulation. Reclaim your legs.',
     duration: '30 Minutes',
@@ -105,7 +109,9 @@ export default function Modalities() {
       {modalities.map((m, i) => (
         <section
           key={m.id}
+          id={m.anchor}
           className={`mod-section ${i % 2 === 0 ? 'mod-section--light' : 'mod-section--cream'}`}
+          style={{ scrollMarginTop: '80px' }}
         >
           <div className="container">
             <div className={`mod-layout ${i % 2 !== 0 ? 'mod-layout--reverse' : ''}`}>

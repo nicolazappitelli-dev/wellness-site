@@ -5,16 +5,17 @@
   right: 0;
   z-index: 100;
   padding: 20px 0;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: padding 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+  will-change: transform;
 }
 
 .nav--scrolled {
   padding: 12px 0;
-  background: rgba(8, 12, 20, 0.88);
+  background: rgba(8, 12, 20, 0.97);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(84,184,224,0.12);
-  box-shadow: 0 2px 32px rgba(0,0,0,0.4);
+  box-shadow: 0 2px 16px rgba(0,0,0,0.4);
 }
 
 .nav__inner {
@@ -175,9 +176,8 @@
   flex-direction: column;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.4s ease;
-  background: rgba(8, 12, 20, 0.97);
-  backdrop-filter: blur(20px);
+  transition: max-height 0.3s ease;
+  background: rgba(6, 10, 18, 0.99);
 }
 
 .nav__mobile--open {
@@ -212,4 +212,10 @@
   .nav__waitlist { display: none; }
   .nav__hamburger { display: flex; }
   .nav__mobile   { display: flex; }
+  /* Remove backdrop-filter on mobile — too expensive on iOS Safari */
+  .nav--scrolled {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: rgba(6, 10, 18, 0.99);
+  }
 }

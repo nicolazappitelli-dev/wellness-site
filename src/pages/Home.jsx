@@ -8,6 +8,7 @@ const modalities = [
   {
     icon: '❄',
     name: 'Cryotherapy',
+    slug: 'cryotherapy',
     duration: '10 min',
     desc: 'Experience ultra-cold, dry air in our advanced electric cryotherapy chamber—engineered to accelerate recovery, reduce inflammation, and leave you energized.',
     color: 'rgba(15,40,72,0.75)',
@@ -16,6 +17,7 @@ const modalities = [
   {
     icon: '☀',
     name: 'Red Light Bed Therapy',
+    slug: 'red-light',
     duration: '20 min',
     desc: 'Bathe in the healing spectrum. Red and near-infrared wavelengths penetrate deep into tissue, stimulating collagen, accelerating repair, and restoring luminosity from within.',
     color: 'rgba(65,12,10,0.75)',
@@ -24,6 +26,7 @@ const modalities = [
   {
     icon: '♨',
     name: 'Infrared Sauna',
+    slug: 'sauna',
     duration: '40 min',
     desc: 'Sweat with intention. Infrared heat works deeper than traditional saunas—purging toxins, soothing sore muscles, and activating the parasympathetic state your body craves.',
     color: 'rgba(55,22,8,0.75)',
@@ -32,6 +35,7 @@ const modalities = [
   {
     icon: '◎',
     name: 'Compression Therapy',
+    slug: 'compression',
     duration: '30 min',
     desc: 'Restore your flow. Sequential compression massage mobilizes lactic acid, reduces swelling, and revives circulation—a full-body reset that athletes and high-performers swear by.',
     color: 'rgba(10,18,58,0.75)',
@@ -237,7 +241,7 @@ export default function Home() {
                   <div className="mod-card__duration">{m.duration}</div>
                   <h3 className="mod-card__name">{m.name}</h3>
                   <p className="mod-card__desc">{m.desc}</p>
-                  <Link to="/modalities" className="mod-card__link">
+                  <Link to={`/modalities#${m.slug}`} className="mod-card__link">
                     Learn more
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                   </Link>
