@@ -12,25 +12,26 @@
   inset: 0;
   background-image: url('/lobby.jpg'), url('/cryo-chamber.jpg');
   background-size: cover;
-  background-position: center 40%, center;
+  background-position: 58% center, center;
   background-repeat: no-repeat;
 }
 
 .hero__gradient {
   position: absolute;
   inset: 0;
-  /* Light wash — keep wall logo readable alongside hero text */
+  /* Very light wash — wall logo stays prominent */
   background:
-    linear-gradient(105deg, rgba(44,36,28,0.42) 28%, rgba(44,36,28,0.12) 100%),
-    linear-gradient(to top, rgba(44,36,28,0.35) 0%, transparent 55%);
+    linear-gradient(105deg, rgba(44,36,28,0.28) 24%, rgba(44,36,28,0.06) 100%),
+    linear-gradient(to top, rgba(44,36,28,0.22) 0%, transparent 58%);
 }
 
 .hero__content {
   position: relative;
   z-index: 2;
-  padding-top: 120px;
-  padding-bottom: 80px;
+  padding-top: 160px;
+  padding-bottom: 64px;
   max-width: 640px;
+  margin-top: 48px;
 }
 
 .hero__title {
