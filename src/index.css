@@ -24,7 +24,7 @@
   --font-body: 'Outfit', system-ui, -apple-system, 'Segoe UI', sans-serif;
 
   --section-pad: clamp(72px, 9vw, 120px);
-  --container: 1120px;
+  --container: 1180px;
 
   --ease: cubic-bezier(0.4, 0, 0.2, 1);
   --transition: 0.3s var(--ease);

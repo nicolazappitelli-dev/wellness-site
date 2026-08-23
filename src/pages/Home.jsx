@@ -61,6 +61,7 @@ export default function Home() {
         <div className="hero__media" aria-hidden="true">
           <img src="/lobby.jpg" alt="" className="hero__photo" />
         </div>
+        <div className="hero__veil" aria-hidden="true" />
         <div className="container hero__shell">
           <div className="hero__content">
             <h1 className="hero__title fade-up">
