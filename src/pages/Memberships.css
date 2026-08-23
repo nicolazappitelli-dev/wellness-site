@@ -94,9 +94,9 @@
 }
 
 .memb-plan--featured {
-  background: linear-gradient(145deg, rgba(15,40,72,0.95) 0%, rgba(8,22,50,0.98) 100%);
-  color: var(--charcoal);
-  border-color: rgba(84,184,224,0.3);
+  background: linear-gradient(145deg, rgba(36,30,22,0.97) 0%, rgba(23,19,14,0.99) 100%);
+  color: #F7F1E4;
+  border-color: rgba(184,148,74,0.3);
 }
 
 .memb-plan--featured:hover {
@@ -107,14 +107,14 @@
   position: absolute;
   top: -14px;
   left: 48px;
-  background: var(--sage);
-  color: #fff;
+  background: linear-gradient(135deg, #D4BC78, #B8944A);
+  color: #1A1510;
   font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   padding: 6px 16px;
-  border-radius: 100px;
+  border-radius: 4px;
 }
 
 .memb-plan__name {
@@ -147,7 +147,7 @@
 }
 
 .memb-plan--featured .memb-plan__amount {
-  color: var(--charcoal);
+  color: #F7F1E4;
 }
 
 .memb-plan__billing {
@@ -254,10 +254,10 @@
 .walkin-info-box {
   margin-top: 32px;
   max-width: 860px;
-  border: 1px solid rgba(84,184,224,0.18);
+  border: 1px solid rgba(184,148,74,0.18);
   border-radius: 14px;
   padding: 22px 28px;
-  background: rgba(84,184,224,0.03);
+  background: rgba(184,148,74,0.03);
 }
 
 .walkin-info-box__eyebrow {
@@ -324,7 +324,7 @@
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
   background: var(--surface-darkest);
-  color: var(--charcoal);
+  color: #F7F1E4;
 }
 
 .compare-table__feature-col {
@@ -356,7 +356,7 @@
 }
 
 .compare-table__plan-col--unl {
-  background: rgba(84,184,224,0.12);
+  background: rgba(184,148,74,0.12);
 }
 
 .compare-table__row {
@@ -387,7 +387,7 @@
 }
 
 .compare-table__cell--featured {
-  background: rgba(84,184,224,0.05);
+  background: rgba(184,148,74,0.05);
 }
 
 .check-icon {
@@ -479,7 +479,7 @@
   font-family: var(--font-heading);
   font-size: clamp(32px, 4vw, 52px);
   font-weight: 500;
-  color: var(--charcoal);
+  color: #F7F1E4;
   margin-bottom: 16px;
   line-height: 1.1;
 }
@@ -502,7 +502,7 @@
   max-width: 600px;
   margin: 0 auto;
   background: linear-gradient(135deg, rgba(15,30,50,0.96) 0%, rgba(8,18,35,0.99) 100%);
-  border: 1px solid rgba(130,206,242,0.15);
+  border: 1px solid rgba(184,148,74,0.15);
   border-radius: 20px;
   padding: clamp(48px, 6vw, 80px) clamp(32px, 5vw, 64px);
   display: flex;
@@ -510,7 +510,7 @@
   align-items: center;
   text-align: center;
   gap: 20px;
-  box-shadow: 0 32px 80px rgba(0,0,0,0.35), 0 0 0 1px rgba(130,206,242,0.08);
+  box-shadow: 0 32px 80px rgba(0,0,0,0.35), 0 0 0 1px rgba(184,148,74,0.08);
 }
 
 .founding-memb-card__eyebrow {

@@ -14,7 +14,7 @@
   transform: translate(-50%, -50%);
   width: 600px;
   height: 300px;
-  background: radial-gradient(ellipse at center, rgba(84,184,224,0.08) 0%, transparent 70%);
+  background: radial-gradient(ellipse at center, rgba(184,148,74,0.08) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -33,13 +33,13 @@
   font-weight: 500;
   line-height: 1.05;
   letter-spacing: -0.02em;
-  color: var(--charcoal);
+  color: #F7F1E4;
   margin: 14px 0 18px;
 }
 
 .waitlist__sub {
   font-size: 16px;
-  color: var(--charcoal-muted);
+  color: rgba(247, 241, 228, 0.62);
   line-height: 1.7;
   max-width: 360px;
 }
@@ -66,12 +66,12 @@
 }
 
 .waitlist__field:focus-within {
-  border-color: rgba(84,184,224,0.4);
-  box-shadow: 0 0 0 3px rgba(84,184,224,0.08);
+  border-color: rgba(184,148,74,0.4);
+  box-shadow: 0 0 0 3px rgba(184,148,74,0.08);
 }
 
 .waitlist__field--error {
-  border-color: rgba(196,40,32,0.45);
+  border-color: rgba(168,90,58,0.45);
 }
 
 .waitlist__input {
@@ -81,13 +81,12 @@
   outline: none;
   font-family: var(--font-body);
   font-size: 15px;
-  color: var(--charcoal);
-  padding: 10px 0;
+  color: #F7F1E4;
   min-width: 0;
 }
 
 .waitlist__input::placeholder {
-  color: var(--charcoal-muted);
+  color: rgba(247, 241, 228, 0.4);
 }
 
 .waitlist__input:disabled {
@@ -137,7 +136,7 @@
 
 .waitlist__trust {
   font-size: 11px;
-  color: var(--charcoal-muted);
+  color: rgba(247, 241, 228, 0.4);
   letter-spacing: 0.04em;
 }
 
@@ -146,8 +145,8 @@
   display: flex;
   align-items: flex-start;
   gap: 14px;
-  background: rgba(84,184,224,0.06);
-  border: 1px solid rgba(84,184,224,0.2);
+  background: rgba(184,148,74,0.06);
+  border: 1px solid rgba(184,148,74,0.2);
   border-radius: 14px;
   padding: 22px 24px;
 }
@@ -156,8 +155,8 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: rgba(84,184,224,0.12);
-  border: 1px solid rgba(84,184,224,0.3);
+  background: rgba(184,148,74,0.12);
+  border: 1px solid rgba(184,148,74,0.3);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -168,7 +167,7 @@
 
 .waitlist__done-msg {
   font-size: 15px;
-  color: var(--charcoal);
+  color: #F7F1E4;
   line-height: 1.6;
   padding-top: 6px;
 }

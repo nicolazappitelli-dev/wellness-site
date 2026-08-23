@@ -1,31 +1,31 @@
 :root {
-  /* ── Dark base palette ── */
-  --cream: #080C14;           /* page background */
-  --warm-white: #0D1420;      /* section surface */
-  --linen: #131C2E;           /* card background */
-  --sand: rgba(255,255,255,0.09);  /* borders / dividers */
+  /* ── Warm stone surfaces (Elevate Cryo gold brand) ── */
+  --cream: #E6DCC8;           /* page background */
+  --warm-white: #F1E8D8;      /* section surface */
+  --linen: #FAF6EE;           /* card background */
+  --sand: rgba(139, 115, 85, 0.16);  /* borders / dividers */
 
-  /* ── Text (light on dark) ── */
-  --charcoal: #DDE8F5;        /* primary text (was dark, now light) */
-  --charcoal-light: #9AB4CC;  /* secondary text */
-  --charcoal-muted: rgba(154,180,204,0.5); /* muted text */
+  /* ── Text ── */
+  --charcoal: #2A2218;        /* primary text */
+  --charcoal-light: #5C4E3E;  /* secondary text */
+  --charcoal-muted: rgba(92, 78, 62, 0.58); /* muted text */
 
-  /* ── Ice blue accent (was sage) ── */
-  --sage: #54B8E0;
-  --sage-light: #82CEF2;
-  --sage-pale: rgba(84,184,224,0.1);
+  /* ── Brushed gold accent (was ice blue / sage) ── */
+  --sage: #B8944A;
+  --sage-light: #D4BC78;
+  --sage-pale: rgba(184, 148, 74, 0.12);
 
-  /* ── Red accent — sparingly (was bronze) ── */
-  --bronze: #C42820;
-  --bronze-light: #E84030;
+  /* ── Warm ember — sparingly (modalities / alerts) ── */
+  --bronze: #A85A3A;
+  --bronze-light: #C47452;
 
-  /* ── Named dark surfaces (for explicit dark sections) ── */
-  --surface-darkest: #04060C;
-  --surface-dark: #08101A;
+  /* ── Named dark surfaces (hero overlays, footer) ── */
+  --surface-darkest: #17130E;
+  --surface-dark: #241E16;
 
   /* Typography */
-  --font-heading: 'Space Grotesk', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-heading: 'Syne', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-body: 'Outfit', system-ui, -apple-system, 'Segoe UI', sans-serif;
 
   /* Spacing */
   --section-pad: clamp(64px, 8vw, 120px);
@@ -49,6 +49,11 @@ html {
 
 body {
   background-color: var(--cream);
+  background-image:
+    radial-gradient(ellipse 120% 80% at 10% -10%, rgba(212, 188, 120, 0.22), transparent 55%),
+    radial-gradient(ellipse 90% 60% at 100% 0%, rgba(168, 90, 58, 0.08), transparent 50%),
+    linear-gradient(180deg, #EDE4D4 0%, var(--cream) 40%, #DFD3BC 100%);
+  background-attachment: fixed;
   color: var(--charcoal);
   font-family: var(--font-body);
   font-weight: 400;
@@ -92,7 +97,7 @@ button {
 
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--surface-darkest); }
-::-webkit-scrollbar-thumb { background: rgba(84,184,224,0.25); border-radius: 3px; }
+::-webkit-scrollbar-thumb { background: rgba(184,148,74,0.35); border-radius: 3px; }
 
 .container {
   width: 100%;
@@ -137,25 +142,25 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: linear-gradient(135deg, #54B8E0 0%, #2A90C8 100%);
-  color: #fff;
+  background: linear-gradient(135deg, #D4BC78 0%, #B8944A 55%, #8F6F2E 100%);
+  color: #1A1510;
   font-family: var(--font-body);
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   padding: 15px 36px;
-  border-radius: 100px;
+  border-radius: 4px;
   transition: all var(--transition);
   border: none;
   cursor: pointer;
-  box-shadow: 0 0 0 0 rgba(84,184,224,0);
+  box-shadow: 0 0 0 0 rgba(184,148,74,0);
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, #82CEF2 0%, #54B8E0 100%);
+  background: linear-gradient(135deg, #E8D5A3 0%, #D4BC78 55%, #B8944A 100%);
   transform: translateY(-2px);
-  box-shadow: 0 8px 32px rgba(84,184,224,0.35);
+  box-shadow: 0 8px 28px rgba(184,148,74,0.35);
 }
 
 .btn-secondary {
@@ -163,15 +168,15 @@ button {
   align-items: center;
   gap: 8px;
   background: transparent;
-  color: var(--sage-light);
+  color: var(--sage);
   font-family: var(--font-body);
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   padding: 14px 36px;
-  border-radius: 100px;
-  border: 1px solid rgba(84,184,224,0.35);
+  border-radius: 4px;
+  border: 1px solid rgba(184,148,74,0.45);
   transition: all var(--transition);
   cursor: pointer;
 }
@@ -179,33 +184,33 @@ button {
 .btn-secondary:hover {
   border-color: var(--sage);
   background: var(--sage-pale);
-  color: #fff;
+  color: var(--charcoal);
   transform: translateY(-2px);
-  box-shadow: 0 6px 24px rgba(84,184,224,0.15);
+  box-shadow: 0 6px 24px rgba(184,148,74,0.15);
 }
 
 .btn-sage {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: linear-gradient(135deg, #54B8E0, #2A90C8);
-  color: #fff;
+  background: linear-gradient(135deg, #D4BC78, #B8944A);
+  color: #1A1510;
   font-family: var(--font-body);
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   padding: 15px 36px;
-  border-radius: 100px;
+  border-radius: 4px;
   border: none;
   transition: all var(--transition);
   cursor: pointer;
 }
 
 .btn-sage:hover {
-  background: linear-gradient(135deg, #82CEF2, #54B8E0);
+  background: linear-gradient(135deg, #E8D5A3, #D4BC78);
   transform: translateY(-2px);
-  box-shadow: 0 8px 32px rgba(84,184,224,0.3);
+  box-shadow: 0 8px 32px rgba(184,148,74,0.3);
 }
 
 .btn-ghost {
@@ -271,7 +276,7 @@ button {
 /* ── Button active/press states ── */
 .btn-primary:active {
   transform: translateY(0) scale(0.97);
-  box-shadow: 0 2px 8px rgba(84,184,224,0.2);
+  box-shadow: 0 2px 8px rgba(184,148,74,0.2);
 }
 
 .btn-secondary:active {

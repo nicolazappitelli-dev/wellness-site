@@ -140,8 +140,8 @@
 .booking-walkin {
   max-width: 640px;
   margin: 0 auto 80px;
-  background: rgba(84,184,224,0.04);
-  border: 1px solid rgba(84,184,224,0.18);
+  background: rgba(184,148,74,0.04);
+  border: 1px solid rgba(184,148,74,0.18);
   border-radius: 16px;
   padding: 28px 32px;
 }

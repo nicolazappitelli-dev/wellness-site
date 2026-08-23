@@ -42,7 +42,7 @@ export default function Memberships() {
             <em>Coming Soon.</em>
           </h1>
           <p className="memb-hero__sub fade-up-2">
-            Be among the first to join Elevate Cryo &amp; Wellness. Founding members
+            Be among the first to join Elevate Cryo. Founding members
             lock in exclusive pricing before we open our doors this Summer 2026.
           </p>
         </div>
@@ -56,7 +56,7 @@ export default function Memberships() {
               <div className="founding-memb-card__eyebrow">Limited Spots Available</div>
               <h2 className="founding-memb-card__title">Founding Memberships Coming Soon</h2>
               <p className="founding-memb-card__body">
-                Be one of the first to experience Elevate Cryo &amp; Wellness and lock in exclusive rates before we open.
+                Be one of the first to experience Elevate Cryo and lock in exclusive rates before we open.
               </p>
               <ul className="founding-memb-card__perks">
                 <li>

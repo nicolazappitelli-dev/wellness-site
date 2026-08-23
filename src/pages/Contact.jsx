@@ -85,6 +85,21 @@ export default function Contact() {
             </div>
 
             <div className="contact-info__block">
+              <h3 className="contact-info__heading">Website</h3>
+              <div className="contact-info__links">
+                <a
+                  href="https://www.elevatecryoconcord.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="contact-info__link"
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                  www.elevatecryoconcord.com
+                </a>
+              </div>
+            </div>
+
+            <div className="contact-info__block">
               <h3 className="contact-info__heading">Direct Contact</h3>
               <div className="contact-info__links">
                 <a href="tel:+14406679104" className="contact-info__link">

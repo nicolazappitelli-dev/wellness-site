@@ -11,8 +11,8 @@ const modalities = [
     slug: 'cryotherapy',
     duration: '10 min',
     desc: 'Experience ultra-cold, dry air in our advanced electric cryotherapy chamber—engineered to accelerate recovery, reduce inflammation, and leave you energized.',
-    color: 'rgba(15,40,72,0.75)',
-    iconColor: '#82CEF2',
+    color: 'rgba(42,34,24,0.88)',
+    iconColor: '#D4BC78',
   },
   {
     icon: '☀',
@@ -20,8 +20,8 @@ const modalities = [
     slug: 'red-light',
     duration: '20 min',
     desc: 'Bathe in the healing spectrum. Red and near-infrared wavelengths penetrate deep into tissue, stimulating collagen, accelerating repair, and restoring luminosity from within.',
-    color: 'rgba(65,12,10,0.75)',
-    iconColor: '#E84030',
+    color: 'rgba(90,40,28,0.82)',
+    iconColor: '#E09070',
   },
   {
     icon: '♨',
@@ -29,8 +29,8 @@ const modalities = [
     slug: 'sauna',
     duration: '40 min',
     desc: 'Sweat with intention. Infrared heat works deeper than traditional saunas—purging toxins, soothing sore muscles, and activating the parasympathetic state your body craves.',
-    color: 'rgba(55,22,8,0.75)',
-    iconColor: '#E09050',
+    color: 'rgba(70,48,28,0.85)',
+    iconColor: '#E0B070',
   },
   {
     icon: '◎',
@@ -38,8 +38,8 @@ const modalities = [
     slug: 'compression',
     duration: '30 min',
     desc: 'Restore your flow. Sequential compression massage mobilizes lactic acid, reduces swelling, and revives circulation—a full-body reset that athletes and high-performers swear by.',
-    color: 'rgba(10,18,58,0.75)',
-    iconColor: '#8090D8',
+    color: 'rgba(48,40,32,0.88)',
+    iconColor: '#C8B090',
   },
 ]
 
@@ -121,13 +121,14 @@ export default function Home() {
         </div>
         <div className="container hero__content">
           <span className="section-label fade-up">Coming Soon — Concord, Ohio</span>
+          <p className="hero__brand fade-up">Elevate Cryo</p>
           <h1 className="hero__title fade-up-1">
             Recover Faster.<br />
             Feel Better.<br />
             <em>Age Better.</em>
           </h1>
           <p className="hero__sub fade-up-2">
-            Cryotherapy, Sauna &amp; Recovery — Coming Soon to Concord, Ohio.
+            Cryotherapy, red light, sauna &amp; compression — coming soon to Concord, Ohio.
           </p>
           <div className="hero__ctas fade-up-3">
             <p className="hero__founding-note">Be First In — Founding Members Get Exclusive Pricing</p>
@@ -176,7 +177,7 @@ export default function Home() {
                 Opening Soon
               </div>
               <h2 className="opening-card__title">Opening Summer 2026.</h2>
-              <p className="opening-card__subhead">Elevate Cryo &amp; Wellness is coming to Concord.</p>
+              <p className="opening-card__subhead">Elevate Cryo is coming to Concord.</p>
               <p className="opening-card__body">
                 Join the waitlist for first access to memberships and opening specials.
               </p>
@@ -265,7 +266,7 @@ export default function Home() {
               <span className="section-label">Founding Members</span>
               <h2 className="founding-cta__title">Founding Memberships Coming Soon</h2>
               <p className="founding-cta__body">
-                Be one of the first to experience Elevate Cryo &amp; Wellness and lock in exclusive rates before we open.
+                Be one of the first to experience Elevate Cryo and lock in exclusive rates before we open.
               </p>
               <Link to="/#waitlist" className="btn-primary founding-cta__btn">Join the Waitlist</Link>
             </div>
@@ -322,7 +323,7 @@ export default function Home() {
                 </li>
                 <li className="eligibility__item">
                   <span className="eligibility__dot" aria-hidden="true" />
-                  Clients must be at least 16 years of age to use any services at Elevate Cryo &amp; Wellness.
+                  Clients must be at least 16 years of age to use any services at Elevate Cryo.
                 </li>
                 <li className="eligibility__item">
                   <span className="eligibility__dot" aria-hidden="true" />
@@ -334,7 +335,7 @@ export default function Home() {
                 </li>
                 <li className="eligibility__item">
                   <span className="eligibility__dot" aria-hidden="true" />
-                  Elevate Cryo &amp; Wellness reserves the right to request valid identification and to refuse service if age or consent requirements are not met.
+                  Elevate Cryo reserves the right to request valid identification and to refuse service if age or consent requirements are not met.
                 </li>
                 <li className="eligibility__item">
                   <span className="eligibility__dot" aria-hidden="true" />

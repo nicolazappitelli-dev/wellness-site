@@ -18,10 +18,9 @@
 }
 
 .footer__logo-img {
-  height: 48px;
+  height: 64px;
   width: auto;
-  mix-blend-mode: screen;
-  opacity: 0.9;
+  opacity: 0.95;
   transition: opacity 0.25s ease;
 }
 
@@ -33,7 +32,22 @@
   font-size: 14px;
   line-height: 1.7;
   color: rgba(253, 252, 250, 0.5);
-  max-width: 260px;
+  max-width: 280px;
+  margin-bottom: 14px;
+}
+
+.footer__site {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--sage-light);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer__site:hover {
+  color: #F7F1E4;
 }
 
 .footer__heading {
