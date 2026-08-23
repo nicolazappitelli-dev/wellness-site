@@ -1,58 +1,40 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 720" role="img" aria-label="Elevate Cryo">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 520" role="img" aria-label="Elevate Cryo">
   <defs>
     <linearGradient id="gold" x1="12%" y1="8%" x2="88%" y2="92%">
-      <stop offset="0%" stop-color="#F0E0B0"/>
-      <stop offset="28%" stop-color="#D4BC78"/>
-      <stop offset="55%" stop-color="#B8944A"/>
-      <stop offset="78%" stop-color="#8F6F2E"/>
-      <stop offset="100%" stop-color="#D4BC78"/>
+      <stop offset="0%" stop-color="#F0DFA0"/>
+      <stop offset="35%" stop-color="#E0C878"/>
+      <stop offset="65%" stop-color="#C9A84C"/>
+      <stop offset="100%" stop-color="#A8882E"/>
     </linearGradient>
     <linearGradient id="peak" x1="50%" y1="0%" x2="50%" y2="100%">
       <stop offset="0%" stop-color="#FFF8EC"/>
       <stop offset="100%" stop-color="#E8DCC4"/>
     </linearGradient>
-    <filter id="lift" x="-15%" y="-15%" width="130%" height="130%">
-      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#6B5638" flood-opacity="0.28"/>
-    </filter>
   </defs>
 
-  <!-- Soft brand panel -->
-  <rect width="720" height="720" fill="#E8DFD0"/>
-  <rect x="36" y="36" width="648" height="648" rx="28" fill="#EDE4D4" stroke="rgba(184,148,74,0.18)" stroke-width="1"/>
-
-  <!-- Snowflake -->
-  <g transform="translate(360 168)" filter="url(#lift)" fill="url(#gold)">
-    <rect x="-6" y="-62" width="12" height="124" rx="3"/>
-    <rect x="-62" y="-6" width="124" height="12" rx="3"/>
-    <rect x="-6" y="-62" width="12" height="124" rx="3" transform="rotate(45)"/>
-    <rect x="-6" y="-62" width="12" height="124" rx="3" transform="rotate(-45)"/>
-    <circle r="10"/>
-    <path d="M-12 -62 L0 -78 L12 -62Z"/>
-    <path d="M-12 62 L0 78 L12 62Z"/>
-    <path d="M-62 -12 L-78 0 L-62 12Z"/>
-    <path d="M62 -12 L78 0 L62 12Z"/>
-    <path d="M-52 -40 L-66 -52 L-40 -52Z" transform="rotate(0)"/>
-    <path d="M40 -52 L66 -52 L52 -40Z"/>
-    <path d="M-52 40 L-40 52 L-66 52Z"/>
-    <path d="M52 40 L66 52 L40 52Z"/>
+  <g transform="translate(320 100)" fill="url(#gold)">
+    <rect x="-5" y="-52" width="10" height="104" rx="2"/>
+    <rect x="-52" y="-5" width="104" height="10" rx="2"/>
+    <rect x="-5" y="-52" width="10" height="104" rx="2" transform="rotate(45)"/>
+    <rect x="-5" y="-52" width="10" height="104" rx="2" transform="rotate(-45)"/>
+    <circle r="8"/>
+    <path d="M-10 -52 L0 -66 L10 -52Z"/>
+    <path d="M-10 52 L0 66 L10 52Z"/>
+    <path d="M-52 -10 L-66 0 L-52 10Z"/>
+    <path d="M52 -10 L66 0 L52 10Z"/>
   </g>
 
-  <!-- Mountain -->
-  <g filter="url(#lift)">
-    <path d="M168 340 L278 198 L360 290 L442 178 L552 340 Z" fill="url(#gold)"/>
-    <path d="M278 198 L360 290 L442 178 L360 148 Z" fill="url(#peak)"/>
-    <path d="M210 340 C268 312 318 318 360 340 C402 318 452 312 510 340 H552 L168 340 Z" fill="url(#gold)" opacity="0.9"/>
+  <g transform="translate(0 -10)">
+    <path d="M170 250 L260 140 L320 215 L380 125 L470 250 Z" fill="url(#gold)"/>
+    <path d="M260 140 L320 215 L380 125 L320 100 Z" fill="url(#peak)"/>
   </g>
 
-  <!-- Wordmark -->
-  <text x="360" y="430" text-anchor="middle"
+  <text x="320" y="330" text-anchor="middle"
         font-family="Arial Black, Helvetica Neue, Arial, sans-serif"
-        font-size="58" font-weight="700" letter-spacing="12"
-        fill="url(#gold)" filter="url(#lift)">ELEVATE CRYO</text>
-
-  <!-- Tagline -->
-  <text x="360" y="478" text-anchor="middle"
+        font-size="48" font-weight="700" letter-spacing="10"
+        fill="url(#gold)">ELEVATE CRYO</text>
+  <text x="320" y="368" text-anchor="middle"
         font-family="Helvetica Neue, Arial, sans-serif"
-        font-size="15" font-weight="400" letter-spacing="2.4"
-        fill="#8A7B6B">CRYOTHERAPY · RED LIGHT · SAUNA · COMPRESSION</text>
+        font-size="13" font-weight="400" letter-spacing="2.4"
+        fill="#C4B5A0">CRYOTHERAPY · RED LIGHT · SAUNA · COMPRESSION</text>
 </svg>

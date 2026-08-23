@@ -39,6 +39,11 @@ export default function Waitlist() {
     setInvalid(false)
     setStatus('loading')
 
+    if (!supabase) {
+      setStatus('error')
+      return
+    }
+
     try {
       const { error } = await supabase
         .from('waitlist')
