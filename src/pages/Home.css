@@ -10,15 +10,16 @@
 .hero__bg {
   position: absolute;
   inset: 0;
-  background: url('/cryo-chamber.jpg') center/cover no-repeat;
+  background: url('/lobby.jpg') center 40%/cover no-repeat;
 }
 
 .hero__gradient {
   position: absolute;
   inset: 0;
+  /* Stronger left wash — lobby photo is bright wood/white */
   background:
-    linear-gradient(105deg, rgba(11,9,7,0.92) 40%, rgba(11,9,7,0.45) 100%),
-    linear-gradient(to top, rgba(11,9,7,0.75) 0%, transparent 45%);
+    linear-gradient(105deg, rgba(11,9,7,0.9) 36%, rgba(11,9,7,0.35) 100%),
+    linear-gradient(to top, rgba(11,9,7,0.72) 0%, transparent 48%);
 }
 
 .hero__content {
