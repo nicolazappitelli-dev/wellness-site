@@ -56,7 +56,7 @@ export default function Contact() {
 
     setStatus('loading')
     try {
-      await submitLead({
+      const result = await submitLead({
         form: 'Contact',
         name: `${form.first.trim()} ${form.last.trim()}`,
         first_name: form.first.trim(),
@@ -67,9 +67,9 @@ export default function Contact() {
         website: form.website,
         _subject: `Website inquiry: ${form.subject}`,
       })
-      setStatus('success')
-    } catch (err) {
-      setStatus(err.code === 'activation' ? 'activation' : 'error')
+      setStatus(result.fallback === 'mailto' ? 'mailto' : 'success')
+    } catch {
+      setStatus('error')
     }
   }
 
@@ -90,12 +90,16 @@ export default function Contact() {
         <div className="contact-grid">
           <div className="contact-form-wrap">
             <h2 className="contact-form-wrap__title">Send a message</h2>
-            {status === 'success' ? (
+            {status === 'success' || status === 'mailto' ? (
               <div className="form-done">
                 <div className="form-done__icon">
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20 6L9 17l-5-5"/></svg>
                 </div>
-                <p className="form-done__msg">Message sent. We typically reply within one business day.</p>
+                <p className="form-done__msg">
+                  {status === 'mailto'
+                    ? 'Send the email that just opened and we will get back to you within one business day.'
+                    : 'Message sent. We typically reply within one business day.'}
+                </p>
                 <Link to="/#waitlist" className="btn-secondary">Join the Waitlist</Link>
               </div>
             ) : (
@@ -135,11 +139,6 @@ export default function Contact() {
                 {status === 'error' && (
                   <p className="form-hint form-hint--error">
                     Something went wrong. Email us at {SITE_EMAIL} or try again.
-                  </p>
-                )}
-                {status === 'activation' && (
-                  <p className="form-hint form-hint--error">
-                    One more step: confirm the first FormSubmit email in {SITE_EMAIL} so messages can arrive.
                   </p>
                 )}
                 <button type="submit" className="btn-primary auth-form__submit" disabled={status === 'loading'}>

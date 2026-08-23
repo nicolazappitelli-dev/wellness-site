@@ -19,7 +19,7 @@ export default function Waitlist() {
     }
   }, [])
 
-  const done = status === 'success'
+  const done = status === 'success' || status === 'mailto'
   useEffect(() => {
     if (done && doneRef.current) {
       doneRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' })
@@ -39,15 +39,17 @@ export default function Waitlist() {
     setStatus('loading')
 
     try {
-      await submitLead({
+      const result = await submitLead({
         form: 'Waitlist',
+        name: trimmed,
         email: trimmed,
+        message: `${trimmed} asked to join the founding member waitlist.`,
         website,
         _subject: 'New waitlist signup — Elevate Cryo & Wellness',
       })
-      setStatus('success')
-    } catch (err) {
-      setStatus(err.code === 'activation' ? 'activation' : 'error')
+      setStatus(result.fallback === 'mailto' ? 'mailto' : 'success')
+    } catch {
+      setStatus('error')
     }
   }
 
@@ -72,7 +74,9 @@ export default function Waitlist() {
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20 6L9 17l-5-5"/></svg>
                 </div>
                 <p className="waitlist__done-msg">
-                  You&apos;re on the list. We&apos;ll reach out soon.
+                  {status === 'mailto'
+                    ? 'Send the email that just opened to finish joining the waitlist.'
+                    : "You're on the list. We'll reach out soon."}
                 </p>
               </div>
             ) : (
@@ -119,12 +123,7 @@ export default function Waitlist() {
                 )}
                 {status === 'error' && (
                   <p className="waitlist__hint waitlist__hint--error">
-                    Something went wrong — please try again, or email us directly.
-                  </p>
-                )}
-                {status === 'activation' && (
-                  <p className="waitlist__hint waitlist__hint--error">
-                    One more step: check elevatecryowellness@gmail.com and confirm the first form email so signups can arrive.
+                    Something went wrong — please email elevatecryowellness@gmail.com directly.
                   </p>
                 )}
 
