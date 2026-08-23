@@ -209,14 +209,14 @@ export default function Modalities() {
         <div className="container">
           <Reveal>
             <div className="mod-cta__inner">
-              <span className="section-label">Coming Soon</span>
-              <h2 className="section-title">Founding Memberships Coming Soon</h2>
+              <span className="section-label">Memberships</span>
+              <h2 className="section-title">Founding rates for the first 50.</h2>
               <p className="section-subtitle">
-                Be one of the first to experience all four modalities. Join the waitlist for priority access and exclusive founding member pricing.
+                Everyday Wellness from $149.99/mo or Unlimited from $229.99/mo (+ tax). Walk-ins $35 per modality.
               </p>
               <div className="mod-cta__actions">
-                <Link to="/#waitlist" className="btn-primary">Join the Waitlist</Link>
-                <Link to="/contact" className="btn-secondary">Ask a Question</Link>
+                <Link to="/memberships" className="btn-primary">View Pricing</Link>
+                <Link to="/#waitlist" className="btn-secondary">Join the Waitlist</Link>
               </div>
             </div>
           </Reveal>

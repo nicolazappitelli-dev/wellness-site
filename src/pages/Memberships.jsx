@@ -3,86 +3,131 @@ import { Link } from 'react-router-dom'
 import Reveal from '../components/Reveal'
 import './Memberships.css'
 
+const plans = [
+  {
+    name: 'Everyday Wellness',
+    sessions: '1 modality a day · every day',
+    founding: '149.99',
+    standard: '169.99',
+    desc: 'One modality session per day — ideal for consistent recovery.',
+    includes: [
+      '1 modality session per day',
+      'Access to all four modalities',
+      'Member booking portal',
+      'Founding rate locked for the first 50 members',
+    ],
+  },
+  {
+    name: 'Unlimited',
+    sessions: 'All modalities · unlimited access',
+    founding: '229.99',
+    standard: '249.99',
+    desc: 'Stack every modality in a single visit — maximum restoration.',
+    includes: [
+      'Unlimited modality access',
+      'Use all four modalities in one visit',
+      'Member booking portal',
+      'Founding rate locked for the first 50 members',
+    ],
+    featured: true,
+  },
+]
+
 const faqs = [
   {
-    q: 'When are you opening?',
-    a: "We're targeting Summer 2026 in Concord, Ohio. Join the waitlist to be the first to know and lock in founding member pricing before we open.",
+    q: 'What is the walk-in rate?',
+    a: 'Walk-ins are $35 + tax per modality. No membership required — first-come, first-served based on availability.',
   },
   {
-    q: 'What does founding membership include?',
-    a: 'Founding members receive priority access when we open, exclusive pricing locked in before public rates are announced, and early booking privileges across all four recovery modalities.',
+    q: 'What is Everyday Wellness?',
+    a: 'Everyday Wellness includes 1 modality a day, every day. Founding members (first 50) pay $149.99 + tax per month. After the first 50, the rate is $169.99 + tax per month.',
   },
   {
-    q: 'How do I secure founding member status?',
-    a: 'Simply join the waitlist. When memberships open, waitlist members will be the first notified and will have a priority window to activate their founding membership.',
+    q: 'What is Unlimited?',
+    a: 'Unlimited includes all modalities with unlimited access. Founding members (first 50) pay $229.99 + tax per month. After the first 50, the rate is $249.99 + tax per month.',
   },
   {
-    q: 'What modalities will be available?',
-    a: 'We offer four modalities: whole-body Cryotherapy, Red Light Bed Therapy, Infrared Sauna, and Compression Therapy. Each is individually powerful — together they form a complete recovery protocol.',
+    q: 'How do founding memberships work?',
+    a: 'The first 50 members lock in founding rates: $149.99/mo for Everyday Wellness and $229.99/mo for Unlimited (plus tax). After the first 50, standard rates apply.',
   },
   {
     q: 'Can I pause or cancel my membership?',
-    a: 'Yes. Members will be able to pause or cancel at any time with no cancellation fees. Full membership terms will be available when we open.',
+    a: 'Yes. Members may pause or cancel at any time with no cancellation fees. See Policies for full terms.',
   },
   {
     q: 'Where are you located?',
-    a: 'We are coming to 8019 Crile Road, Concord, OH 44077. Opening Summer 2026.',
+    a: '8019 Crile Road, Concord Township, OH 44077 — next to Discount Drug Mart.',
   },
 ]
 
 export default function Memberships() {
   return (
     <main className="memberships-page">
-      {/* Hero */}
       <section className="memb-hero">
         <div className="container">
           <span className="section-label fade-up">Membership Plans</span>
           <h1 className="memb-hero__title fade-up-1">
-            Founding Memberships<br />
-            <em>Coming Soon.</em>
+            Simple pricing.<br />
+            <em>Founding rates locked in.</em>
           </h1>
           <p className="memb-hero__sub fade-up-2">
-            Be among the first to join Elevate Cryo. Founding members
-            lock in exclusive pricing before we open our doors this Summer 2026.
+            Choose Everyday Wellness or Unlimited. The first 50 members lock in founding rates before standard pricing begins.
           </p>
         </div>
       </section>
 
-      {/* Founding Membership Card */}
+      <div className="memb-notice">
+        <div className="container">
+          <div className="memb-notice__inner">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+            <p>
+              <strong>Walk-in:</strong> $35 + tax per modality — no membership required.
+            </p>
+          </div>
+        </div>
+      </div>
+
       <section className="section memb-plans">
         <div className="container">
-          <Reveal>
-            <div className="founding-memb-card">
-              <div className="founding-memb-card__eyebrow">Limited Spots Available</div>
-              <h2 className="founding-memb-card__title">Founding Memberships Coming Soon</h2>
-              <p className="founding-memb-card__body">
-                Be one of the first to experience Elevate Cryo and lock in exclusive rates before we open.
-              </p>
-              <ul className="founding-memb-card__perks">
-                <li>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20 6L9 17l-5-5"/></svg>
-                  Priority access when we open
-                </li>
-                <li>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20 6L9 17l-5-5"/></svg>
-                  Exclusive founding member pricing
-                </li>
-                <li>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20 6L9 17l-5-5"/></svg>
-                  First to know about our opening date
-                </li>
-                <li>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20 6L9 17l-5-5"/></svg>
-                  Full access to all four recovery modalities
-                </li>
-              </ul>
-              <Link to="/#waitlist" className="btn-primary">Join the Waitlist</Link>
-            </div>
-          </Reveal>
+          <div className="memb-plans__grid">
+            {plans.map((plan, i) => (
+              <Reveal key={plan.name} delay={i * 80}>
+                <div className={`memb-plan${plan.featured ? ' memb-plan--featured' : ''}`}>
+                  {plan.featured && <div className="memb-plan__badge">Most Popular</div>}
+                  <div className="memb-plan__name">{plan.name}</div>
+                  <div className="memb-plan__sessions">{plan.sessions}</div>
+                  <div className="memb-plan__price">
+                    <span className="memb-plan__amount">${plan.founding}</span>
+                    <span className="memb-plan__billing">+ tax / mo</span>
+                  </div>
+                  <p className="memb-plan__tagline">Founding members · first 50</p>
+                  <p className="memb-plan__standard">
+                    After first 50: <strong>${plan.standard}</strong> + tax / mo
+                  </p>
+                  <div className="memb-plan__divider" />
+                  <p className="memb-plan__desc">{plan.desc}</p>
+                  <ul className="memb-plan__includes">
+                    {plan.includes.map(item => (
+                      <li key={item} className="memb-plan__include-item">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20 6L9 17l-5-5"/></svg>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                  <Link to="/#waitlist" className={plan.featured ? 'btn-primary' : 'btn-secondary'}>
+                    Join the Waitlist
+                  </Link>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+          <p className="memb-plans__note">
+            All prices + tax. Founding rates apply to the first 50 members only.
+            See <Link to="/policies">Policies</Link> for full membership terms.
+          </p>
         </div>
       </section>
 
-      {/* FAQ */}
       <section className="section memb-faq">
         <div className="container">
           <div className="memb-faq__inner">
@@ -103,16 +148,17 @@ export default function Memberships() {
         </div>
       </section>
 
-      {/* CTA */}
       <section className="memb-cta-section">
         <div className="container">
           <Reveal>
             <div className="memb-cta__inner">
-              <h2 className="memb-cta__title">Be among the first.</h2>
-              <p className="memb-cta__sub">Join the waitlist for priority access and founding member pricing.</p>
+              <h2 className="memb-cta__title">Lock in founding rates.</h2>
+              <p className="memb-cta__sub">
+                First 50 members get Everyday Wellness at $149.99/mo or Unlimited at $229.99/mo (+ tax).
+              </p>
               <div className="memb-cta__actions">
                 <Link to="/#waitlist" className="btn-primary">Join the Waitlist</Link>
-                <Link to="/contact" className="btn-secondary" style={{ borderColor: 'rgba(255,255,255,0.25)', color: 'rgba(255,255,255,0.7)' }}>Contact Us</Link>
+                <Link to="/contact" className="btn-secondary">Contact Us</Link>
               </div>
             </div>
           </Reveal>

@@ -41,8 +41,12 @@ const faqs = [
     a: 'Whole-body cryotherapy, red light bed therapy, infrared sauna, and compression therapy.',
   },
   {
+    q: 'How much does it cost?',
+    a: 'Walk-ins are $35 + tax per modality. Everyday Wellness is $149.99/mo founding (first 50) or $169.99/mo standard. Unlimited is $229.99/mo founding or $249.99/mo standard — all plus tax.',
+  },
+  {
     q: 'How do founding memberships work?',
-    a: 'Waitlist members get first access to memberships and locked-in founding rates before public pricing is announced.',
+    a: 'The first 50 members lock in founding rates before standard pricing begins. Join the waitlist to secure a founding spot.',
   },
   {
     q: 'Are there health requirements?',
