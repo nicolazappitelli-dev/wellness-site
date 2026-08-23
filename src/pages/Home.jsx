@@ -62,16 +62,15 @@ export default function Home() {
           <div className="hero__gradient" />
         </div>
         <div className="container hero__content">
-          <p className="hero__brand fade-up">Elevate Cryo</p>
-          <h1 className="hero__title fade-up-1">
+          <h1 className="hero__title fade-up">
             Recover.<br />
             Restore.<br />
             <em>Elevate.</em>
           </h1>
-          <p className="hero__sub fade-up-2">
+          <p className="hero__sub fade-up-1">
             Cryotherapy, red light, sauna, and compression — coming soon to Concord, Ohio.
           </p>
-          <div className="hero__ctas fade-up-3">
+          <div className="hero__ctas fade-up-2">
             <Link to="/#waitlist" className="btn-primary">Join the Waitlist</Link>
           </div>
         </div>
