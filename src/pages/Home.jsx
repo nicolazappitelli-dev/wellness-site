@@ -105,7 +105,7 @@ const faqs = [
   },
   {
     q: 'How do founding memberships work?',
-    a: 'Join the waitlist now to secure founding member status. When we open, founding members will have first access to memberships and exclusive pricing locked in before public rates are announced.',
+    a: 'Join the waitlist now to secure founding member status. Founding rates are Essential at $99/mo and Unlimited at $129/mo, with walk-ins at $25 + tax per modality. Waitlist members get first access when we open.',
   },
 ]
 
@@ -263,9 +263,10 @@ export default function Home() {
           <Reveal>
             <div className="founding-cta__card">
               <span className="section-label">Founding Members</span>
-              <h2 className="founding-cta__title">Founding Memberships Coming Soon</h2>
+              <h2 className="founding-cta__title">Founding rates: $99 and $129.</h2>
               <p className="founding-cta__body">
-                Be one of the first to experience Elevate Cryo &amp; Wellness and lock in exclusive rates before we open.
+                Essential is $99/mo for one modality a day. Unlimited is $129/mo for every modality,
+                every visit. Walk-ins will be $25 + tax. Join the waitlist to lock these rates in.
               </p>
               <Link to="/#waitlist" className="btn-primary founding-cta__btn">Join the Waitlist</Link>
             </div>

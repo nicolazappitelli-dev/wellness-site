@@ -1,17 +1,17 @@
 import { useState, useEffect, useRef } from 'react'
-import { supabase } from '../lib/supabaseClient'
+import { submitLead } from '../lib/submitLead'
 import './Waitlist.css'
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 export default function Waitlist() {
-  const [email,  setEmail]  = useState('')
-  const [status, setStatus] = useState('idle') // idle | loading | success | duplicate | error
+  const [email, setEmail] = useState('')
+  const [website, setWebsite] = useState('')
+  const [status, setStatus] = useState('idle') // idle | loading | success | error | activation
   const [invalid, setInvalid] = useState(false)
   const inputRef = useRef(null)
-  const doneRef  = useRef(null)
+  const doneRef = useRef(null)
 
-  // Auto-focus email when user navigates to #waitlist via a CTA
   useEffect(() => {
     if (window.location.hash === '#waitlist') {
       const timer = setTimeout(() => inputRef.current?.focus(), 450)
@@ -19,8 +19,7 @@ export default function Waitlist() {
     }
   }, [])
 
-  // Scroll success/duplicate message into view
-  const done = status === 'success' || status === 'duplicate'
+  const done = status === 'success'
   useEffect(() => {
     if (done && doneRef.current) {
       doneRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' })
@@ -40,22 +39,15 @@ export default function Waitlist() {
     setStatus('loading')
 
     try {
-      const { error } = await supabase
-        .from('waitlist')
-        .insert({ email: trimmed })
-
-      if (error) {
-        // Postgres unique constraint violation
-        if (error.code === '23505') {
-          setStatus('duplicate')
-        } else {
-          setStatus('error')
-        }
-      } else {
-        setStatus('success')
-      }
-    } catch {
-      setStatus('error')
+      await submitLead({
+        form: 'Waitlist',
+        email: trimmed,
+        website,
+        _subject: 'New waitlist signup — Elevate Cryo & Wellness',
+      })
+      setStatus('success')
+    } catch (err) {
+      setStatus(err.code === 'activation' ? 'activation' : 'error')
     }
   }
 
@@ -80,9 +72,7 @@ export default function Waitlist() {
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20 6L9 17l-5-5"/></svg>
                 </div>
                 <p className="waitlist__done-msg">
-                  {status === 'success'
-                    ? "You're on the list. We'll reach out soon."
-                    : "You're already on the list — thank you."}
+                  You&apos;re on the list. We&apos;ll reach out soon.
                 </p>
               </div>
             ) : (
@@ -99,7 +89,18 @@ export default function Waitlist() {
                     disabled={status === 'loading'}
                     autoComplete="email"
                     aria-label="Email address"
+                    required
                   />
+                  <label className="waitlist__hp" aria-hidden="true">
+                    Company
+                    <input
+                      type="text"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      value={website}
+                      onChange={e => setWebsite(e.target.value)}
+                    />
+                  </label>
                   <button
                     type="submit"
                     className="waitlist__btn btn-primary"
@@ -118,7 +119,12 @@ export default function Waitlist() {
                 )}
                 {status === 'error' && (
                   <p className="waitlist__hint waitlist__hint--error">
-                    Something went wrong — please try again.
+                    Something went wrong — please try again, or email us directly.
+                  </p>
+                )}
+                {status === 'activation' && (
+                  <p className="waitlist__hint waitlist__hint--error">
+                    One more step: check elevatecryowellness@gmail.com and confirm the first form email so signups can arrive.
                   </p>
                 )}
 
