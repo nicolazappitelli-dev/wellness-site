@@ -19,10 +19,10 @@
 .hero__gradient {
   position: absolute;
   inset: 0;
-  /* Soft warm wash — keeps photo visible, text readable */
+  /* Light wash — keep wall logo readable alongside hero text */
   background:
-    linear-gradient(105deg, rgba(44,36,28,0.72) 34%, rgba(44,36,28,0.22) 100%),
-    linear-gradient(to top, rgba(44,36,28,0.55) 0%, transparent 50%);
+    linear-gradient(105deg, rgba(44,36,28,0.42) 28%, rgba(44,36,28,0.12) 100%),
+    linear-gradient(to top, rgba(44,36,28,0.35) 0%, transparent 55%);
 }
 
 .hero__content {
