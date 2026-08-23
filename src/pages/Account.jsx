@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { supabase } from '../lib/supabaseClient'
 import { useAuth, isActiveMember } from '../lib/auth'
-import { startCheckout, openBillingPortal } from '../lib/billing'
+import { startCheckout } from '../lib/billing'
+import { CLOVER_BOOKING_URL, hasCloverBooking } from '../lib/clover'
 import { MODALITIES, PLANS, canCancelBooking, formatTime, parseISODate } from '../lib/catalog'
 import './SimplePages.css'
 import './Account.css'
@@ -111,19 +112,10 @@ export default function Account() {
     setMessage(error ? error.message : 'Password reset email sent.')
   }
 
-  async function pay(plan) {
+  function pay(plan) {
     setBillingError('')
     try {
-      await startCheckout(plan)
-    } catch (err) {
-      setBillingError(err.message)
-    }
-  }
-
-  async function portal() {
-    setBillingError('')
-    try {
-      await openBillingPortal()
+      startCheckout(plan)
     } catch (err) {
       setBillingError(err.message)
     }
@@ -161,11 +153,15 @@ export default function Account() {
         <div className="simple-page__hero">
           <div className="container">
             <span className="section-label fade-up">Member Portal</span>
-            <h1 className="simple-page__title fade-up-1">Connect the backend to go live.</h1>
+            <h1 className="simple-page__title fade-up-1">Book and pay in Clover.</h1>
             <p className="simple-page__sub fade-up-2">
-              Unpause Supabase, add the project URL and anon key, and run supabase/schema.sql.
-              Then members can create accounts, pay, and book.
+              Scheduling and membership payments run through the studio&apos;s Clover account.
+              Website logins are optional.
             </p>
+            <div className="hero__ctas fade-up-3" style={{ marginTop: 28, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+              <Link to="/booking" className="btn-primary">Book a session</Link>
+              <Link to="/memberships" className="btn-secondary">Memberships</Link>
+            </div>
           </div>
         </div>
       </main>
@@ -185,8 +181,8 @@ export default function Account() {
             </h1>
             <p className="simple-page__sub fade-up-2">
               {active
-                ? `${plan?.name} is active. Book up to 4 days ahead, or manage billing anytime.`
-                : 'Activate Essential or Unlimited to unlock online booking.'}
+                ? `${plan?.name} is on file. Book and pay through Clover.`
+                : 'Use Clover to start Essential or Unlimited, then book sessions there.'}
             </p>
           </div>
         </div>
@@ -211,8 +207,10 @@ export default function Account() {
               {active && plan?.id === 'essential' && (
                 <button type="button" className="btn-primary" onClick={() => pay('unlimited')}>Upgrade to Unlimited</button>
               )}
-              {profile?.stripe_customer_id && (
-                <button type="button" className="btn-secondary" onClick={portal}>Manage billing</button>
+              {hasCloverBooking() && (
+                <a className="btn-secondary" href={CLOVER_BOOKING_URL} target="_blank" rel="noopener noreferrer">
+                  Manage in Clover
+                </a>
               )}
               <Link to="/booking" className="btn-secondary">Book a session</Link>
             </div>

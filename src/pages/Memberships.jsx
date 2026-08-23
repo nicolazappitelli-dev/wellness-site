@@ -1,7 +1,6 @@
 import { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Reveal from '../components/Reveal'
-import { useAuth } from '../lib/auth'
 import { startCheckout } from '../lib/billing'
 import './Memberships.css'
 
@@ -81,18 +80,12 @@ const faqs = [
 ]
 
 export default function Memberships() {
-  const { user } = useAuth()
-  const navigate = useNavigate()
   const [payError, setPayError] = useState('')
 
-  async function choosePlan(planId) {
+  function choosePlan(planId) {
     setPayError('')
-    if (!user) {
-      navigate('/account')
-      return
-    }
     try {
-      await startCheckout(planId)
+      startCheckout(planId)
     } catch (err) {
       setPayError(err.message)
     }
@@ -164,15 +157,15 @@ export default function Memberships() {
                     style={{ marginTop: 'auto', display: 'inline-flex', justifyContent: 'center' }}
                     onClick={() => choosePlan(p.id)}
                   >
-                    {user ? `Subscribe to ${p.name}` : `Create account · ${p.name}`}
+                    Pay with Clover · {p.name}
                   </button>
                 </div>
               </Reveal>
             ))}
           </div>
           <p className="memb-plans__note">
-            All memberships require account creation and are subject to our <Link to="/policies">Terms &amp; Policies</Link>.
-            Membership rates are billed monthly through Stripe. Sales tax may be applied at checkout.
+            Memberships are billed through the studio&apos;s Clover account. Subject to our <Link to="/policies">Terms &amp; Policies</Link>.
+            Sales tax may be applied at checkout.
             {payError && <><br /><span className="form-hint form-hint--error">{payError}</span></>}
           </p>
 
