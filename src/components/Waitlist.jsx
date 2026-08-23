@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { submitLead } from '../lib/submitLead'
+import { supabase } from '../lib/supabaseClient'
 import './Waitlist.css'
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -39,6 +40,17 @@ export default function Waitlist() {
     setStatus('loading')
 
     try {
+      if (supabase) {
+        const { error } = await supabase.from('waitlist').insert({ email: trimmed })
+        if (!error) {
+          setStatus('success')
+          return
+        }
+        if (error.code === '23505') {
+          setStatus('success')
+          return
+        }
+      }
       const result = await submitLead({
         form: 'Waitlist',
         name: trimmed,

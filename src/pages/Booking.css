@@ -2,7 +2,7 @@
    Booking page container
 ───────────────────────────────────────────── */
 .booking-page {
-  padding-top: 0;
+  padding-top: 90px;
   min-height: 100vh;
 }
 

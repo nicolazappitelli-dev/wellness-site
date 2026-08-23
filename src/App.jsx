@@ -9,6 +9,7 @@ import Booking from './pages/Booking'
 import Account from './pages/Account'
 import Policies from './pages/Policies'
 import Contact from './pages/Contact'
+import { AuthProvider } from './lib/auth'
 import './pages/SimplePages.css'
 
 function ScrollToTop() {
@@ -69,6 +70,7 @@ function NotFound() {
 function App() {
   return (
     <BrowserRouter>
+      <AuthProvider>
       <ScrollToTop />
       <HashScrollHandler />
       <Nav />
@@ -83,6 +85,7 @@ function App() {
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
+      </AuthProvider>
     </BrowserRouter>
   )
 }

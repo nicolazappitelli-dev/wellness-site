@@ -334,6 +334,9 @@
   font-size: 12px;
   color: var(--sage);
   text-decoration: none;
+  background: none;
+  border: 0;
+  padding: 0;
 }
 
 .auth-form__submit {

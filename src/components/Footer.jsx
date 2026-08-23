@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { STUDIO_HOURS } from '../lib/catalog'
 import './Footer.css'
 
 export default function Footer() {
@@ -30,10 +31,12 @@ export default function Footer() {
           <div className="footer__col">
             <h4 className="footer__heading">Hours</h4>
             <div className="footer__hours">
-              <div className="footer__hours-row">
-                <span>Hours</span>
-                <span>Coming Soon</span>
-              </div>
+              {STUDIO_HOURS.map(row => (
+                <div key={row.days} className="footer__hours-row">
+                  <span>{row.days}</span>
+                  <span>{row.hours}</span>
+                </div>
+              ))}
             </div>
           </div>
 

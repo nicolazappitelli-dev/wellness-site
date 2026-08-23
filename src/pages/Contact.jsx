@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { submitLead } from '../lib/submitLead'
 import { SITE_EMAIL, SITE_PHONE, SITE_PHONE_HREF, SITE_MAPS_HREF } from '../lib/site'
+import { STUDIO_HOURS } from '../lib/catalog'
 import './SimplePages.css'
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -164,10 +165,12 @@ export default function Contact() {
             <div className="contact-info__block">
               <h3 className="contact-info__heading">Hours of Operation</h3>
               <div className="contact-info__hours">
-                <div className="contact-info__hours-row">
-                  <span>Hours</span>
-                  <span>Coming Soon</span>
-                </div>
+                {STUDIO_HOURS.map(row => (
+                  <div key={row.days} className="contact-info__hours-row">
+                    <span>{row.days}</span>
+                    <span>{row.hours}</span>
+                  </div>
+                ))}
               </div>
             </div>
 
