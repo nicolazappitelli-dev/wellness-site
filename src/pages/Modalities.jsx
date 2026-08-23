@@ -141,15 +141,12 @@ export default function Modalities() {
 
               {/* Atmospheric Visual Panel */}
               <Reveal delay={60}>
-                <div
-                  className={`mod-visual${m.image ? ' mod-visual--photo' : ''}`}
-                  style={m.image
-                    ? { backgroundImage: `url('${m.image}')` }
-                    : undefined
-                  }
-                >
-                  {m.image && <div className="mod-visual__photo-overlay" />}
-                  <div className="mod-visual__emoji">{m.emoji}</div>
+                <div className={`mod-visual${m.image ? ' mod-visual--photo' : ''}`}>
+                  {m.image ? (
+                    <img src={m.image} alt={m.name} className="mod-visual__img" loading="lazy" />
+                  ) : (
+                    <div className="mod-visual__emoji">{m.emoji}</div>
+                  )}
                   <div className="mod-visual__pill">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
                     {m.duration}

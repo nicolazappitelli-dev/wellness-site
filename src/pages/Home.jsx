@@ -58,20 +58,22 @@ export default function Home() {
   return (
     <main className="home">
       <section className="hero">
-        <div className="hero__bg">
-          <div className="hero__gradient" />
+        <div className="hero__media" aria-hidden="true">
+          <img src="/lobby.jpg" alt="" className="hero__photo" />
         </div>
-        <div className="container hero__content">
-          <h1 className="hero__title fade-up">
-            Recover.<br />
-            Restore.<br />
-            <em>Elevate.</em>
-          </h1>
-          <p className="hero__sub fade-up-1">
-            Cryotherapy, red light, sauna, and compression — coming soon to Concord, Ohio.
-          </p>
-          <div className="hero__ctas fade-up-2">
-            <Link to="/#waitlist" className="btn-primary">Join the Waitlist</Link>
+        <div className="container hero__shell">
+          <div className="hero__content">
+            <h1 className="hero__title fade-up">
+              Recover.<br />
+              Restore.<br />
+              <em>Elevate.</em>
+            </h1>
+            <p className="hero__sub fade-up-1">
+              Cryotherapy, red light, sauna, and compression — coming soon to Concord, Ohio.
+            </p>
+            <div className="hero__ctas fade-up-2">
+              <Link to="/#waitlist" className="btn-primary">Join the Waitlist</Link>
+            </div>
           </div>
         </div>
       </section>

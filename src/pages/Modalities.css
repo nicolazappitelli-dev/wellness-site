@@ -59,42 +59,40 @@
 }
 
 /* Visual Panel */
-.mod-visual--photo {
-  background-size: cover;
-  background-position: center;
-}
-
-.mod-visual__photo-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(23,19,14,0.25) 0%,
-    rgba(23,19,14,0.1) 40%,
-    rgba(23,19,14,0.55) 100%
-  );
-  pointer-events: none;
-}
-
 .mod-visual {
-  border-radius: 28px;
-  aspect-ratio: 3/4;
+  border-radius: 20px;
+  aspect-ratio: 4 / 5;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   gap: 24px;
   position: sticky;
   top: 120px;
   overflow: hidden;
   transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
-  box-shadow: 0 16px 64px rgba(0,0,0,0.12);
-  background: var(--linen);
+  box-shadow: 0 12px 40px rgba(42, 36, 28, 0.1);
+  background: #1A1612;
+  padding: 20px;
 }
 
 .mod-visual:hover {
-  transform: scale(1.015) translateY(-4px);
-  box-shadow: 0 28px 80px rgba(0,0,0,0.16);
+  transform: translateY(-3px);
+  box-shadow: 0 18px 48px rgba(42, 36, 28, 0.14);
+}
+
+.mod-visual--photo {
+  padding: 0;
+}
+
+.mod-visual__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center center;
+  background: #14110E;
 }
 
 .mod-visual__emoji {
@@ -114,15 +112,24 @@
   font-weight: 500;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: rgba(44,44,44,0.75);
-  background: rgba(255,255,255,0.72);
+  color: rgba(42, 36, 28, 0.8);
+  background: rgba(255,255,255,0.88);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   padding: 10px 22px;
   border-radius: 100px;
   position: relative;
-  z-index: 1;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  z-index: 2;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+  margin-bottom: 8px;
+}
+
+.mod-visual--photo .mod-visual__pill {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
 }
 
 /* Make Reveal wrappers grid-transparent in mod-layout */
