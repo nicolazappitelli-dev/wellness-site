@@ -8,11 +8,19 @@ export default function Footer() {
         <div className="footer__grid">
           <div className="footer__brand">
             <div className="footer__logo">
-              <img src="/logo.png" alt="Elevate Cryo & Wellness" className="footer__logo-img" loading="lazy" />
+              <img src="/logo-nav-dark.svg" alt="Elevate Cryo" className="footer__logo-img" loading="lazy" />
             </div>
             <p className="footer__tagline">
-              Your sanctuary for recovery, restoration, and radiant wellbeing.
+              Cryotherapy, red light, sauna, and compression — recovery elevated in Concord, Ohio.
             </p>
+            <a
+              href="https://www.elevatecryoconcord.com"
+              className="footer__site"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              www.elevatecryoconcord.com
+            </a>
           </div>
 
           <div className="footer__col">
@@ -67,7 +75,7 @@ export default function Footer() {
 
         <div className="footer__bottom">
           <p className="footer__legal">
-            &copy; {new Date().getFullYear()} Elevate Cryo & Wellness. All rights reserved.
+            &copy; {new Date().getFullYear()} Elevate Cryo. All rights reserved.
           </p>
           <div className="footer__legal-links">
             <Link to="/policies">Privacy Policy</Link>

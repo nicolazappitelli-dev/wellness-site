@@ -39,6 +39,11 @@ export default function Waitlist() {
     setInvalid(false)
     setStatus('loading')
 
+    if (!supabase) {
+      setStatus('error')
+      return
+    }
+
     try {
       const { error } = await supabase
         .from('waitlist')
@@ -69,7 +74,7 @@ export default function Waitlist() {
             <span className="section-label">Founding Members</span>
             <h2 className="waitlist__title">Join the waitlist.</h2>
             <p className="waitlist__sub">
-              Be first through our doors. Founding members lock in exclusive pricing before we open.
+              First 50 members lock in founding rates — Everyday Wellness $149.99/mo or Unlimited $229.99/mo (+ tax).
             </p>
           </div>
 

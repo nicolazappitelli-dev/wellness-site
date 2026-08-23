@@ -34,7 +34,7 @@
 .memb-notice {
   background: var(--sage-pale);
   padding: 16px 0;
-  border-bottom: 1px solid rgba(122,140,110,0.2);
+  border-bottom: 1px solid rgba(201,168,76,0.18);
 }
 
 .memb-notice__inner {
@@ -44,6 +44,11 @@
   font-size: 14px;
   color: var(--charcoal-light);
   line-height: 1.5;
+}
+
+.memb-notice__inner strong {
+  color: var(--charcoal);
+  font-weight: 600;
 }
 
 .memb-notice__inner svg {
@@ -94,21 +99,22 @@
 }
 
 .memb-plan--featured {
-  background: linear-gradient(145deg, rgba(15,40,72,0.95) 0%, rgba(8,22,50,0.98) 100%);
+  background: var(--linen);
   color: var(--charcoal);
-  border-color: rgba(84,184,224,0.3);
+  border-color: rgba(184,149,63,0.45);
+  box-shadow: 0 12px 40px rgba(42, 36, 28, 0.08);
 }
 
 .memb-plan--featured:hover {
-  border-color: var(--sage-light);
+  border-color: var(--sage);
 }
 
 .memb-plan__badge {
   position: absolute;
   top: -14px;
   left: 48px;
-  background: var(--sage);
-  color: #fff;
+  background: linear-gradient(135deg, #E0C878, #C9A84C);
+  color: #1A1510;
   font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.15em;
@@ -128,7 +134,7 @@
 }
 
 .memb-plan--featured .memb-plan__name {
-  color: var(--sage-light);
+  color: var(--sage);
 }
 
 .memb-plan__price {
@@ -156,7 +162,7 @@
 }
 
 .memb-plan--featured .memb-plan__billing {
-  color: rgba(253,252,250,0.45);
+  color: var(--charcoal-muted);
 }
 
 .memb-plan__sessions {
@@ -164,23 +170,43 @@
   font-size: 14px;
   font-weight: 600;
   color: var(--charcoal);
-  margin-bottom: 8px;
+  margin-bottom: 16px;
 }
 
 .memb-plan--featured .memb-plan__sessions {
-  color: rgba(253,252,250,0.9);
+  color: var(--charcoal);
 }
 
 .memb-plan__tagline {
-  font-family: var(--font-heading);
-  font-size: 17px;
-  font-style: italic;
-  color: var(--charcoal-muted);
-  margin-bottom: 0;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-style: normal;
+  letter-spacing: 0.04em;
+  color: var(--sage);
+  margin: 0 0 8px;
 }
 
 .memb-plan--featured .memb-plan__tagline {
-  color: rgba(253,252,250,0.5);
+  color: var(--sage);
+}
+
+.memb-plan__standard {
+  font-size: 13px;
+  color: var(--charcoal-muted);
+  margin: 0;
+}
+
+.memb-plan__standard strong {
+  color: var(--charcoal-light);
+  font-weight: 600;
+}
+
+.memb-plan--featured .memb-plan__standard {
+  color: var(--charcoal-muted);
+}
+
+.memb-plan--featured .memb-plan__standard strong {
+  color: var(--charcoal-light);
 }
 
 .memb-plan__divider {
@@ -190,7 +216,7 @@
 }
 
 .memb-plan--featured .memb-plan__divider {
-  background: rgba(255,255,255,0.1);
+  background: var(--sand);
 }
 
 .memb-plan__desc {
@@ -201,7 +227,7 @@
 }
 
 .memb-plan--featured .memb-plan__desc {
-  color: rgba(253,252,250,0.5);
+  color: var(--charcoal-muted);
 }
 
 .memb-plan__includes {
@@ -223,7 +249,7 @@
 }
 
 .memb-plan--featured .memb-plan__include-item {
-  color: rgba(253,252,250,0.7);
+  color: var(--charcoal-light);
 }
 
 .memb-plan__include-item svg {
@@ -254,10 +280,10 @@
 .walkin-info-box {
   margin-top: 32px;
   max-width: 860px;
-  border: 1px solid rgba(84,184,224,0.18);
+  border: 1px solid rgba(184,148,74,0.18);
   border-radius: 14px;
   padding: 22px 28px;
-  background: rgba(84,184,224,0.03);
+  background: rgba(184,148,74,0.03);
 }
 
 .walkin-info-box__eyebrow {
@@ -324,7 +350,7 @@
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
   background: var(--surface-darkest);
-  color: var(--charcoal);
+  color: #F7F1E4;
 }
 
 .compare-table__feature-col {
@@ -356,7 +382,7 @@
 }
 
 .compare-table__plan-col--unl {
-  background: rgba(84,184,224,0.12);
+  background: rgba(184,148,74,0.12);
 }
 
 .compare-table__row {
@@ -387,7 +413,7 @@
 }
 
 .compare-table__cell--featured {
-  background: rgba(84,184,224,0.05);
+  background: rgba(184,148,74,0.05);
 }
 
 .check-icon {
@@ -467,8 +493,9 @@
 
 /* CTA */
 .memb-cta-section {
-  background: var(--surface-darkest);
+  background: var(--warm-white);
   padding: 100px 0;
+  border-top: 1px solid var(--sand);
 }
 
 .memb-cta__inner {
@@ -486,7 +513,7 @@
 
 .memb-cta__sub {
   font-size: 16px;
-  color: rgba(253,252,250,0.5);
+  color: var(--charcoal-muted);
   line-height: 1.7;
   margin-bottom: 40px;
 }
@@ -502,7 +529,7 @@
   max-width: 600px;
   margin: 0 auto;
   background: linear-gradient(135deg, rgba(15,30,50,0.96) 0%, rgba(8,18,35,0.99) 100%);
-  border: 1px solid rgba(130,206,242,0.15);
+  border: 1px solid rgba(184,148,74,0.15);
   border-radius: 20px;
   padding: clamp(48px, 6vw, 80px) clamp(32px, 5vw, 64px);
   display: flex;
@@ -510,7 +537,7 @@
   align-items: center;
   text-align: center;
   gap: 20px;
-  box-shadow: 0 32px 80px rgba(0,0,0,0.35), 0 0 0 1px rgba(130,206,242,0.08);
+  box-shadow: 0 32px 80px rgba(0,0,0,0.35), 0 0 0 1px rgba(184,148,74,0.08);
 }
 
 .founding-memb-card__eyebrow {

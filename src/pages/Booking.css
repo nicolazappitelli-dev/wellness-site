@@ -11,7 +11,7 @@
 ───────────────────────────────────────────── */
 .bk-demo {
   background: var(--surface-darkest);
-  border-bottom: 1px solid rgba(84,184,224,0.12);
+  border-bottom: 1px solid rgba(184,148,74,0.12);
   padding: 10px 0;
   position: sticky;
   top: 0;
@@ -32,7 +32,7 @@
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--charcoal-muted);
+  color: rgba(247, 241, 228, 0.45);
   flex-shrink: 0;
 }
 
@@ -56,13 +56,13 @@
 }
 
 .bk-demo__tab:hover {
-  border-color: rgba(84,184,224,0.3);
+  border-color: rgba(184,148,74,0.3);
   color: var(--sage-light);
 }
 
 .bk-demo__tab--on {
-  background: rgba(84,184,224,0.12);
-  border-color: rgba(84,184,224,0.35);
+  background: rgba(184,148,74,0.12);
+  border-color: rgba(184,148,74,0.35);
   color: var(--sage-light);
 }
 
@@ -100,7 +100,7 @@
 
 .bk-locked__fake-day {
   height: 32px;
-  background: rgba(84,184,224,0.4);
+  background: rgba(184,148,74,0.4);
   border-radius: 8px;
 }
 
@@ -124,8 +124,8 @@
 }
 
 .bk-locked__fake-slot.--partial {
-  background: rgba(84,184,224,0.12);
-  border-color: rgba(84,184,224,0.2);
+  background: rgba(184,148,74,0.12);
+  border-color: rgba(184,148,74,0.2);
 }
 
 /* Gate overlay card */
@@ -141,15 +141,15 @@
   border-radius: 20px;
   padding: 44px 48px;
   text-align: center;
-  box-shadow: 0 40px 100px rgba(0,0,0,0.6), 0 0 0 1px rgba(84,184,224,0.08);
+  box-shadow: 0 40px 100px rgba(0,0,0,0.6), 0 0 0 1px rgba(184,148,74,0.08);
 }
 
 .bk-locked__icon {
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: rgba(84,184,224,0.08);
-  border: 1px solid rgba(84,184,224,0.2);
+  background: rgba(184,148,74,0.08);
+  border: 1px solid rgba(184,148,74,0.2);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -211,8 +211,8 @@
   align-items: center;
   gap: 16px;
   padding: 12px 18px;
-  background: rgba(84,184,224,0.05);
-  border: 1px solid rgba(84,184,224,0.14);
+  background: rgba(184,148,74,0.05);
+  border: 1px solid rgba(184,148,74,0.14);
   border-radius: 12px;
   flex-wrap: wrap;
 }
@@ -232,7 +232,7 @@
   height: 7px;
   border-radius: 50%;
   background: var(--sage);
-  box-shadow: 0 0 6px rgba(84,184,224,0.7);
+  box-shadow: 0 0 6px rgba(184,148,74,0.7);
   flex-shrink: 0;
 }
 
@@ -261,13 +261,13 @@
 }
 
 .bk-day:hover {
-  border-color: rgba(84,184,224,0.2);
+  border-color: rgba(184,148,74,0.2);
 }
 
 .bk-day--on {
-  background: rgba(84,184,224,0.1);
-  border-color: rgba(84,184,224,0.4);
-  box-shadow: 0 0 0 1px rgba(84,184,224,0.2);
+  background: rgba(184,148,74,0.1);
+  border-color: rgba(184,148,74,0.4);
+  box-shadow: 0 0 0 1px rgba(184,148,74,0.2);
 }
 
 .bk-day__name {
@@ -363,14 +363,14 @@
 }
 
 .bk-mod:hover {
-  border-color: rgba(var(--mc-rgb, 84,184,224), 0.25);
-  background: rgba(var(--mc-rgb, 84,184,224), 0.05);
+  border-color: rgba(var(--mc-rgb, 184,148,74), 0.25);
+  background: rgba(var(--mc-rgb, 184,148,74), 0.05);
 }
 
 .bk-mod--on {
-  background: color-mix(in srgb, var(--mc, #54B8E0) 12%, transparent);
-  border-color: color-mix(in srgb, var(--mc, #54B8E0) 60%, transparent);
-  box-shadow: 0 0 0 1px color-mix(in srgb, var(--mc, #54B8E0) 20%, transparent);
+  background: color-mix(in srgb, var(--mc, #B8944A) 12%, transparent);
+  border-color: color-mix(in srgb, var(--mc, #B8944A) 60%, transparent);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--mc, #B8944A) 20%, transparent);
 }
 
 .bk-mod__icon {
@@ -407,8 +407,8 @@
   gap: 10px;
   font-size: 13px;
   color: var(--charcoal-light);
-  background: rgba(84,184,224,0.06);
-  border: 1px solid rgba(84,184,224,0.18);
+  background: rgba(184,148,74,0.06);
+  border: 1px solid rgba(184,148,74,0.18);
   border-radius: 10px;
   padding: 12px 16px;
 }
@@ -467,7 +467,7 @@
 }
 
 .bk-leg--avail::before   { background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); }
-.bk-leg--partial::before { background: rgba(84,184,224,0.15);  border: 1px solid rgba(84,184,224,0.3); }
+.bk-leg--partial::before { background: rgba(184,148,74,0.15);  border: 1px solid rgba(184,148,74,0.3); }
 .bk-leg--full::before    { background: rgba(255,80,80,0.08);   border: 1px solid rgba(255,80,80,0.18); }
 .bk-leg--conflict::before{ background: rgba(196,40,32,0.12);   border: 1px solid rgba(196,40,32,0.25); }
 
@@ -517,28 +517,28 @@
   color: var(--charcoal-light);
 }
 .bk-slot--available:hover {
-  background: rgba(84,184,224,0.1);
-  border-color: rgba(84,184,224,0.3);
+  background: rgba(184,148,74,0.1);
+  border-color: rgba(184,148,74,0.3);
   color: var(--charcoal);
 }
 
 /* Selected */
 .bk-slot--selected {
-  background: rgba(84,184,224,0.15);
-  border-color: rgba(84,184,224,0.5);
+  background: rgba(184,148,74,0.15);
+  border-color: rgba(184,148,74,0.5);
   color: var(--sage-light);
-  box-shadow: 0 0 0 2px rgba(84,184,224,0.15);
+  box-shadow: 0 0 0 2px rgba(184,148,74,0.15);
 }
 
 /* Partial (compression with some occupancy) */
 .bk-slot--partial {
-  background: rgba(84,184,224,0.07);
-  border-color: rgba(84,184,224,0.2);
+  background: rgba(184,148,74,0.07);
+  border-color: rgba(184,148,74,0.2);
   color: var(--charcoal-light);
 }
 .bk-slot--partial:hover {
-  background: rgba(84,184,224,0.12);
-  border-color: rgba(84,184,224,0.35);
+  background: rgba(184,148,74,0.12);
+  border-color: rgba(184,148,74,0.35);
   color: var(--charcoal);
 }
 .bk-slot--partial .bk-slot__badge {
@@ -556,8 +556,8 @@
 
 /* User's confirmed booking */
 .bk-slot--booked {
-  background: rgba(84,184,224,0.12);
-  border-color: rgba(84,184,224,0.4);
+  background: rgba(184,148,74,0.12);
+  border-color: rgba(184,148,74,0.4);
   color: var(--sage-light);
   cursor: default;
 }
@@ -593,10 +593,10 @@
   justify-content: space-between;
   gap: 20px;
   background: var(--linen);
-  border: 1px solid rgba(84,184,224,0.3);
+  border: 1px solid rgba(184,148,74,0.3);
   border-radius: 16px;
   padding: 16px 20px;
-  box-shadow: 0 16px 48px rgba(0,0,0,0.5), 0 0 0 1px rgba(84,184,224,0.08);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.5), 0 0 0 1px rgba(184,148,74,0.08);
   backdrop-filter: blur(12px);
   flex-wrap: wrap;
 }
@@ -631,8 +631,8 @@
   gap: 10px;
   font-size: 13px;
   color: var(--sage-light);
-  background: rgba(84,184,224,0.07);
-  border: 1px solid rgba(84,184,224,0.2);
+  background: rgba(184,148,74,0.07);
+  border: 1px solid rgba(184,148,74,0.2);
   border-radius: 10px;
   padding: 14px 18px;
   animation: bk-slide-in 0.3s ease;
@@ -684,7 +684,7 @@
 /* color-mix fallback for older browsers on modality tabs */
 @supports not (background: color-mix(in srgb, red 10%, transparent)) {
   .bk-mod--on {
-    background: rgba(84,184,224,0.12);
-    border-color: rgba(84,184,224,0.4);
+    background: rgba(184,148,74,0.12);
+    border-color: rgba(184,148,74,0.4);
   }
 }
