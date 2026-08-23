@@ -1,23 +1,24 @@
 :root {
-  /* Dark spa base — structure of the live draft, gold brand accents */
-  --cream: #0B0907;
-  --warm-white: #12100D;
-  --linen: #1A1612;
-  --sand: rgba(255, 255, 255, 0.08);
+  /* Bright spa surfaces — lobby / gold brand vibe */
+  --cream: #F5F0E8;
+  --warm-white: #FBF8F2;
+  --linen: #FFFFFF;
+  --sand: rgba(90, 72, 48, 0.12);
 
-  --charcoal: #F0E8D8;
-  --charcoal-light: #C4B5A0;
-  --charcoal-muted: rgba(196, 181, 160, 0.52);
+  --charcoal: #2A241C;
+  --charcoal-light: #5C5348;
+  --charcoal-muted: rgba(42, 36, 28, 0.52);
 
-  --sage: #C9A84C;
-  --sage-light: #E0C878;
-  --sage-pale: rgba(201, 168, 76, 0.12);
+  --sage: #B8953F;
+  --sage-light: #C9A84C;
+  --sage-pale: rgba(184, 149, 63, 0.12);
 
   --bronze: #A85A3A;
   --bronze-light: #C47452;
 
-  --surface-darkest: #070605;
-  --surface-dark: #100E0B;
+  /* Soft warm accents for rare dark bands */
+  --surface-darkest: #2C241C;
+  --surface-dark: #3A3128;
 
   --font-heading: 'Syne', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-body: 'Outfit', system-ui, -apple-system, 'Segoe UI', sans-serif;
@@ -84,8 +85,8 @@ button {
 }
 
 ::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--surface-darkest); }
-::-webkit-scrollbar-thumb { background: rgba(201,168,76,0.3); border-radius: 3px; }
+::-webkit-scrollbar-track { background: #E8E0D4; }
+::-webkit-scrollbar-thumb { background: rgba(184,149,63,0.4); border-radius: 3px; }
 
 .container {
   width: 100%;
@@ -130,7 +131,7 @@ button {
   align-items: center;
   gap: 8px;
   background: linear-gradient(135deg, #E0C878 0%, #C9A84C 55%, #A8882E 100%);
-  color: #140F0A;
+  color: #1A1510;
   font-family: var(--font-body);
   font-size: 12px;
   font-weight: 600;
@@ -146,7 +147,7 @@ button {
 .btn-primary:hover {
   background: linear-gradient(135deg, #F0DFA0 0%, #E0C878 55%, #C9A84C 100%);
   transform: translateY(-1px);
-  box-shadow: 0 8px 28px rgba(201,168,76,0.28);
+  box-shadow: 0 8px 24px rgba(184,149,63,0.28);
 }
 
 .btn-secondary {
@@ -154,7 +155,7 @@ button {
   align-items: center;
   gap: 8px;
   background: transparent;
-  color: var(--sage-light);
+  color: var(--sage);
   font-family: var(--font-body);
   font-size: 12px;
   font-weight: 600;
@@ -162,7 +163,7 @@ button {
   text-transform: uppercase;
   padding: 14px 34px;
   border-radius: 100px;
-  border: 1px solid rgba(201,168,76,0.35);
+  border: 1px solid rgba(184,149,63,0.4);
   transition: all var(--transition);
   cursor: pointer;
 }
@@ -170,7 +171,7 @@ button {
 .btn-secondary:hover {
   border-color: var(--sage);
   background: var(--sage-pale);
-  color: #fff;
+  color: var(--charcoal);
   transform: translateY(-1px);
 }
 
@@ -179,7 +180,7 @@ button {
   align-items: center;
   gap: 8px;
   background: linear-gradient(135deg, #E0C878, #C9A84C);
-  color: #140F0A;
+  color: #1A1510;
   font-family: var(--font-body);
   font-size: 12px;
   font-weight: 600;

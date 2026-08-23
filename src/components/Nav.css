@@ -5,15 +5,16 @@
   right: 0;
   z-index: 100;
   padding: 20px 0;
-  transition: padding 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+  transition: padding 0.3s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .nav--scrolled {
   padding: 12px 0;
-  background: rgba(11, 9, 7, 0.94);
+  background: rgba(251, 248, 242, 0.94);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(201,168,76,0.12);
+  border-bottom: 1px solid rgba(184,149,63,0.18);
+  box-shadow: 0 2px 16px rgba(42, 36, 28, 0.06);
 }
 
 .nav__inner {
@@ -56,11 +57,15 @@
   font-weight: 500;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(240, 232, 216, 0.45);
+  color: rgba(247, 243, 232, 0.7);
   text-decoration: none;
   transition: color 0.25s ease;
   position: relative;
   padding-bottom: 2px;
+}
+
+.nav--scrolled .nav__link {
+  color: rgba(42, 36, 28, 0.48);
 }
 
 .nav__link::after {
@@ -76,6 +81,11 @@
 
 .nav__link:hover,
 .nav__link--active {
+  color: #F7F3E8;
+}
+
+.nav--scrolled .nav__link:hover,
+.nav--scrolled .nav__link--active {
   color: var(--charcoal);
 }
 
@@ -90,7 +100,7 @@
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #140F0A;
+  color: #1A1510;
   background: linear-gradient(135deg, #E0C878, #C9A84C);
   border: none;
   padding: 8px 18px;
@@ -114,19 +124,30 @@
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(240, 232, 216, 0.5);
+  color: rgba(247, 243, 232, 0.75);
   text-decoration: none;
   background: transparent;
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid rgba(247, 243, 232, 0.28);
   padding: 8px 16px;
   border-radius: 100px;
-  transition: color 0.25s ease, border-color 0.25s ease;
+  transition: color 0.25s ease, border-color 0.25s ease, background 0.25s ease;
   flex-shrink: 0;
 }
 
+.nav--scrolled .nav__account {
+  color: var(--charcoal-light);
+  border-color: rgba(42, 36, 28, 0.15);
+}
+
 .nav__account:hover {
+  color: #F7F3E8;
+  border-color: rgba(184,149,63,0.5);
+}
+
+.nav--scrolled .nav__account:hover {
   color: var(--charcoal);
-  border-color: rgba(201,168,76,0.35);
+  border-color: rgba(184,149,63,0.4);
+  background: var(--sage-pale);
 }
 
 .nav__hamburger {
@@ -148,9 +169,13 @@
   display: block;
   width: 22px;
   height: 1.5px;
-  background: var(--charcoal);
+  background: #F7F3E8;
   transition: all 0.3s ease;
   transform-origin: center;
+}
+
+.nav--scrolled .nav__hamburger span {
+  background: var(--charcoal);
 }
 
 .nav__hamburger--open span:nth-child(1) {
@@ -170,12 +195,12 @@
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease;
-  background: rgba(7, 6, 5, 0.98);
+  background: rgba(251, 248, 242, 0.98);
 }
 
 .nav__mobile--open {
   max-height: 420px;
-  border-top: 1px solid rgba(201,168,76,0.1);
+  border-top: 1px solid rgba(184,149,63,0.15);
 }
 
 .nav__mobile-link {
@@ -187,15 +212,15 @@
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(240, 232, 216, 0.45);
+  color: rgba(42, 36, 28, 0.5);
   text-decoration: none;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(42, 36, 28, 0.06);
   transition: color 0.2s ease, padding-left 0.2s ease;
 }
 
 .nav__mobile-link:hover,
 .nav__mobile-link--active {
-  color: var(--sage-light);
+  color: var(--sage);
   padding-left: calc(clamp(20px, 5vw, 56px) + 8px);
 }
 
@@ -208,6 +233,6 @@
   .nav--scrolled {
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
-    background: rgba(7, 6, 5, 0.99);
+    background: rgba(251, 248, 242, 0.99);
   }
 }

@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="footer__grid">
           <div className="footer__brand">
             <div className="footer__logo">
-              <img src="/logo.svg" alt="Elevate Cryo" className="footer__logo-img" loading="lazy" />
+              <img src="/logo-nav-dark.svg" alt="Elevate Cryo" className="footer__logo-img" loading="lazy" />
             </div>
             <p className="footer__tagline">
               Cryotherapy, red light, sauna, and compression — recovery elevated in Concord, Ohio.

@@ -33,7 +33,11 @@ export default function Nav() {
     <header className={`nav${scrolled ? ' nav--scrolled' : ''}`}>
       <div className="nav__inner">
         <Link to="/" className="nav__logo">
-          <img src="/logo-nav.svg" alt="Elevate Cryo" className="nav__logo-img" />
+          <img
+            src={scrolled ? '/logo-nav-dark.svg' : '/logo-nav.svg'}
+            alt="Elevate Cryo"
+            className="nav__logo-img"
+          />
         </Link>
 
         <nav className="nav__links">

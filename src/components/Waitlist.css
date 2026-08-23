@@ -1,9 +1,10 @@
 .waitlist {
-  background: var(--surface-darkest);
+  background: var(--warm-white);
   padding: 100px 0;
   position: relative;
   overflow: hidden;
   scroll-margin-top: 80px;
+  border-top: 1px solid var(--sand);
 }
 
 .waitlist__glow {
@@ -24,13 +25,13 @@
   font-weight: 600;
   line-height: 1.08;
   letter-spacing: -0.02em;
-  color: #F0E8D8;
+  color: var(--charcoal);
   margin: 14px 0 16px;
 }
 
 .waitlist__sub {
   font-size: 16px;
-  color: rgba(240, 232, 216, 0.55);
+  color: var(--charcoal-muted);
   line-height: 1.7;
   max-width: 360px;
 }
@@ -48,20 +49,21 @@
 .waitlist__field {
   display: flex;
   gap: 10px;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: var(--linen);
+  border: 1px solid var(--sand);
   border-radius: 100px;
   padding: 6px 6px 6px 22px;
   transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 4px 16px rgba(42, 36, 28, 0.04);
 }
 
 .waitlist__field:focus-within {
-  border-color: rgba(201,168,76,0.4);
-  box-shadow: 0 0 0 3px rgba(201,168,76,0.08);
+  border-color: rgba(184,149,63,0.45);
+  box-shadow: 0 0 0 3px rgba(184,149,63,0.1);
 }
 
 .waitlist__field--error {
-  border-color: rgba(168,90,58,0.5);
+  border-color: rgba(168,90,58,0.45);
 }
 
 .waitlist__input {
@@ -71,13 +73,13 @@
   outline: none;
   font-family: var(--font-body);
   font-size: 15px;
-  color: #F0E8D8;
+  color: var(--charcoal);
   padding: 10px 0;
   min-width: 0;
 }
 
 .waitlist__input::placeholder {
-  color: rgba(240, 232, 216, 0.35);
+  color: rgba(42, 36, 28, 0.35);
 }
 
 .waitlist__input:disabled {
@@ -103,8 +105,8 @@
   display: inline-block;
   width: 14px;
   height: 14px;
-  border: 2px solid rgba(20,15,10,0.25);
-  border-top-color: #140F0A;
+  border: 2px solid rgba(26,21,16,0.2);
+  border-top-color: #1A1510;
   border-radius: 50%;
   animation: wl-spin 0.7s linear infinite;
 }
@@ -120,12 +122,12 @@
 }
 
 .waitlist__hint--error {
-  color: var(--bronze-light);
+  color: var(--bronze);
 }
 
 .waitlist__trust {
   font-size: 11px;
-  color: rgba(240, 232, 216, 0.35);
+  color: var(--charcoal-muted);
   letter-spacing: 0.04em;
 }
 
@@ -133,8 +135,8 @@
   display: flex;
   align-items: flex-start;
   gap: 14px;
-  background: rgba(201,168,76,0.08);
-  border: 1px solid rgba(201,168,76,0.22);
+  background: var(--sage-pale);
+  border: 1px solid rgba(184,149,63,0.25);
   border-radius: 16px;
   padding: 22px 24px;
 }
@@ -143,8 +145,8 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: rgba(201,168,76,0.12);
-  border: 1px solid rgba(201,168,76,0.3);
+  background: rgba(184,149,63,0.15);
+  border: 1px solid rgba(184,149,63,0.3);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -155,7 +157,7 @@
 
 .waitlist__done-msg {
   font-size: 15px;
-  color: #F0E8D8;
+  color: var(--charcoal);
   line-height: 1.6;
   padding-top: 6px;
 }

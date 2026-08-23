@@ -99,13 +99,14 @@
 }
 
 .memb-plan--featured {
-  background: linear-gradient(145deg, rgba(36,30,22,0.97) 0%, rgba(23,19,14,0.99) 100%);
-  color: #F7F1E4;
-  border-color: rgba(184,148,74,0.3);
+  background: var(--linen);
+  color: var(--charcoal);
+  border-color: rgba(184,149,63,0.45);
+  box-shadow: 0 12px 40px rgba(42, 36, 28, 0.08);
 }
 
 .memb-plan--featured:hover {
-  border-color: var(--sage-light);
+  border-color: var(--sage);
 }
 
 .memb-plan__badge {
@@ -113,7 +114,7 @@
   top: -14px;
   left: 48px;
   background: linear-gradient(135deg, #E0C878, #C9A84C);
-  color: #140F0A;
+  color: #1A1510;
   font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.15em;
@@ -133,7 +134,7 @@
 }
 
 .memb-plan--featured .memb-plan__name {
-  color: var(--sage-light);
+  color: var(--sage);
 }
 
 .memb-plan__price {
@@ -152,7 +153,7 @@
 }
 
 .memb-plan--featured .memb-plan__amount {
-  color: #F7F1E4;
+  color: var(--charcoal);
 }
 
 .memb-plan__billing {
@@ -161,7 +162,7 @@
 }
 
 .memb-plan--featured .memb-plan__billing {
-  color: rgba(253,252,250,0.45);
+  color: var(--charcoal-muted);
 }
 
 .memb-plan__sessions {
@@ -173,7 +174,7 @@
 }
 
 .memb-plan--featured .memb-plan__sessions {
-  color: rgba(253,252,250,0.9);
+  color: var(--charcoal);
 }
 
 .memb-plan__tagline {
@@ -186,7 +187,7 @@
 }
 
 .memb-plan--featured .memb-plan__tagline {
-  color: var(--sage-light);
+  color: var(--sage);
 }
 
 .memb-plan__standard {
@@ -201,11 +202,11 @@
 }
 
 .memb-plan--featured .memb-plan__standard {
-  color: rgba(253,252,250,0.45);
+  color: var(--charcoal-muted);
 }
 
 .memb-plan--featured .memb-plan__standard strong {
-  color: rgba(253,252,250,0.75);
+  color: var(--charcoal-light);
 }
 
 .memb-plan__divider {
@@ -215,7 +216,7 @@
 }
 
 .memb-plan--featured .memb-plan__divider {
-  background: rgba(255,255,255,0.1);
+  background: var(--sand);
 }
 
 .memb-plan__desc {
@@ -226,7 +227,7 @@
 }
 
 .memb-plan--featured .memb-plan__desc {
-  color: rgba(253,252,250,0.5);
+  color: var(--charcoal-muted);
 }
 
 .memb-plan__includes {
@@ -248,7 +249,7 @@
 }
 
 .memb-plan--featured .memb-plan__include-item {
-  color: rgba(253,252,250,0.7);
+  color: var(--charcoal-light);
 }
 
 .memb-plan__include-item svg {
@@ -492,8 +493,9 @@
 
 /* CTA */
 .memb-cta-section {
-  background: var(--surface-darkest);
+  background: var(--warm-white);
   padding: 100px 0;
+  border-top: 1px solid var(--sand);
 }
 
 .memb-cta__inner {
@@ -504,14 +506,14 @@
   font-family: var(--font-heading);
   font-size: clamp(32px, 4vw, 52px);
   font-weight: 500;
-  color: #F7F1E4;
+  color: var(--charcoal);
   margin-bottom: 16px;
   line-height: 1.1;
 }
 
 .memb-cta__sub {
   font-size: 16px;
-  color: rgba(253,252,250,0.5);
+  color: var(--charcoal-muted);
   line-height: 1.7;
   margin-bottom: 40px;
 }
