@@ -24,7 +24,7 @@ export default function Nav() {
       <div className="nav__inner">
         <Link to="/" className="nav__logo">
           <img
-            src="/logo-nav-dark.svg"
+            src="/logo-nav.png"
             alt="Elevate Cryo"
             className="nav__logo-img"
           />
