@@ -59,7 +59,23 @@ export default function Home() {
     <main className="home">
       <section className="hero">
         <div className="hero__media" aria-hidden="true">
-          <img src="/lobby.jpg" alt="" className="hero__photo" />
+          <picture>
+            <source
+              type="image/webp"
+              media="(max-width: 900px)"
+              srcSet="/lobby-sm.webp"
+            />
+            <source type="image/webp" srcSet="/lobby.webp" />
+            <img
+              src="/lobby.jpg"
+              alt=""
+              className="hero__photo"
+              width={1061}
+              height={1004}
+              fetchPriority="high"
+              decoding="async"
+            />
+          </picture>
         </div>
         <div className="hero__veil" aria-hidden="true" />
         <div className="container hero__shell">

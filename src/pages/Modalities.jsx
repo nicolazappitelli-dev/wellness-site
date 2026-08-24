@@ -10,7 +10,9 @@ const modalities = [
     name: 'Cryotherapy',
     tagline: 'The power of cold. Redefined.',
     duration: '10 Minutes',
-    image: '/cryo-chamber.jpg',
+    image: '/cryo-chamber',
+    imageW: 948,
+    imageH: 1100,
     intro: `Experience ultra-cold, dry air in our advanced electric cryotherapy chamber—engineered to accelerate recovery, reduce inflammation, and leave you energized.`,
     benefits: [
       'Dramatically reduces systemic inflammation and joint pain',
@@ -28,7 +30,9 @@ const modalities = [
     name: 'Red Light Bed Therapy',
     tagline: 'Heal from the inside out.',
     duration: '20 Minutes',
-    image: '/red-light-bed.jpg',
+    image: '/red-light-bed',
+    imageW: 981,
+    imageH: 1100,
     intro: `Red and near-infrared wavelengths (630–660nm and up to 940nm) penetrate deep into tissue to support cellular repair, reduce inflammation, and enhance recovery.`,
     benefits: [
       'Stimulates collagen production for smoother, firmer skin',
@@ -46,7 +50,9 @@ const modalities = [
     name: 'Infrared Sauna',
     tagline: 'Sweat deeply. Release fully.',
     duration: '40 Minutes',
-    image: '/sauna.jpg',
+    image: '/sauna',
+    imageW: 1200,
+    imageH: 800,
     intro: `Our infrared sauna uses far-infrared wavelengths to penetrate 1.5 to 2 inches beneath the skin's surface—reaching muscle tissue, joints, and deep organs in a way traditional steam saunas cannot. The result is a deeper, more intentional sweat at a more comfortable ambient temperature, ideal for extended, therapeutic sessions.`,
     benefits: [
       'Deep detoxification through profuse, metabolically active sweating',
@@ -64,7 +70,9 @@ const modalities = [
     name: 'Compression Therapy',
     tagline: 'Restore your circulation. Reclaim your legs.',
     duration: '30 Minutes',
-    image: '/compression-boots.jpg',
+    image: '/compression-boots',
+    imageW: 1200,
+    imageH: 900,
     intro: `Sequential compression therapy uses dynamic air pressure—applied via specialized sleeves to the legs, hips, and arms—to replicate and amplify the natural pumping action of your lymphatic system. The result is dramatically improved circulation, accelerated metabolic waste removal, and a profound sense of lightness in tired limbs.`,
     benefits: [
       'Accelerates lactic acid clearance after intense training',
@@ -136,7 +144,18 @@ export default function Modalities() {
             <div className={`mod-layout ${i % 2 !== 0 ? 'mod-layout--reverse' : ''}`}>
               <Reveal delay={60}>
                 <figure className="mod-photo">
-                  <img src={m.image} alt={m.name} className="mod-photo__img" loading="lazy" />
+                  <picture>
+                    <source type="image/webp" srcSet={`${m.image}.webp`} />
+                    <img
+                      src={`${m.image}.jpg`}
+                      alt={m.name}
+                      className="mod-photo__img"
+                      width={m.imageW}
+                      height={m.imageH}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </picture>
                 </figure>
               </Reveal>
 

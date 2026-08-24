@@ -80,6 +80,7 @@ button {
 
 #root {
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
 }
@@ -232,7 +233,6 @@ button {
 .fade-up { animation: fadeUp 0.75s var(--ease) both; }
 .fade-up-1 { animation: fadeUp 0.75s 0.1s var(--ease) both; }
 .fade-up-2 { animation: fadeUp 0.75s 0.22s var(--ease) both; }
-.fade-up-3 { animation: fadeUp 0.75s 0.34s var(--ease) both; }
 
 .reveal {
   opacity: 0;
@@ -245,10 +245,16 @@ button {
   transform: translateY(0);
 }
 
+.route-fallback {
+  min-height: 50vh;
+  background: var(--cream);
+}
+
 @media (max-width: 768px) {
   .reveal {
+    opacity: 1;
     transform: none;
-    transition: opacity 0.45s ease;
+    transition: none;
   }
 }
 
@@ -267,7 +273,7 @@ button {
     opacity: 1;
     transform: none;
   }
-  .fade-up, .fade-up-1, .fade-up-2, .fade-up-3 {
+  .fade-up, .fade-up-1, .fade-up-2 {
     animation: none;
     opacity: 1;
   }

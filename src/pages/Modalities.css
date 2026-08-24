@@ -33,6 +33,8 @@
 /* Sections */
 .mod-section {
   padding: clamp(64px, 8vw, 96px) 0;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 720px;
 }
 
 .mod-section--light {
@@ -70,6 +72,11 @@
   overflow: hidden;
   border-radius: 12px;
   background: transparent;
+}
+
+.mod-photo picture {
+  display: block;
+  width: 100%;
 }
 
 .mod-photo__img {

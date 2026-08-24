@@ -5,17 +5,23 @@
   right: 0;
   z-index: 100;
   padding: 20px 0;
-  background: rgba(245, 240, 232, 0.72);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(245, 240, 232, 0.92);
   transition: padding 0.3s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .nav--scrolled {
   padding: 12px 0;
-  background: rgba(251, 248, 242, 0.94);
+  background: rgba(251, 248, 242, 0.97);
   border-bottom: 1px solid rgba(184,149,63,0.18);
   box-shadow: 0 2px 16px rgba(42, 36, 28, 0.06);
+}
+
+@supports (backdrop-filter: blur(8px)) {
+  .nav--scrolled {
+    background: rgba(251, 248, 242, 0.88);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
 }
 
 .nav__inner {

@@ -1,14 +1,15 @@
-import { useEffect } from 'react'
+import { lazy, Suspense, useEffect } from 'react'
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import Nav from './components/Nav'
 import Footer from './components/Footer'
-import Home from './pages/Home'
-import Modalities from './pages/Modalities'
-import Memberships from './pages/Memberships'
-import Booking from './pages/Booking'
-import Account from './pages/Account'
-import Policies from './pages/Policies'
-import Contact from './pages/Contact'
+
+const Home = lazy(() => import('./pages/Home'))
+const Modalities = lazy(() => import('./pages/Modalities'))
+const Memberships = lazy(() => import('./pages/Memberships'))
+const Booking = lazy(() => import('./pages/Booking'))
+const Account = lazy(() => import('./pages/Account'))
+const Policies = lazy(() => import('./pages/Policies'))
+const Contact = lazy(() => import('./pages/Contact'))
 
 function ScrollToTop() {
   const location = useLocation()
@@ -19,7 +20,6 @@ function ScrollToTop() {
   return null
 }
 
-// Handles cross-page hash navigation reliably (iOS Safari + Chrome)
 function HashScrollHandler() {
   const location = useLocation()
   useEffect(() => {
@@ -27,23 +27,23 @@ function HashScrollHandler() {
     const id = location.hash.slice(1)
     const scrollTo = () => {
       const el = document.getElementById(id)
-      if (el) {
-        const navHeight = 80
-        const top = el.getBoundingClientRect().top + window.scrollY - navHeight
-        window.scrollTo({ top, behavior: 'smooth' })
-        return true
-      }
-      return false
+      if (!el) return false
+      const nav = document.querySelector('.nav')
+      const navHeight = nav ? nav.getBoundingClientRect().height : 80
+      const top = el.getBoundingClientRect().top + window.scrollY - navHeight
+      window.scrollTo({ top, behavior: 'smooth' })
+      return true
     }
-    // First attempt at 100ms; second attempt at 300ms covers slow mobile renders
     const t1 = setTimeout(() => {
-      if (!scrollTo()) {
-        setTimeout(scrollTo, 200)
-      }
+      if (!scrollTo()) setTimeout(scrollTo, 200)
     }, 100)
     return () => clearTimeout(t1)
   }, [location])
   return null
+}
+
+function RouteFallback() {
+  return <div className="route-fallback" aria-hidden="true" />
 }
 
 function App() {
@@ -52,15 +52,17 @@ function App() {
       <ScrollToTop />
       <HashScrollHandler />
       <Nav />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/modalities" element={<Modalities />} />
-        <Route path="/memberships" element={<Memberships />} />
-        <Route path="/booking" element={<Booking />} />
-        <Route path="/account" element={<Account />} />
-        <Route path="/policies" element={<Policies />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
+      <Suspense fallback={<RouteFallback />}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/modalities" element={<Modalities />} />
+          <Route path="/memberships" element={<Memberships />} />
+          <Route path="/booking" element={<Booking />} />
+          <Route path="/account" element={<Account />} />
+          <Route path="/policies" element={<Policies />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </Suspense>
       <Footer />
     </BrowserRouter>
   )
