@@ -90,7 +90,7 @@ export default function Home() {
             <em>Elevate.</em>
           </h1>
           <p className="hero__sub fade-up-2">
-            Cryotherapy, redlight bed therapy (15 min), sauna (25 min), and compression therapy — now open in Concord, Ohio.
+            Cryotherapy, redlight bed therapy, sauna, and compression therapy — now open in Concord, Ohio.
           </p>
           <div className="hero__ctas fade-up-3">
             <Link to="/#inquiry" className="btn-primary">Request a Call</Link>
