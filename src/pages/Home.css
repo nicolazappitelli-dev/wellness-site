@@ -1,37 +1,67 @@
-/* ───── Hero ───── */
+/* ───── Hero — wall logo is the focal point ───── */
 .hero {
   position: relative;
-  min-height: 100vh;
+  min-height: clamp(560px, 86vh, 820px);
   display: flex;
   align-items: center;
   overflow: hidden;
+  background: var(--cream);
 }
 
-.hero__bg {
+.hero__media {
   position: absolute;
   inset: 0;
-  background-image: url('/lobby.jpg'), url('/cryo-chamber.jpg');
-  background-size: cover;
-  background-position: 58% center, center;
-  background-repeat: no-repeat;
+  background: #E8DFD0;
 }
 
-.hero__gradient {
+.hero__media picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.hero__photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Crop to the slat wall + ELEVATE CRYO sign */
+  object-position: 52% 30%;
+  display: block;
+}
+
+.hero__veil {
   position: absolute;
   inset: 0;
-  /* Very light wash — wall logo stays prominent */
+  z-index: 1;
+  pointer-events: none;
   background:
-    linear-gradient(105deg, rgba(44,36,28,0.28) 24%, rgba(44,36,28,0.06) 100%),
-    linear-gradient(to top, rgba(44,36,28,0.22) 0%, transparent 58%);
+    linear-gradient(
+      95deg,
+      rgba(245, 240, 232, 0.96) 0%,
+      rgba(245, 240, 232, 0.88) 16%,
+      rgba(245, 240, 232, 0.42) 32%,
+      rgba(245, 240, 232, 0.1) 46%,
+      transparent 58%
+    ),
+    linear-gradient(
+      to top,
+      rgba(245, 240, 232, 0.22) 0%,
+      transparent 28%
+    );
+}
+
+.hero__shell {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding-top: 120px;
+  padding-bottom: 72px;
 }
 
 .hero__content {
-  position: relative;
-  z-index: 2;
-  padding-top: 160px;
-  padding-bottom: 64px;
-  max-width: 640px;
-  margin-top: 48px;
+  max-width: 460px;
+  /* Nudge Now Open / copy toward the wall sign */
+  margin-left: clamp(28px, 10vw, 160px);
 }
 
 .hero__open {
@@ -41,47 +71,36 @@
   line-height: 0.95;
   letter-spacing: -0.04em;
   margin: 0 0 18px;
-  background: linear-gradient(135deg, #E0C878, #C9A84C);
+  background: linear-gradient(135deg, #C9A84C, #B8953F);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-.hero__hours-btn {
-  color: #FBF8F2;
-  border-color: rgba(251, 248, 242, 0.4);
-}
-
-.hero__hours-btn:hover {
-  background: rgba(251, 248, 242, 0.12);
-  color: #FBF8F2;
-  border-color: rgba(251, 248, 242, 0.7);
-}
-
 .hero__title {
   font-family: var(--font-heading);
-  font-size: clamp(42px, 7vw, 80px);
+  font-size: clamp(32px, 4.4vw, 52px);
   font-weight: 600;
-  line-height: 0.96;
+  line-height: 0.98;
   letter-spacing: -0.035em;
-  color: #FBF8F2;
-  margin: 0 0 28px;
+  color: var(--charcoal);
+  margin: 0 0 22px;
 }
 
 .hero__title em {
   font-style: normal;
-  background: linear-gradient(135deg, #E0C878, #C9A84C);
+  background: linear-gradient(135deg, #C9A84C, #B8953F);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .hero__sub {
-  font-size: clamp(15px, 2vw, 17px);
-  color: rgba(251, 248, 242, 0.78);
+  font-size: clamp(15px, 1.5vw, 17px);
+  color: var(--charcoal-muted);
   line-height: 1.8;
-  max-width: 460px;
-  margin-bottom: 40px;
+  max-width: 380px;
+  margin-bottom: 34px;
 }
 
 .hero__ctas {
@@ -289,6 +308,37 @@
 }
 
 @media (max-width: 900px) {
+  .hero {
+    min-height: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .hero__media {
+    position: relative;
+    min-height: 46vh;
+    max-height: 52vh;
+  }
+
+  .hero__veil {
+    display: none;
+  }
+
+  .hero__shell {
+    background: var(--cream);
+    padding-top: 36px;
+    padding-bottom: 52px;
+  }
+
+  .hero__content {
+    max-width: 100%;
+    margin-left: 0;
+  }
+
+  .hero__photo {
+    object-position: 50% 28%;
+  }
+
   .modalities-preview__grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -312,9 +362,5 @@
 @media (max-width: 560px) {
   .modalities-preview__grid {
     grid-template-columns: 1fr;
-  }
-
-  .hero__content {
-    padding-top: 110px;
   }
 }

@@ -67,22 +67,37 @@ export default function Home() {
   return (
     <main className="home">
       <section className="hero">
-        <div className="hero__bg">
-          <div className="hero__gradient" />
+        <div className="hero__media" aria-hidden="true">
+          <picture>
+            <source type="image/webp" media="(max-width: 900px)" srcSet="/lobby-sm.webp" />
+            <source type="image/webp" srcSet="/lobby.webp" />
+            <img
+              src="/lobby.jpg"
+              alt=""
+              className="hero__photo"
+              width={1061}
+              height={1004}
+              fetchPriority="high"
+              decoding="async"
+            />
+          </picture>
         </div>
-        <div className="container hero__content">
-          <p className="hero__open fade-up">Now Open</p>
-          <h1 className="hero__title fade-up-1">
-            Recover.<br />
-            Restore.<br />
-            <em>Elevate.</em>
-          </h1>
-          <p className="hero__sub fade-up-2">
-            Cryotherapy, red light, sauna, and compression — now open in Concord, Ohio.
-          </p>
-          <div className="hero__ctas fade-up-3">
-            <Link to="/#inquiry" className="btn-primary">Request a Call</Link>
-            <Link to="/#hours" className="btn-secondary hero__hours-btn">See Hours</Link>
+        <div className="hero__veil" aria-hidden="true" />
+        <div className="container hero__shell">
+          <div className="hero__content">
+            <p className="hero__open fade-up">Now Open</p>
+            <h1 className="hero__title fade-up-1">
+              Recover.<br />
+              Restore.<br />
+              <em>Elevate.</em>
+            </h1>
+            <p className="hero__sub fade-up-2">
+              Cryotherapy, red light, sauna, and compression — now open in Concord, Ohio.
+            </p>
+            <div className="hero__ctas fade-up-3">
+              <Link to="/#inquiry" className="btn-primary">Request a Call</Link>
+              <Link to="/#hours" className="btn-secondary">See Hours</Link>
+            </div>
           </div>
         </div>
       </section>
