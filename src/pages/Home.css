@@ -21,70 +21,68 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 50% 28%;
+  object-position: 50% 20%;
   display: block;
 }
 
 .hero__open {
   position: absolute;
   z-index: 2;
-  top: 34%;
-  right: clamp(28px, 6vw, 88px);
+  top: 18%;
+  right: 20px;
   margin: 0;
   text-align: right;
   font-family: var(--font-heading);
-  font-size: clamp(36px, 6vw, 76px);
+  font-size: clamp(28px, 4.2vw, 48px);
   font-weight: 600;
   line-height: 0.95;
   letter-spacing: -0.04em;
-  background: linear-gradient(135deg, #E0C878, #C9A84C);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #8B6914;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 
 .hero__copy {
   position: absolute;
   z-index: 2;
-  left: 50%;
-  bottom: 7%;
+  left: 34%;
+  top: 58%;
   transform: translateX(-50%);
-  width: min(560px, calc(100% - 40px));
-  text-align: center;
+  width: min(420px, calc(100% - 48px));
+  text-align: left;
 }
 
 .hero__title {
   font-family: var(--font-heading);
-  font-size: clamp(36px, 5.2vw, 64px);
+  font-size: clamp(32px, 4.6vw, 56px);
   font-weight: 600;
   line-height: 0.96;
   letter-spacing: -0.035em;
   color: #FBF8F2;
-  margin: 0 0 16px;
-  text-shadow: 0 2px 24px rgba(26, 21, 16, 0.35);
+  margin: 0 0 14px;
+  text-shadow: 0 2px 18px rgba(26, 21, 16, 0.55), 0 0 2px rgba(26, 21, 16, 0.8);
 }
 
 .hero__title em {
   font-style: normal;
-  background: linear-gradient(135deg, #E0C878, #C9A84C);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #E0C878;
+  background: none;
+  -webkit-text-fill-color: unset;
 }
 
 .hero__sub {
   font-size: clamp(15px, 1.6vw, 17px);
-  color: rgba(251, 248, 242, 0.86);
+  color: rgba(251, 248, 242, 0.92);
   line-height: 1.7;
-  margin: 0 auto 28px;
-  max-width: 420px;
+  margin: 0 0 24px;
+  max-width: 380px;
+  text-shadow: 0 2px 12px rgba(26, 21, 16, 0.55);
 }
 
 .hero__ctas {
   display: flex;
   gap: 14px;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .hero__hours-btn {
@@ -302,17 +300,22 @@
   }
 
   .hero__open {
-    top: 22%;
-    right: 20px;
-    font-size: clamp(28px, 9vw, 44px);
+    top: 14%;
+    right: 16px;
+    font-size: clamp(22px, 7vw, 36px);
   }
 
   .hero__copy {
+    left: 28px;
+    right: 28px;
+    width: auto;
+    top: auto;
     bottom: 5%;
+    transform: none;
   }
 
   .hero__photo {
-    object-position: 50% 26%;
+    object-position: 50% 18%;
   }
 
   .modalities-preview__grid {
