@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { useAuth } from '../lib/auth'
 import './Nav.css'
 
 const links = [
@@ -16,8 +15,6 @@ export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
   const location = useLocation()
-  const { user, profile } = useAuth()
-  const accountLabel = profile?.first_name || 'Account'
 
   useEffect(() => {
     const onScroll = () => {
@@ -54,7 +51,7 @@ export default function Nav() {
         <Link to="/#waitlist" className="nav__waitlist">Join Waitlist</Link>
         <Link to="/account" className="nav__account">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-          {user ? accountLabel : 'Account'}
+          Account
         </Link>
 
         <button
@@ -77,7 +74,7 @@ export default function Nav() {
           </Link>
         ))}
         <Link to="/#waitlist" className="nav__mobile-link">Join Waitlist</Link>
-        <Link to="/account" className="nav__mobile-link">{user ? accountLabel : 'Account'}</Link>
+        <Link to="/account" className="nav__mobile-link">Account</Link>
       </div>
     </header>
   )

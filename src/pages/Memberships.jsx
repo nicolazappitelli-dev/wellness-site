@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Reveal from '../components/Reveal'
-import { startCheckout } from '../lib/billing'
+import { CLOVER_BOOKING_URL, CLOVER_LOGIN_URL, cloverPayUrl } from '../lib/clover'
 import './Memberships.css'
 
 const plans = [
@@ -80,17 +80,6 @@ const faqs = [
 ]
 
 export default function Memberships() {
-  const [payError, setPayError] = useState('')
-
-  function choosePlan(planId) {
-    setPayError('')
-    try {
-      startCheckout(planId)
-    } catch (err) {
-      setPayError(err.message)
-    }
-  }
-
   return (
     <main className="memberships-page">
       <section className="memb-hero">
@@ -112,8 +101,8 @@ export default function Memberships() {
           <div className="memb-notice__inner">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
             <div>
-              <strong>Join the waitlist to claim founding pricing</strong> — Essential $99/mo or Unlimited $129/mo,
-              plus walk-ins at $25 + tax. Online booking opens with the studio.
+              <strong>Booking in Clover is members-only</strong> — sessions show $0 because they are included.
+              Activate Essential ($99/mo) or Unlimited ($129/mo) at the studio, then sign in to book.
               <Link to="/#waitlist" className="memb-notice__link"> Join the waitlist</Link>
             </div>
           </div>
@@ -151,22 +140,35 @@ export default function Memberships() {
                     ))}
                   </ul>
 
-                  <button
-                    type="button"
-                    className={p.featured ? 'btn-primary' : 'btn-secondary'}
-                    style={{ marginTop: 'auto', display: 'inline-flex', justifyContent: 'center' }}
-                    onClick={() => choosePlan(p.id)}
-                  >
-                    Pay with Clover · {p.name}
-                  </button>
+                  {cloverPayUrl(p.id) ? (
+                    <a
+                      className={p.featured ? 'btn-primary' : 'btn-secondary'}
+                      style={{ marginTop: 'auto', display: 'inline-flex', justifyContent: 'center' }}
+                      href={cloverPayUrl(p.id)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Start {p.name} in Clover
+                    </a>
+                  ) : (
+                    <Link
+                      to="/contact"
+                      className={p.featured ? 'btn-primary' : 'btn-secondary'}
+                      style={{ marginTop: 'auto', display: 'inline-flex', justifyContent: 'center' }}
+                    >
+                      Ask about {p.name}
+                    </Link>
+                  )}
                 </div>
               </Reveal>
             ))}
           </div>
           <p className="memb-plans__note">
-            Memberships are billed through the studio&apos;s Clover account. Subject to our <Link to="/policies">Terms &amp; Policies</Link>.
-            Sales tax may be applied at checkout.
-            {payError && <><br /><span className="form-hint form-hint--error">{payError}</span></>}
+            Memberships are started at the studio, then you book in Clover. Subject to our <Link to="/policies">Terms &amp; Policies</Link>.
+            Already a member?{' '}
+            <a href={CLOVER_LOGIN_URL} target="_blank" rel="noopener noreferrer">Sign in</a>
+            {' '}or{' '}
+            <a href={CLOVER_BOOKING_URL} target="_blank" rel="noopener noreferrer">book a session</a>.
           </p>
 
           <Reveal delay={100}>
