@@ -3,6 +3,6 @@ export const STUDIO_HOURS = [
 ]
 
 export const PLANS = {
-  essential: { id: 'essential', name: 'Essential', price: 99, label: '$99/mo' },
-  unlimited: { id: 'unlimited', name: 'Unlimited', price: 129, label: '$129/mo' },
+  everyday: { id: 'everyday', name: 'Everyday Wellness', price: 149.99, label: '$149.99/mo founding' },
+  unlimited: { id: 'unlimited', name: 'Unlimited', price: 229.99, label: '$229.99/mo founding' },
 }

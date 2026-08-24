@@ -5,73 +5,58 @@ import './Memberships.css'
 
 const plans = [
   {
-    id: 'essential',
-    name: 'Essential',
-    price: '$99',
-    billing: '+ tax / month',
-    tagline: 'Focused recovery, every day.',
-    sessions: '1 modality per day',
-    desc: 'The Essential plan gives you daily access to one modality of your choice. Whether you rotate through our offerings or anchor to a single treatment, this plan delivers consistent, meaningful recovery for a disciplined routine.',
+    name: 'Everyday Wellness',
+    sessions: '1 modality a day · every day',
+    founding: '149.99',
+    standard: '169.99',
+    desc: 'One modality session per day — ideal for consistent recovery.',
     includes: [
-      'One modality session per calendar day',
-      'Choose from Cryo, Red Light, Sauna, or Compression',
+      '1 modality session per day',
+      'Access to all four modalities',
       'We will call you to get set up and scheduled',
-      'Cancel or pause anytime',
+      'Founding rate locked for the first 50 members',
     ],
-    featured: false,
   },
   {
-    id: 'unlimited',
     name: 'Unlimited',
-    price: '$129',
-    billing: '+ tax / month',
-    tagline: 'Everything, every visit.',
-    sessions: 'Unlimited modalities per day',
-    desc: 'The Unlimited plan removes all limits. Stack every modality in a single visit, building the most comprehensive recovery protocol available. Preferred by athletes, high-performers, and anyone committed to peak restoration.',
+    sessions: 'All modalities · unlimited access',
+    founding: '229.99',
+    standard: '249.99',
+    desc: 'Stack every modality in a single visit — maximum restoration.',
     includes: [
-      'Unlimited modality sessions per calendar day',
-      'Stack Cryo, Red Light, Sauna, and Compression in one visit',
+      'Unlimited modality access',
+      'Use all four modalities in one visit',
       'We will call you to get set up and scheduled',
-      'Cancel or pause anytime',
+      'Founding rate locked for the first 50 members',
     ],
     featured: true,
   },
 ]
 
-const comparisons = [
-  { feature: 'Daily sessions', essential: '1 modality', unlimited: 'Unlimited' },
-  { feature: 'Cryotherapy', essential: true, unlimited: true },
-  { feature: 'Red Light Bed Therapy', essential: true, unlimited: true },
-  { feature: 'Infrared Sauna', essential: true, unlimited: true },
-  { feature: 'Compression Therapy', essential: true, unlimited: true },
-  { feature: 'We help you get scheduled', essential: true, unlimited: true },
-  { feature: 'Cancel / pause anytime', essential: true, unlimited: true },
-]
-
 const faqs = [
   {
-    q: 'When are you opening?',
-    a: "We're targeting Summer 2026 in Concord, Ohio. Request a call so we can help you lock in founding member pricing before public rates change.",
+    q: 'What is the walk-in rate?',
+    a: 'Walk-ins are $35 + tax per modality. No membership required — first-come, first-served based on availability.',
   },
   {
-    q: 'Can I visit without a membership?',
-    a: 'Yes. Walk-ins will be welcome at $25 + tax per modality — no membership and no commitment. First-come, first-served during operating hours.',
+    q: 'What is Everyday Wellness?',
+    a: 'Everyday Wellness includes 1 modality a day, every day. Founding members (first 50) pay $149.99 + tax per month. After the first 50, the rate is $169.99 + tax per month.',
   },
   {
-    q: 'How do I get started?',
-    a: 'Leave your name and number on the site. He will call you to answer questions, help you pick Essential or Unlimited, and schedule you when the studio opens.',
+    q: 'What is Unlimited?',
+    a: 'Unlimited includes all modalities with unlimited access. Founding members (first 50) pay $229.99 + tax per month. After the first 50, the rate is $249.99 + tax per month.',
   },
   {
-    q: 'How does scheduling work?',
-    a: 'For now, he will call you after you request a callback and help you find a time. Online booking is not on the site yet.',
+    q: 'How do founding memberships work?',
+    a: 'The first 50 members lock in founding rates: $149.99/mo for Everyday Wellness and $229.99/mo for Unlimited (plus tax). After the first 50, standard rates apply.',
   },
   {
     q: 'Can I pause or cancel my membership?',
-    a: 'Yes. Members may pause for up to 60 days or cancel at any time with no cancellation fees. Cancellations take effect at the end of the current billing period.',
+    a: 'Yes. Members may pause or cancel at any time with no cancellation fees. See Policies for full terms.',
   },
   {
     q: 'Where are you located?',
-    a: '8019 Crile Road, Concord, OH 44077. Opening Summer 2026.',
+    a: '8019 Crile Road, Concord Township, OH 44077 — next to Discount Drug Mart.',
   },
 ]
 
@@ -82,121 +67,64 @@ export default function Memberships() {
         <div className="container">
           <span className="section-label fade-up">Membership Plans</span>
           <h1 className="memb-hero__title fade-up-1">
-            Commit to your recovery.<br />
-            <em>We&apos;ll handle the rest.</em>
+            Simple pricing.<br />
+            <em>Founding rates locked in.</em>
           </h1>
           <p className="memb-hero__sub fade-up-2">
-            Founding members lock in these rates before we open. Prefer to drop in?
-            Walk-ins will be welcome at $25 + tax per modality — no commitment required.
+            Choose Everyday Wellness or Unlimited. The first 50 members lock in founding rates before standard pricing begins.
           </p>
         </div>
       </section>
 
-      <section className="memb-notice">
+      <div className="memb-notice">
         <div className="container">
           <div className="memb-notice__inner">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
-            <div>
-              <strong>Request a call to get started.</strong> Leave your name and number and he will
-              reach out to help you join Essential ($99/mo) or Unlimited ($129/mo) and get scheduled.
-            </div>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+            <p>
+              <strong>Walk-in:</strong> $35 + tax per modality — no membership required.
+            </p>
           </div>
         </div>
-      </section>
+      </div>
 
       <section className="section memb-plans">
         <div className="container">
           <div className="memb-plans__grid">
-            {plans.map((p, idx) => (
-              <Reveal key={p.name} delay={idx * 120}>
-                <div className={`memb-plan${p.featured ? ' memb-plan--featured' : ''}`}>
-                  {p.featured && <div className="memb-plan__badge">Most Popular</div>}
-
-                  <div className="memb-plan__header">
-                    <div className="memb-plan__name">{p.name}</div>
-                    <div className="memb-plan__price">
-                      <span className="memb-plan__amount">{p.price}</span>
-                      <span className="memb-plan__billing">{p.billing}</span>
-                    </div>
-                    <div className="memb-plan__sessions">{p.sessions}</div>
-                    <p className="memb-plan__tagline">{p.tagline}</p>
+            {plans.map((plan, i) => (
+              <Reveal key={plan.name} delay={i * 80}>
+                <div className={`memb-plan${plan.featured ? ' memb-plan--featured' : ''}`}>
+                  {plan.featured && <div className="memb-plan__badge">Most Popular</div>}
+                  <div className="memb-plan__name">{plan.name}</div>
+                  <div className="memb-plan__sessions">{plan.sessions}</div>
+                  <div className="memb-plan__price">
+                    <span className="memb-plan__amount">${plan.founding}</span>
+                    <span className="memb-plan__billing">+ tax / mo</span>
                   </div>
-
+                  <p className="memb-plan__tagline">Founding members · first 50</p>
+                  <p className="memb-plan__standard">
+                    After first 50: <strong>${plan.standard}</strong> + tax / mo
+                  </p>
                   <div className="memb-plan__divider" />
-
-                  <p className="memb-plan__desc">{p.desc}</p>
-
+                  <p className="memb-plan__desc">{plan.desc}</p>
                   <ul className="memb-plan__includes">
-                    {p.includes.map((item, i) => (
-                      <li key={i} className="memb-plan__include-item">
+                    {plan.includes.map(item => (
+                      <li key={item} className="memb-plan__include-item">
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20 6L9 17l-5-5"/></svg>
                         {item}
                       </li>
                     ))}
                   </ul>
-
-                  <Link
-                    to="/#inquiry"
-                    className={p.featured ? 'btn-primary' : 'btn-secondary'}
-                    style={{ marginTop: 'auto', display: 'inline-flex', justifyContent: 'center' }}
-                  >
-                    Request a call for {p.name}
+                  <Link to="/#inquiry" className={plan.featured ? 'btn-primary' : 'btn-secondary'}>
+                    Request a Call
                   </Link>
                 </div>
               </Reveal>
             ))}
           </div>
           <p className="memb-plans__note">
-            Memberships are started with a call — leave your info and he will help you get set up.
-            Subject to our <Link to="/policies">Terms &amp; Policies</Link>.
+            All prices + tax. Founding rates apply to the first 50 members only.
+            See <Link to="/policies">Policies</Link> for full membership terms.
           </p>
-
-          <Reveal delay={100}>
-            <div className="walkin-info-box">
-              <div className="walkin-info-box__eyebrow">No commitment needed</div>
-              <div className="walkin-info-box__main">
-                <div className="walkin-info-box__text">
-                  <strong>Walk-ins welcome — $25 + tax per modality.</strong>
-                  <span> No membership and no account required. First-come, first-served during operating hours.</span>
-                </div>
-                <Link to="/contact" className="walkin-info-box__link">
-                  Contact us
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                </Link>
-              </div>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="section memb-compare">
-        <div className="container">
-          <Reveal>
-            <span className="section-label">Compare Plans</span>
-            <h2 className="section-title">Find the right fit.</h2>
-          </Reveal>
-          <div className="compare-table">
-            <div className="compare-table__header">
-              <div className="compare-table__feature-col">Feature</div>
-              <div className="compare-table__plan-col compare-table__plan-col--ess">Essential<br /><span>$99 / mo</span></div>
-              <div className="compare-table__plan-col compare-table__plan-col--unl">Unlimited<br /><span>$129 / mo</span></div>
-            </div>
-            {comparisons.map((row, i) => (
-              <div key={i} className="compare-table__row">
-                <div className="compare-table__feature">{row.feature}</div>
-                <div className="compare-table__cell">
-                  {typeof row.essential === 'boolean' ? (
-                    row.essential ? <CheckIcon /> : <XIcon />
-                  ) : row.essential}
-                </div>
-                <div className="compare-table__cell compare-table__cell--featured">
-                  {typeof row.unlimited === 'boolean' ? (
-                    row.unlimited ? <CheckIcon featured /> : <XIcon />
-                  ) : row.unlimited}
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -224,33 +152,19 @@ export default function Memberships() {
         <div className="container">
           <Reveal>
             <div className="memb-cta__inner">
-              <h2 className="memb-cta__title">Request a call to get started.</h2>
-              <p className="memb-cta__sub">Leave your name and number. He will call you to help you join and get scheduled.</p>
+              <h2 className="memb-cta__title">Lock in founding rates.</h2>
+              <p className="memb-cta__sub">
+                First 50 members get Everyday Wellness at $149.99/mo or Unlimited at $229.99/mo (+ tax).
+              </p>
               <div className="memb-cta__actions">
                 <Link to="/#inquiry" className="btn-primary">Request a Call</Link>
-                <Link to="/contact" className="btn-secondary" style={{ borderColor: 'rgba(255,255,255,0.25)', color: 'rgba(255,255,255,0.7)' }}>Ask a Question</Link>
+                <Link to="/contact" className="btn-secondary">Contact Us</Link>
               </div>
             </div>
           </Reveal>
         </div>
       </section>
     </main>
-  )
-}
-
-function CheckIcon({ featured }) {
-  return (
-    <span className={`check-icon${featured ? ' check-icon--featured' : ''}`}>
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-    </span>
-  )
-}
-
-function XIcon() {
-  return (
-    <span className="x-icon">
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
-    </span>
   )
 }
 

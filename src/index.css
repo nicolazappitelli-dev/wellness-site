@@ -1,37 +1,31 @@
 :root {
-  /* ── Dark base palette ── */
-  --cream: #080C14;           /* page background */
-  --warm-white: #0D1420;      /* section surface */
-  --linen: #131C2E;           /* card background */
-  --sand: rgba(255,255,255,0.09);  /* borders / dividers */
+  /* Bright spa surfaces — lobby / gold brand vibe */
+  --cream: #F5F0E8;
+  --warm-white: #FBF8F2;
+  --linen: #FFFFFF;
+  --sand: rgba(90, 72, 48, 0.12);
 
-  /* ── Text (light on dark) ── */
-  --charcoal: #DDE8F5;        /* primary text (was dark, now light) */
-  --charcoal-light: #9AB4CC;  /* secondary text */
-  --charcoal-muted: rgba(154,180,204,0.5); /* muted text */
+  --charcoal: #2A241C;
+  --charcoal-light: #5C5348;
+  --charcoal-muted: rgba(42, 36, 28, 0.52);
 
-  /* ── Ice blue accent (was sage) ── */
-  --sage: #54B8E0;
-  --sage-light: #82CEF2;
-  --sage-pale: rgba(84,184,224,0.1);
+  --sage: #B8953F;
+  --sage-light: #C9A84C;
+  --sage-pale: rgba(184, 149, 63, 0.12);
 
-  /* ── Red accent — sparingly (was bronze) ── */
-  --bronze: #C42820;
-  --bronze-light: #E84030;
+  --bronze: #A85A3A;
+  --bronze-light: #C47452;
 
-  /* ── Named dark surfaces (for explicit dark sections) ── */
-  --surface-darkest: #04060C;
-  --surface-dark: #08101A;
+  /* Soft warm accents for rare dark bands */
+  --surface-darkest: #2C241C;
+  --surface-dark: #3A3128;
 
-  /* Typography */
-  --font-heading: 'Space Grotesk', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-heading: 'Syne', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-body: 'Outfit', system-ui, -apple-system, 'Segoe UI', sans-serif;
 
-  /* Spacing */
-  --section-pad: clamp(64px, 8vw, 120px);
-  --container: 1200px;
+  --section-pad: clamp(72px, 9vw, 120px);
+  --container: 1120px;
 
-  /* Transitions */
   --ease: cubic-bezier(0.4, 0, 0.2, 1);
   --transition: 0.3s var(--ease);
 }
@@ -43,8 +37,8 @@
 }
 
 html {
-  scroll-behavior: auto; /* JS handles all smooth scrolling — prevents browser native scroll conflicting with our handler */
-  scroll-padding-top: 80px; /* offset for sticky nav */
+  scroll-behavior: auto;
+  scroll-padding-top: 80px;
 }
 
 body {
@@ -91,14 +85,14 @@ button {
 }
 
 ::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--surface-darkest); }
-::-webkit-scrollbar-thumb { background: rgba(84,184,224,0.25); border-radius: 3px; }
+::-webkit-scrollbar-track { background: #E8E0D4; }
+::-webkit-scrollbar-thumb { background: rgba(184,149,63,0.4); border-radius: 3px; }
 
 .container {
   width: 100%;
   max-width: var(--container);
   margin: 0 auto;
-  padding: 0 clamp(20px, 5vw, 60px);
+  padding: 0 clamp(20px, 5vw, 56px);
 }
 
 .section {
@@ -109,7 +103,7 @@ button {
   font-family: var(--font-body);
   font-size: 11px;
   font-weight: 500;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--sage);
   margin-bottom: 16px;
@@ -118,44 +112,42 @@ button {
 
 .section-title {
   font-family: var(--font-heading);
-  font-size: clamp(28px, 3.5vw, 48px);
+  font-size: clamp(28px, 3.5vw, 44px);
   font-weight: 600;
   color: var(--charcoal);
-  margin-bottom: 20px;
+  margin-bottom: 18px;
   letter-spacing: -0.03em;
 }
 
 .section-subtitle {
   font-size: 16px;
   color: var(--charcoal-muted);
-  max-width: 560px;
+  max-width: 520px;
   line-height: 1.8;
 }
 
-/* ── Buttons ── */
 .btn-primary {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: linear-gradient(135deg, #54B8E0 0%, #2A90C8 100%);
-  color: #fff;
+  background: linear-gradient(135deg, #E0C878 0%, #C9A84C 55%, #A8882E 100%);
+  color: #1A1510;
   font-family: var(--font-body);
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  padding: 15px 36px;
+  padding: 15px 34px;
   border-radius: 100px;
   transition: all var(--transition);
   border: none;
   cursor: pointer;
-  box-shadow: 0 0 0 0 rgba(84,184,224,0);
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, #82CEF2 0%, #54B8E0 100%);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 32px rgba(84,184,224,0.35);
+  background: linear-gradient(135deg, #F0DFA0 0%, #E0C878 55%, #C9A84C 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(184,149,63,0.28);
 }
 
 .btn-secondary {
@@ -163,15 +155,15 @@ button {
   align-items: center;
   gap: 8px;
   background: transparent;
-  color: var(--sage-light);
+  color: var(--sage);
   font-family: var(--font-body);
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  padding: 14px 36px;
+  padding: 14px 34px;
   border-radius: 100px;
-  border: 1px solid rgba(84,184,224,0.35);
+  border: 1px solid rgba(184,149,63,0.4);
   transition: all var(--transition);
   cursor: pointer;
 }
@@ -179,23 +171,22 @@ button {
 .btn-secondary:hover {
   border-color: var(--sage);
   background: var(--sage-pale);
-  color: #fff;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 24px rgba(84,184,224,0.15);
+  color: var(--charcoal);
+  transform: translateY(-1px);
 }
 
 .btn-sage {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: linear-gradient(135deg, #54B8E0, #2A90C8);
-  color: #fff;
+  background: linear-gradient(135deg, #E0C878, #C9A84C);
+  color: #1A1510;
   font-family: var(--font-body);
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  padding: 15px 36px;
+  padding: 15px 34px;
   border-radius: 100px;
   border: none;
   transition: all var(--transition);
@@ -203,9 +194,8 @@ button {
 }
 
 .btn-sage:hover {
-  background: linear-gradient(135deg, #82CEF2, #54B8E0);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 32px rgba(84,184,224,0.3);
+  background: linear-gradient(135deg, #F0DFA0, #E0C878);
+  transform: translateY(-1px);
 }
 
 .btn-ghost {
@@ -219,7 +209,7 @@ button {
   color: var(--charcoal-muted);
   text-decoration: none;
   transition: color 0.2s ease, gap 0.2s ease;
-  margin-top: 32px;
+  margin-top: 28px;
 }
 
 .btn-ghost:hover {
@@ -235,23 +225,19 @@ button {
 }
 
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(28px); }
+  from { opacity: 0; transform: translateY(24px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Hero inline animations (fire on load) */
-.fade-up { animation: fadeUp 0.8s var(--ease) both; }
-.fade-up-1 { animation: fadeUp 0.8s 0.1s var(--ease) both; }
-.fade-up-2 { animation: fadeUp 0.8s 0.25s var(--ease) both; }
-.fade-up-3 { animation: fadeUp 0.8s 0.4s var(--ease) both; }
-.fade-up-4 { animation: fadeUp 0.8s 0.55s var(--ease) both; }
+.fade-up { animation: fadeUp 0.75s var(--ease) both; }
+.fade-up-1 { animation: fadeUp 0.75s 0.1s var(--ease) both; }
+.fade-up-2 { animation: fadeUp 0.75s 0.22s var(--ease) both; }
+.fade-up-3 { animation: fadeUp 0.75s 0.34s var(--ease) both; }
 
-/* Scroll-reveal wrapper */
 .reveal {
   opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.65s var(--ease), transform 0.65s var(--ease);
-  will-change: transform, opacity;
+  transform: translateY(24px);
+  transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
 }
 
 .reveal--visible {
@@ -259,48 +245,30 @@ button {
   transform: translateY(0);
 }
 
-/* On mobile: opacity-only reveal, no translate, no will-change — avoids dozens of GPU compositor layers */
 @media (max-width: 768px) {
   .reveal {
     transform: none;
-    transition: opacity 0.5s ease;
-    will-change: auto;
+    transition: opacity 0.45s ease;
   }
 }
 
-/* ── Button active/press states ── */
-.btn-primary:active {
-  transform: translateY(0) scale(0.97);
-  box-shadow: 0 2px 8px rgba(84,184,224,0.2);
-}
-
+.btn-primary:active,
 .btn-secondary:active {
-  transform: translateY(0) scale(0.97);
-  background: var(--sage-pale);
+  transform: translateY(0) scale(0.98);
 }
 
-.btn-ghost:active {
-  color: var(--sage);
-}
-
-/* ── Prefers-reduced-motion ── */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-  html {
-    scroll-behavior: auto;
-  }
   .reveal {
     opacity: 1;
     transform: none;
-    transition: none;
   }
-  .fade-up, .fade-up-1, .fade-up-2, .fade-up-3, .fade-up-4 {
+  .fade-up, .fade-up-1, .fade-up-2, .fade-up-3 {
     animation: none;
     opacity: 1;
-    transform: none;
   }
 }

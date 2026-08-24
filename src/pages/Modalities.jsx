@@ -9,11 +9,9 @@ const modalities = [
     anchor: 'cryotherapy',
     name: 'Cryotherapy',
     tagline: 'The power of cold. Redefined.',
-    duration: '15 Minutes',
+    duration: '10 Minutes',
     emoji: '❄',
     image: '/cryo-chamber.jpg',
-    gradient: 'radial-gradient(ellipse at 60% 30%, #c8dff0 0%, #a0c0e0 45%, #7098b8 100%)',
-    accentColor: '#4A7FA8',
     intro: `Experience ultra-cold, dry air in our advanced electric cryotherapy chamber—engineered to accelerate recovery, reduce inflammation, and leave you energized.`,
     benefits: [
       'Dramatically reduces systemic inflammation and joint pain',
@@ -33,8 +31,6 @@ const modalities = [
     duration: '20 Minutes',
     emoji: '☀',
     image: '/red-light-bed.jpg',
-    gradient: 'radial-gradient(ellipse at 40% 55%, #f5dfc0 0%, #e0a060 45%, #c07838 100%)',
-    accentColor: '#C07830',
     intro: `Red and near-infrared wavelengths (630–660nm and up to 940nm) penetrate deep into tissue to support cellular repair, reduce inflammation, and enhance recovery.`,
     benefits: [
       'Stimulates collagen production for smoother, firmer skin',
@@ -51,10 +47,8 @@ const modalities = [
     anchor: 'sauna',
     name: 'Infrared Sauna',
     tagline: 'Sweat deeply. Release fully.',
-    duration: '25 Minutes',
+    duration: '40 Minutes',
     emoji: '♨',
-    gradient: 'radial-gradient(ellipse at 50% 40%, #e8c4a8 0%, #c88858 45%, #a05830 100%)',
-    accentColor: '#B05035',
     intro: `Our infrared sauna uses far-infrared wavelengths to penetrate 1.5 to 2 inches beneath the skin's surface—reaching muscle tissue, joints, and deep organs in a way traditional steam saunas cannot. The result is a deeper, more intentional sweat at a more comfortable ambient temperature, ideal for extended, therapeutic sessions.`,
     benefits: [
       'Deep detoxification through profuse, metabolically active sweating',
@@ -73,8 +67,6 @@ const modalities = [
     tagline: 'Restore your circulation. Reclaim your legs.',
     duration: '30 Minutes',
     emoji: '◎',
-    gradient: 'radial-gradient(ellipse at 35% 60%, #c8d0e8 0%, #8890c0 45%, #585890 100%)',
-    accentColor: '#5060A0',
     intro: `Sequential compression therapy uses dynamic air pressure—applied via specialized sleeves to the legs, hips, and arms—to replicate and amplify the natural pumping action of your lymphatic system. The result is dramatically improved circulation, accelerated metabolic waste removal, and a profound sense of lightness in tired limbs.`,
     benefits: [
       'Accelerates lactic acid clearance after intense training',
@@ -153,11 +145,10 @@ export default function Modalities() {
                   className={`mod-visual${m.image ? ' mod-visual--photo' : ''}`}
                   style={m.image
                     ? { backgroundImage: `url('${m.image}')` }
-                    : { background: m.gradient }
+                    : undefined
                   }
                 >
                   {m.image && <div className="mod-visual__photo-overlay" />}
-                  <div className="mod-visual__glow" />
                   <div className="mod-visual__emoji">{m.emoji}</div>
                   <div className="mod-visual__pill">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
@@ -209,14 +200,14 @@ export default function Modalities() {
         <div className="container">
           <Reveal>
             <div className="mod-cta__inner">
-              <span className="section-label">Founding Members</span>
-              <h2 className="section-title">Lock in $99 and $129 founding rates.</h2>
+              <span className="section-label">Memberships</span>
+              <h2 className="section-title">Founding rates for the first 50.</h2>
               <p className="section-subtitle">
-                Be one of the first to experience all four modalities. Request a call for priority access and founding member pricing.
+                Everyday Wellness from $149.99/mo or Unlimited from $229.99/mo (+ tax). Walk-ins $35 per modality.
               </p>
               <div className="mod-cta__actions">
-                <Link to="/#inquiry" className="btn-primary">Request a Call</Link>
-                <Link to="/contact" className="btn-secondary">Ask a Question</Link>
+                <Link to="/memberships" className="btn-primary">View Pricing</Link>
+                <Link to="/#inquiry" className="btn-secondary">Request a Call</Link>
               </div>
             </div>
           </Reveal>

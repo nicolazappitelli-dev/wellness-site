@@ -5,8 +5,8 @@ const sections = [
     title: 'Membership Terms',
     content: [
       { heading: 'Eligibility', text: 'Membership is available to individuals 18 years of age or older. All members must complete a health intake form and acknowledge any applicable health contraindications prior to activating their account.' },
-      { heading: 'Minor Clients', text: 'Clients must be at least 16 years of age to use any services at Elevate Cryo & Wellness. Clients under the age of 18 must have a parent or legal guardian present to sign a consent form prior to receiving services. A parent or guardian may be required to remain on-site during the session at the discretion of staff.' },
-      { heading: 'Right to Refuse', text: 'Elevate Cryo & Wellness reserves the right to request valid identification and to refuse service if age or consent requirements are not met.' },
+      { heading: 'Minor Clients', text: 'Clients must be at least 16 years of age to use any services at Elevate Cryo. Clients under the age of 18 must have a parent or legal guardian present to sign a consent form prior to receiving services. A parent or guardian may be required to remain on-site during the session at the discretion of staff.' },
+      { heading: 'Right to Refuse', text: 'Elevate Cryo reserves the right to request valid identification and to refuse service if age or consent requirements are not met.' },
       { heading: 'Waiver & Health Screening', text: 'All clients are required to complete a waiver and health screening prior to participation. Certain services may not be suitable for individuals with specific medical conditions.' },
       { heading: 'Billing & Renewal', text: 'Memberships are billed monthly on the activation date and renew automatically. All rates are subject to applicable sales tax. Elevate reserves the right to update pricing with 30 days written notice to members.' },
       { heading: 'Cancellation', text: 'Members may cancel at any time with no cancellation fee. Cancellations take effect at the end of the current billing period. No partial refunds are issued for unused days within a billing cycle.' },
@@ -17,8 +17,8 @@ const sections = [
     title: 'Booking & Cancellation Policy',
     content: [
       { heading: 'Scheduling', text: 'When the studio opens, the team will help you schedule sessions by phone or in person. Online booking is not available on this website yet.' },
-      { heading: 'Walk-In Access', text: 'Walk-ins will be welcome at $25 + tax per modality. No membership is required to walk in. Walk-in access is first-come, first-served and subject to availability.' },
-      { heading: 'Cancellation Window', text: 'Please give at least 4 hours notice when you need to cancel. Late cancellations and no-shows may be counted as a used session under the Essential plan.' },
+      { heading: 'Walk-In Access', text: 'Walk-ins are welcome at $35 + tax per modality with no membership required. Walk-in access is first-come, first-served and subject to availability.' },
+      { heading: 'Cancellation Window', text: 'Sessions must be cancelled at least 4 hours prior to the scheduled start time. Late cancellations (under 4 hours) and no-shows will be counted as a used session under the Everyday Wellness plan. Repeated no-shows may result in temporary booking restrictions.' },
       { heading: 'Rescheduling', text: 'Call the studio to reschedule. Please give at least 4 hours notice when possible, subject to availability.' },
     ],
   },
@@ -30,7 +30,7 @@ const sections = [
       { heading: 'Infrared Sauna Contraindications', text: 'Individuals with MS, lupus, adrenal suppression, or those who are pregnant should consult a physician before using the infrared sauna. Avoid use if feverish or immediately post-strenuous exercise.' },
       { heading: 'Red Light Therapy', text: 'Clients currently taking photosensitizing medications or applying photosensitizing topical agents should consult a physician before use. Protective eyewear is mandatory during sessions.' },
       { heading: 'Compression Therapy', text: 'Contraindicated with active deep vein thrombosis (DVT), severe peripheral artery disease, or acute lower-extremity injuries. Clients with circulatory conditions should obtain physician clearance.' },
-      { heading: 'Assumption of Risk', text: 'By activating a membership, you acknowledge an understanding of the inherent risks associated with wellness modalities and agree to hold Elevate Cryo & Wellness harmless for any injury arising from disclosed or undisclosed health conditions.' },
+      { heading: 'Assumption of Risk', text: 'By activating a membership, you acknowledge an understanding of the inherent risks associated with wellness modalities and agree to hold Elevate Cryo harmless for any injury arising from disclosed or undisclosed health conditions.' },
     ],
   },
   {
@@ -93,7 +93,7 @@ export default function Policies() {
               </section>
             ))}
             <div className="policies-updated">
-              <p>Last updated: January 2026. Elevate Cryo & Wellness reserves the right to update these policies at any time. Members will be notified of material changes via email.</p>
+              <p>Last updated: January 2026. Elevate Cryo reserves the right to update these policies at any time. Members will be notified of material changes via email.</p>
             </div>
           </div>
         </div>

@@ -1,5 +1,5 @@
 {
-  "name": "elevate-cryo-wellness",
+  "name": "elevate-cryo",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -24,5 +24,6 @@
     "eslint-plugin-react-refresh": "^0.5.2",
     "globals": "^17.4.0",
     "vite": "^8.0.1"
-  }
+  },
+  "homepage": "https://www.elevatecryoconcord.com"
 }

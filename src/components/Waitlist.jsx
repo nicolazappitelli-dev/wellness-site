@@ -4,22 +4,18 @@ import './Waitlist.css'
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 const INTERESTS = [
-  'Essential membership ($99/mo)',
-  'Unlimited membership ($129/mo)',
+  'Everyday Wellness ($149.99/mo founding)',
+  'Unlimited ($229.99/mo founding)',
   'Walk-in / drop-in',
   'Cryotherapy',
-  'Red Light Bed Therapy',
+  'Red Light Therapy',
   'Infrared Sauna',
-  'Compression Therapy',
+  'Compression',
   'Not sure yet',
 ]
 
-function phoneDigits(value) {
-  return String(value || '').replace(/\D/g, '')
-}
-
 function isValidPhone(value) {
-  const digits = phoneDigits(value)
+  const digits = String(value || '').replace(/\D/g, '')
   return digits.length === 10 || (digits.length === 11 && digits.startsWith('1'))
 }
 
@@ -87,7 +83,6 @@ export default function Waitlist() {
     }
 
     setStatus('loading')
-
     const name = `${first} ${last}`
     const message = [
       `${name} requested a call back.`,
@@ -121,7 +116,6 @@ export default function Waitlist() {
       <div className="waitlist__glow" aria-hidden="true" />
       <div className="container">
         <div className="waitlist__inner">
-
           <div className="waitlist__copy">
             <span className="section-label">Request a Call</span>
             <h2 className="waitlist__title">Tell us how to reach you.</h2>
@@ -243,30 +237,22 @@ export default function Waitlist() {
                   />
                 </label>
 
-                {invalid && (
-                  <p className="waitlist__hint waitlist__hint--error">{invalid}</p>
-                )}
+                {invalid && <p className="waitlist__hint waitlist__hint--error">{invalid}</p>}
                 {status === 'error' && (
                   <p className="waitlist__hint waitlist__hint--error">
                     Something went wrong — please email elevatecryowellness@gmail.com directly.
                   </p>
                 )}
 
-                <button
-                  type="submit"
-                  className="waitlist__btn btn-primary"
-                  disabled={status === 'loading'}
-                >
+                <button type="submit" className="waitlist__btn btn-primary" disabled={status === 'loading'}>
                   {status === 'loading' ? (
                     <span className="waitlist__spinner" aria-hidden="true" />
                   ) : 'Request a Call'}
                 </button>
-
                 <p className="waitlist__trust">We will only use this to call you back. No spam.</p>
               </form>
             )}
           </div>
-
         </div>
       </div>
     </section>
