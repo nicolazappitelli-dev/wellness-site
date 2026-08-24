@@ -16,7 +16,7 @@ const sections = [
   {
     title: 'Booking & Cancellation Policy',
     content: [
-      { heading: 'Scheduling', text: 'When the studio opens, the team will help you schedule sessions by phone or in person. Online booking is not available on this website yet.' },
+      { heading: 'Scheduling', text: 'The team will help you schedule sessions by phone or in person. Online booking is not available on this website yet.' },
       { heading: 'Walk-In Access', text: 'Walk-ins are welcome at $35 + tax per modality with no membership required. Walk-in access is first-come, first-served and subject to availability.' },
       { heading: 'Cancellation Window', text: 'Sessions must be cancelled at least 4 hours prior to the scheduled start time. Late cancellations (under 4 hours) and no-shows will be counted as a used session under the Everyday Wellness plan. Repeated no-shows may result in temporary booking restrictions.' },
       { heading: 'Rescheduling', text: 'Call the studio to reschedule. Please give at least 4 hours notice when possible, subject to availability.' },
