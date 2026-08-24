@@ -29,15 +29,12 @@ export default function Nav() {
     setOpen(false)
   }, [location])
 
-  const onHome = location.pathname === '/'
-  const solid = scrolled || !onHome
-
   return (
-    <header className={`nav${solid ? ' nav--scrolled' : ''}`}>
+    <header className="nav nav--scrolled">
       <div className="nav__inner">
         <Link to="/" className="nav__logo">
           <img
-            src={solid ? '/logo-nav-dark.svg' : '/logo-nav.svg'}
+            src="/logo-nav-dark.svg"
             alt="Elevate Cryo"
             className="nav__logo-img"
           />
