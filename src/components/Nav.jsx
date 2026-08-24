@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import { SITE_PHONE, SITE_PHONE_HREF } from '../lib/site'
 import './Nav.css'
 
 const links = [
   { to: '/', label: 'Home' },
   { to: '/modalities', label: 'Modalities' },
   { to: '/memberships', label: 'Memberships' },
-  { to: '/booking', label: 'Booking' },
   { to: '/policies', label: 'Policies' },
   { to: '/contact', label: 'Contact' },
 ]
@@ -52,11 +52,7 @@ export default function Nav() {
           ))}
         </nav>
 
-        <Link to="/#waitlist" className="nav__waitlist">Join Waitlist</Link>
-        <Link to="/account" className="nav__account">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-          Account
-        </Link>
+        <Link to="/#inquiry" className="nav__waitlist">Request a Call</Link>
 
         <button
           className={`nav__hamburger${open ? ' nav__hamburger--open' : ''}`}
@@ -77,8 +73,8 @@ export default function Nav() {
             {l.label}
           </Link>
         ))}
-        <Link to="/#waitlist" className="nav__mobile-link">Join Waitlist</Link>
-        <Link to="/account" className="nav__mobile-link">Account</Link>
+        <Link to="/#inquiry" className="nav__mobile-link">Request a Call</Link>
+        <a href={SITE_PHONE_HREF} className="nav__mobile-link">Call {SITE_PHONE}</a>
       </div>
     </header>
   )

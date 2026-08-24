@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { STUDIO_HOURS } from '../lib/catalog'
 import './Footer.css'
 
 export default function Footer() {
@@ -29,7 +30,7 @@ export default function Footer() {
               <Link to="/">Home</Link>
               <Link to="/modalities">Modalities</Link>
               <Link to="/memberships">Memberships</Link>
-              <Link to="/booking">Booking</Link>
+              <Link to="/#inquiry">Request a Call</Link>
               <Link to="/policies">Policies</Link>
               <Link to="/contact">Contact</Link>
             </nav>
@@ -38,10 +39,12 @@ export default function Footer() {
           <div className="footer__col">
             <h4 className="footer__heading">Hours</h4>
             <div className="footer__hours">
-              <div className="footer__hours-row">
-                <span>Hours</span>
-                <span>Coming Soon</span>
-              </div>
+              {STUDIO_HOURS.map(row => (
+                <div key={row.days} className="footer__hours-row">
+                  <span>{row.days}</span>
+                  <span>{row.hours}</span>
+                </div>
+              ))}
             </div>
           </div>
 
@@ -68,6 +71,9 @@ export default function Footer() {
               <a href="mailto:elevatecryowellness@gmail.com" className="footer__contact-item">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
                 elevatecryowellness@gmail.com
+              </a>
+              <a href="https://www.instagram.com/elevatecryo/" target="_blank" rel="noopener noreferrer" className="footer__contact-item">
+                Instagram
               </a>
             </div>
           </div>

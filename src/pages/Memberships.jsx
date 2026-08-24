@@ -13,7 +13,7 @@ const plans = [
     includes: [
       '1 modality session per day',
       'Access to all four modalities',
-      'Member booking portal',
+      'We will call you to get set up and scheduled',
       'Founding rate locked for the first 50 members',
     ],
   },
@@ -26,7 +26,7 @@ const plans = [
     includes: [
       'Unlimited modality access',
       'Use all four modalities in one visit',
-      'Member booking portal',
+      'We will call you to get set up and scheduled',
       'Founding rate locked for the first 50 members',
     ],
     featured: true,
@@ -114,8 +114,8 @@ export default function Memberships() {
                       </li>
                     ))}
                   </ul>
-                  <Link to="/#waitlist" className={plan.featured ? 'btn-primary' : 'btn-secondary'}>
-                    Join the Waitlist
+                  <Link to="/#inquiry" className={plan.featured ? 'btn-primary' : 'btn-secondary'}>
+                    Request a Call
                   </Link>
                 </div>
               </Reveal>
@@ -157,7 +157,7 @@ export default function Memberships() {
                 First 50 members get Everyday Wellness at $149.99/mo or Unlimited at $229.99/mo (+ tax).
               </p>
               <div className="memb-cta__actions">
-                <Link to="/#waitlist" className="btn-primary">Join the Waitlist</Link>
+                <Link to="/#inquiry" className="btn-primary">Request a Call</Link>
                 <Link to="/contact" className="btn-secondary">Contact Us</Link>
               </div>
             </div>

@@ -34,7 +34,7 @@ const modalities = [
 const faqs = [
   {
     q: 'When are you opening?',
-    a: "We're targeting Summer 2026 in Concord, Ohio. Join the waitlist for opening updates and founding member pricing.",
+    a: "We're targeting Summer 2026 in Concord, Ohio. Request a call for opening updates and founding member pricing.",
   },
   {
     q: 'What modalities will you offer?',
@@ -46,7 +46,7 @@ const faqs = [
   },
   {
     q: 'How do founding memberships work?',
-    a: 'The first 50 members lock in founding rates before standard pricing begins. Join the waitlist to secure a founding spot.',
+    a: 'The first 50 members lock in founding rates before standard pricing begins. Request a call to secure a founding spot.',
   },
   {
     q: 'Are there health requirements?',
@@ -71,7 +71,7 @@ export default function Home() {
             Cryotherapy, red light, sauna, and compression — coming soon to Concord, Ohio.
           </p>
           <div className="hero__ctas fade-up-2">
-            <Link to="/#waitlist" className="btn-primary">Join the Waitlist</Link>
+            <Link to="/#inquiry" className="btn-primary">Request a Call</Link>
           </div>
         </div>
       </section>

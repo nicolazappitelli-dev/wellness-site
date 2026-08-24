@@ -207,7 +207,7 @@ export default function Modalities() {
               </p>
               <div className="mod-cta__actions">
                 <Link to="/memberships" className="btn-primary">View Pricing</Link>
-                <Link to="/#waitlist" className="btn-secondary">Join the Waitlist</Link>
+                <Link to="/#inquiry" className="btn-secondary">Request a Call</Link>
               </div>
             </div>
           </Reveal>
