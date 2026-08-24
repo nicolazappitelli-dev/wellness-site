@@ -9,9 +9,9 @@ const INTERESTS = [
   'Unlimited ($229.99/mo founding)',
   'Walk-in / drop-in',
   'Cryotherapy',
-  'Red Light Therapy',
+  'Red Light Bed Therapy',
   'Infrared Sauna',
-  'Compression',
+  'Compression Therapy',
   'Not sure yet',
 ]
 
@@ -121,8 +121,8 @@ export default function Waitlist() {
             <span className="section-label">Request a Call</span>
             <h2 className="waitlist__title">Tell us how to reach you.</h2>
             <p className="waitlist__sub">
-              Leave your name and number. We will call you to answer questions,
-              help you pick a plan, and get you scheduled when the studio opens.
+              Leave your name and number. We are open. We will call you to answer
+              questions, help you pick a plan, and get you scheduled.
             </p>
           </div>
 

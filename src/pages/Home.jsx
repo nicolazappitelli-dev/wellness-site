@@ -14,21 +14,21 @@ const modalities = [
     desc: 'Ultra-cold dry air to accelerate recovery, reduce inflammation, and leave you sharp.',
   },
   {
-    name: 'Red Light Therapy',
+    name: 'Red Light Bed Therapy',
     slug: 'red-light',
-    duration: '20 min',
+    duration: '15 min',
     image: '/red-light-bed.jpg',
     desc: 'Red and near-infrared light to support repair, collagen, and recovery from within.',
   },
   {
     name: 'Infrared Sauna',
     slug: 'sauna',
-    duration: '40 min',
+    duration: '25 min',
     image: '/sauna.jpg',
     desc: 'Deep heat to ease sore muscles, support detox, and settle the nervous system.',
   },
   {
-    name: 'Compression',
+    name: 'Compression Therapy',
     slug: 'compression',
     duration: '30 min',
     image: '/compression-boots.jpg',
@@ -46,7 +46,7 @@ const faqs = [
     a: STUDIO_HOURS.map(row => `${row.days}: ${row.hours}`).join('. ') + '.',
   },
   {
-    q: 'What modalities will you offer?',
+    q: 'What modalities do you offer?',
     a: 'Whole-body cryotherapy, red light bed therapy, infrared sauna, and compression therapy.',
   },
   {
