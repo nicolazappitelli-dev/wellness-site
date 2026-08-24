@@ -1,6 +1,6 @@
 export const SITE_NAME = 'Elevate Cryo & Wellness'
 export const SITE_EMAIL = 'elevatecryoconcord@gmail.com'
-export const SITE_PHONE = '440-667-9104'
-export const SITE_PHONE_HREF = 'tel:+14406679104'
+export const SITE_PHONE = '440-754-2912'
+export const SITE_PHONE_HREF = 'tel:+14407542912'
 export const SITE_ADDRESS = '8019 Crile Road, Concord, OH 44077'
 export const SITE_MAPS_HREF = 'https://maps.google.com/?q=8019+Crile+Road+Concord+OH+44077'
