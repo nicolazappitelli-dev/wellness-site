@@ -12,18 +12,8 @@ const links = [
 ]
 
 export default function Nav() {
-  const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
   const location = useLocation()
-
-  useEffect(() => {
-    const onScroll = () => {
-      const next = window.scrollY > 40
-      setScrolled(prev => prev === next ? prev : next)
-    }
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
 
   useEffect(() => {
     setOpen(false)
