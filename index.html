@@ -4,21 +4,26 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#F5F0E8" />
     <title>Elevate Cryo | Concord, Ohio</title>
-    <meta name="description" content="Elevate Cryo — cryotherapy, red light therapy, sauna, and compression therapy coming soon to Concord, Ohio." />
+    <meta name="description" content="Elevate Cryo — now open in Concord, Ohio. Cryotherapy, red light therapy, sauna, and compression therapy." />
     <link rel="canonical" href="https://www.elevatecryoconcord.com/" />
     <meta property="og:title" content="Elevate Cryo | Concord, Ohio" />
-    <meta property="og:description" content="Cryotherapy, red light therapy, sauna, and compression therapy — coming soon to Concord, Ohio." />
+    <meta property="og:description" content="Now open — cryotherapy, red light, sauna, and compression in Concord, Ohio." />
     <meta property="og:url" content="https://www.elevatecryoconcord.com/" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Elevate Cryo" />
-    <!-- Preload hero background for faster LCP -->
-    <link rel="preload" as="image" href="/lobby.jpg" fetchpriority="high" />
-    <!-- Non-blocking fonts: Syne + Outfit -->
+    <meta property="og:image" content="https://www.elevatecryoconcord.com/lobby.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://www.elevatecryoconcord.com/lobby.jpg" />
+    <!-- LCP: responsive hero preload -->
+    <link rel="preload" as="image" href="/lobby-sm.webp" type="image/webp" media="(max-width: 900px)" fetchpriority="high" />
+    <link rel="preload" as="image" href="/lobby.webp" type="image/webp" media="(min-width: 901px)" fetchpriority="high" />
+    <!-- Non-blocking fonts: Syne + Outfit (weights actually used) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&family=Syne:wght@500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&family=Syne:wght@500;600;700&display=swap" rel="stylesheet" /></noscript>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&family=Syne:wght@400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&family=Syne:wght@400;500;600&display=swap" rel="stylesheet" /></noscript>
   </head>
   <body>
     <div id="root"></div>

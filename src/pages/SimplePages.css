@@ -1,6 +1,7 @@
 .simple-page {
   padding-top: 90px;
   min-height: 100vh;
+  min-height: 100dvh;
 }
 
 .simple-page__hero {

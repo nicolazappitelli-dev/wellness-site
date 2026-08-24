@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-import { supabase } from '../lib/supabaseClient'
+import { getSupabase } from '../lib/supabaseClient'
 import './Waitlist.css'
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -39,12 +39,13 @@ export default function Waitlist() {
     setInvalid(false)
     setStatus('loading')
 
-    if (!supabase) {
-      setStatus('error')
-      return
-    }
-
     try {
+      const supabase = await getSupabase()
+      if (!supabase) {
+        setStatus('error')
+        return
+      }
+
       const { error } = await supabase
         .from('waitlist')
         .insert({ email: trimmed })
@@ -66,7 +67,6 @@ export default function Waitlist() {
 
   return (
     <section id="waitlist" className="waitlist">
-      <div className="waitlist__glow" aria-hidden="true" />
       <div className="container">
         <div className="waitlist__inner">
 

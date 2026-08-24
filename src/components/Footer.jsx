@@ -39,8 +39,20 @@ export default function Footer() {
             <h4 className="footer__heading">Hours</h4>
             <div className="footer__hours">
               <div className="footer__hours-row">
-                <span>Hours</span>
-                <span>Coming Soon</span>
+                <span>Mon – Thu</span>
+                <span>8am – 7pm</span>
+              </div>
+              <div className="footer__hours-row">
+                <span>Friday</span>
+                <span>8am – 5pm</span>
+              </div>
+              <div className="footer__hours-row">
+                <span>Saturday</span>
+                <span>10am – 4pm</span>
+              </div>
+              <div className="footer__hours-row">
+                <span>Sunday</span>
+                <span>Closed</span>
               </div>
             </div>
           </div>

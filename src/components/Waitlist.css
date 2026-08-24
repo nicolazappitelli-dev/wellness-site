@@ -7,10 +7,6 @@
   border-top: 1px solid var(--sand);
 }
 
-.waitlist__glow {
-  display: none;
-}
-
 .waitlist__inner {
   display: grid;
   grid-template-columns: 1fr 1fr;

@@ -1,9 +1,21 @@
-import { createClient } from '@supabase/supabase-js'
+let client
 
-const supabaseUrl     = import.meta.env.VITE_SUPABASE_URL
-const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY
+/**
+ * Lazily load Supabase only when the waitlist is submitted.
+ * Keeps @supabase/supabase-js out of the initial JS bundle.
+ */
+export async function getSupabase() {
+  if (client !== undefined) return client
 
-export const supabase =
-  supabaseUrl && supabaseAnonKey
-    ? createClient(supabaseUrl, supabaseAnonKey)
-    : null
+  const url = import.meta.env.VITE_SUPABASE_URL
+  const key = import.meta.env.VITE_SUPABASE_ANON_KEY
+
+  if (!url || !key) {
+    client = null
+    return null
+  }
+
+  const { createClient } = await import('@supabase/supabase-js')
+  client = createClient(url, key)
+  return client
+}

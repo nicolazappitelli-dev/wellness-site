@@ -33,8 +33,8 @@ const modalities = [
 
 const faqs = [
   {
-    q: 'When are you opening?',
-    a: "We're targeting Summer 2026 in Concord, Ohio. Join the waitlist for opening updates and founding member pricing.",
+    q: 'When are you open?',
+    a: 'We are open now in Concord, Ohio. Monday–Thursday 8am–7pm, Friday 8am–5pm, Saturday 10am–4pm. Closed Sunday.',
   },
   {
     q: 'What modalities will you offer?',
@@ -54,24 +54,52 @@ const faqs = [
   },
 ]
 
+const hours = [
+  { days: 'Monday – Thursday', time: '8:00 AM – 7:00 PM' },
+  { days: 'Friday', time: '8:00 AM – 5:00 PM' },
+  { days: 'Saturday', time: '10:00 AM – 4:00 PM' },
+  { days: 'Sunday', time: 'Closed' },
+]
+
 export default function Home() {
   return (
     <main className="home">
       <section className="hero">
-        <div className="hero__bg">
-          <div className="hero__gradient" />
+        <div className="hero__media" aria-hidden="true">
+          <picture>
+            <source
+              type="image/webp"
+              media="(max-width: 900px)"
+              srcSet="/lobby-sm.webp"
+            />
+            <source type="image/webp" srcSet="/lobby.webp" />
+            <img
+              src="/lobby.jpg"
+              alt=""
+              className="hero__photo"
+              width={1061}
+              height={1004}
+              fetchPriority="high"
+              decoding="async"
+            />
+          </picture>
         </div>
-        <div className="container hero__content">
-          <h1 className="hero__title fade-up">
-            Recover.<br />
-            Restore.<br />
-            <em>Elevate.</em>
-          </h1>
-          <p className="hero__sub fade-up-1">
-            Cryotherapy, red light, sauna, and compression — coming soon to Concord, Ohio.
-          </p>
-          <div className="hero__ctas fade-up-2">
-            <Link to="/#waitlist" className="btn-primary">Join the Waitlist</Link>
+        <div className="hero__veil" aria-hidden="true" />
+        <div className="container hero__shell">
+          <div className="hero__content">
+            <p className="hero__open fade-up">Now Open</p>
+            <h1 className="hero__title fade-up-1">
+              Recover.<br />
+              Restore.<br />
+              <em>Elevate.</em>
+            </h1>
+            <p className="hero__sub fade-up-2">
+              Cryotherapy, red light, sauna, and compression — now open in Concord, Ohio.
+            </p>
+            <div className="hero__ctas fade-up-2">
+              <Link to="/#hours" className="btn-primary">See Hours</Link>
+              <Link to="/#waitlist" className="btn-secondary">Join the Waitlist</Link>
+            </div>
           </div>
         </div>
       </section>
@@ -97,6 +125,34 @@ export default function Home() {
                 </Link>
               </Reveal>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="hours" className="section hours-section">
+        <div className="container">
+          <div className="hours-section__inner">
+            <Reveal>
+              <div className="hours-section__intro">
+                <span className="section-label">Visit Us</span>
+                <h2 className="section-title">Hours</h2>
+                <p className="section-subtitle">
+                  Walk-ins welcome. Founding memberships still available for the first 50.
+                </p>
+              </div>
+            </Reveal>
+            <Reveal delay={80}>
+              <ul className="hours-list">
+                {hours.map((row) => (
+                  <li key={row.days} className="hours-list__row">
+                    <span className="hours-list__days">{row.days}</span>
+                    <span className={`hours-list__time${row.time === 'Closed' ? ' hours-list__time--closed' : ''}`}>
+                      {row.time}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
           </div>
         </div>
       </section>
