@@ -34,6 +34,30 @@
   margin-top: 48px;
 }
 
+.hero__open {
+  font-family: var(--font-heading);
+  font-size: clamp(40px, 7vw, 84px);
+  font-weight: 600;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  margin: 0 0 18px;
+  background: linear-gradient(135deg, #E0C878, #C9A84C);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero__hours-btn {
+  color: #FBF8F2;
+  border-color: rgba(251, 248, 242, 0.4);
+}
+
+.hero__hours-btn:hover {
+  background: rgba(251, 248, 242, 0.12);
+  color: #FBF8F2;
+  border-color: rgba(251, 248, 242, 0.7);
+}
+
 .hero__title {
   font-family: var(--font-heading);
   font-size: clamp(42px, 7vw, 80px);
@@ -66,6 +90,59 @@
   flex-wrap: wrap;
 }
 
+/* ───── Hours ───── */
+.hours-section {
+  background: var(--linen);
+  scroll-margin-top: 90px;
+}
+
+.hours-section__inner {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.9fr) minmax(0, 1.2fr);
+  gap: clamp(36px, 6vw, 80px);
+  align-items: end;
+  max-width: 900px;
+}
+
+.hours-section__intro .section-title {
+  margin-bottom: 14px;
+}
+
+.hours-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--sand);
+}
+
+.hours-list__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 24px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--sand);
+}
+
+.hours-list__days {
+  font-family: var(--font-heading);
+  font-size: clamp(18px, 2.2vw, 24px);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--charcoal);
+}
+
+.hours-list__time {
+  font-size: clamp(15px, 1.6vw, 17px);
+  font-weight: 500;
+  color: var(--charcoal-light);
+  white-space: nowrap;
+}
+
+.hours-list__time--closed {
+  color: var(--charcoal-muted);
+}
+
 /* ───── Modalities ───── */
 .modalities-preview {
   background: var(--warm-white);
@@ -88,14 +165,22 @@
 .mod-card {
   display: flex;
   flex-direction: column;
-  padding: 32px 28px;
+  padding: 0 0 24px;
   background: var(--linen);
   border: 1px solid var(--sand);
   border-radius: 16px;
   text-decoration: none;
+  overflow: hidden;
   transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
   min-height: 220px;
   box-shadow: 0 4px 20px rgba(42, 36, 28, 0.04);
+}
+
+.mod-card__photo {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  margin-bottom: 18px;
 }
 
 .mod-card:hover {
@@ -104,13 +189,20 @@
   box-shadow: 0 10px 28px rgba(42, 36, 28, 0.08);
 }
 
+.mod-card__duration,
+.mod-card__name,
+.mod-card__desc {
+  padding-left: 22px;
+  padding-right: 22px;
+}
+
 .mod-card__duration {
   font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--sage);
-  margin-bottom: 14px;
+  margin-bottom: 10px;
 }
 
 .mod-card__name {
@@ -199,6 +291,12 @@
 @media (max-width: 900px) {
   .modalities-preview__grid {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .hours-section__inner {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    align-items: start;
   }
 
   .faq-section__inner {

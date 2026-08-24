@@ -1,5 +1,8 @@
 export const STUDIO_HOURS = [
-  { days: 'Daily', hours: '11:00 AM – 8:00 PM' },
+  { days: 'Monday – Thursday', hours: '8:00 AM – 7:00 PM' },
+  { days: 'Friday', hours: '8:00 AM – 5:00 PM' },
+  { days: 'Saturday', hours: '10:00 AM – 4:00 PM' },
+  { days: 'Sunday', hours: 'Closed' },
 ]
 
 export const PLANS = {

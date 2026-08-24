@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Reveal from '../components/Reveal'
 import Waitlist from '../components/Waitlist'
+import { STUDIO_HOURS } from '../lib/catalog'
 import './Home.css'
 
 const modalities = [
@@ -9,32 +10,40 @@ const modalities = [
     name: 'Cryotherapy',
     slug: 'cryotherapy',
     duration: '10 min',
+    image: '/cryo-chamber.jpg',
     desc: 'Ultra-cold dry air to accelerate recovery, reduce inflammation, and leave you sharp.',
   },
   {
     name: 'Red Light Therapy',
     slug: 'red-light',
     duration: '20 min',
+    image: '/red-light-bed.jpg',
     desc: 'Red and near-infrared light to support repair, collagen, and recovery from within.',
   },
   {
     name: 'Infrared Sauna',
     slug: 'sauna',
     duration: '40 min',
+    image: '/sauna.jpg',
     desc: 'Deep heat to ease sore muscles, support detox, and settle the nervous system.',
   },
   {
     name: 'Compression',
     slug: 'compression',
     duration: '30 min',
+    image: '/compression-boots.jpg',
     desc: 'Sequential compression to move lactic acid, reduce swelling, and restore flow.',
   },
 ]
 
 const faqs = [
   {
-    q: 'When are you opening?',
-    a: "We're targeting Summer 2026 in Concord, Ohio. Request a call for opening updates and founding member pricing.",
+    q: 'Are you open?',
+    a: 'Yes. We are now open in Concord, Ohio. Leave your info and we will call you to help you get started.',
+  },
+  {
+    q: 'What are your hours?',
+    a: STUDIO_HOURS.map(row => `${row.days}: ${row.hours}`).join('. ') + '.',
   },
   {
     q: 'What modalities will you offer?',
@@ -62,19 +71,51 @@ export default function Home() {
           <div className="hero__gradient" />
         </div>
         <div className="container hero__content">
-          <h1 className="hero__title fade-up">
+          <p className="hero__open fade-up">Now Open</p>
+          <h1 className="hero__title fade-up-1">
             Recover.<br />
             Restore.<br />
             <em>Elevate.</em>
           </h1>
-          <p className="hero__sub fade-up-1">
-            Cryotherapy, red light, sauna, and compression — coming soon to Concord, Ohio.
+          <p className="hero__sub fade-up-2">
+            Cryotherapy, red light, sauna, and compression — now open in Concord, Ohio.
           </p>
-          <div className="hero__ctas fade-up-2">
+          <div className="hero__ctas fade-up-3">
             <Link to="/#inquiry" className="btn-primary">Request a Call</Link>
+            <Link to="/#hours" className="btn-secondary hero__hours-btn">See Hours</Link>
           </div>
         </div>
       </section>
+
+      <section id="hours" className="section hours-section" aria-label="Hours">
+        <div className="container">
+          <div className="hours-section__inner">
+            <Reveal>
+              <div className="hours-section__intro">
+                <span className="section-label">Visit Us</span>
+                <h2 className="section-title">Hours</h2>
+                <p className="section-subtitle">
+                  Walk-ins welcome. Founding memberships still available for the first 50.
+                </p>
+              </div>
+            </Reveal>
+            <Reveal delay={80}>
+              <ul className="hours-list">
+                {STUDIO_HOURS.map(row => (
+                  <li key={row.days} className="hours-list__row">
+                    <span className="hours-list__days">{row.days}</span>
+                    <span className={`hours-list__time${row.hours === 'Closed' ? ' hours-list__time--closed' : ''}`}>
+                      {row.hours}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      <Waitlist />
 
       <section className="section modalities-preview">
         <div className="container">
@@ -91,6 +132,7 @@ export default function Home() {
             {modalities.map((m, i) => (
               <Reveal key={m.name} delay={i * 70}>
                 <Link to={`/modalities#${m.slug}`} className="mod-card">
+                  <img src={m.image} alt="" className="mod-card__photo" />
                   <div className="mod-card__duration">{m.duration}</div>
                   <h3 className="mod-card__name">{m.name}</h3>
                   <p className="mod-card__desc">{m.desc}</p>
@@ -124,8 +166,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <Waitlist />
     </main>
   )
 }

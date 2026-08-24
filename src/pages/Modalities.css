@@ -4,18 +4,18 @@
 
 /* Hero */
 .mod-hero {
-  padding: 80px 0 80px;
+  padding: 72px 0 64px;
   background: var(--cream);
 }
 
 .mod-hero__title {
   font-family: var(--font-heading);
-  font-size: clamp(40px, 6vw, 72px);
+  font-size: clamp(40px, 6vw, 68px);
   font-weight: 500;
   line-height: 1.05;
   letter-spacing: -0.02em;
   color: var(--charcoal);
-  margin: 16px 0 28px;
+  margin: 16px 0 24px;
 }
 
 .mod-hero__title em {
@@ -32,7 +32,9 @@
 
 /* Sections */
 .mod-section {
-  padding: 100px 0;
+  padding: clamp(64px, 8vw, 96px) 0;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 720px;
 }
 
 .mod-section--light {
@@ -45,8 +47,8 @@
 
 .mod-layout {
   display: grid;
-  grid-template-columns: 1fr 1.4fr;
-  gap: 80px;
+  grid-template-columns: minmax(280px, 0.9fr) minmax(0, 1.2fr);
+  gap: clamp(36px, 5vw, 64px);
   align-items: start;
 }
 
@@ -58,95 +60,52 @@
   direction: ltr;
 }
 
-/* Visual Panel */
-.mod-visual--photo {
-  background-size: cover;
-  background-position: center;
-}
-
-.mod-visual__photo-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(23,19,14,0.25) 0%,
-    rgba(23,19,14,0.1) 40%,
-    rgba(23,19,14,0.55) 100%
-  );
-  pointer-events: none;
-}
-
-.mod-visual {
-  border-radius: 28px;
-  aspect-ratio: 3/4;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 24px;
-  position: sticky;
-  top: 120px;
-  overflow: hidden;
-  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
-  box-shadow: 0 16px 64px rgba(0,0,0,0.12);
-  background: var(--linen);
-}
-
-.mod-visual:hover {
-  transform: scale(1.015) translateY(-4px);
-  box-shadow: 0 28px 80px rgba(0,0,0,0.16);
-}
-
-.mod-visual__emoji {
-  font-size: 88px;
-  line-height: 1;
-  filter: drop-shadow(0 4px 24px rgba(0,0,0,0.18));
-  position: relative;
-  z-index: 1;
-}
-
-.mod-visual__pill {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-family: var(--font-body);
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: rgba(44,44,44,0.75);
-  background: rgba(255,255,255,0.72);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  padding: 10px 22px;
-  border-radius: 100px;
-  position: relative;
-  z-index: 1;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-}
-
-/* Make Reveal wrappers grid-transparent in mod-layout */
 .mod-layout > .reveal {
   display: contents;
 }
 
+/* Photos — no black panels, no overlays */
+.mod-photo {
+  margin: 0;
+  position: sticky;
+  top: 112px;
+  overflow: hidden;
+  border-radius: 12px;
+  background: transparent;
+}
+
+.mod-photo picture {
+  display: block;
+  width: 100%;
+}
+
+.mod-photo__img {
+  width: 100%;
+  height: auto;
+  max-height: min(640px, 72vh);
+  object-fit: contain;
+  object-position: center center;
+  display: block;
+  border-radius: 12px;
+}
+
 /* Content */
 .mod-content {
-  padding-top: 8px;
+  padding-top: 4px;
 }
 
 .mod-content__name {
   font-family: var(--font-heading);
-  font-size: clamp(36px, 4vw, 52px);
-  font-weight: 400;
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 500;
   color: var(--charcoal);
   line-height: 1.1;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .mod-content__tagline {
   font-family: var(--font-heading);
-  font-size: 20px;
+  font-size: 18px;
   font-style: italic;
   color: var(--sage);
   margin-bottom: 0;
@@ -156,12 +115,11 @@
   font-size: 16px;
   color: var(--charcoal-light);
   line-height: 1.85;
-  margin-bottom: 40px;
+  margin-bottom: 36px;
 }
 
-/* Benefits */
 .mod-benefits {
-  margin-bottom: 36px;
+  margin-bottom: 32px;
 }
 
 .mod-benefits__heading {
@@ -199,7 +157,6 @@
   flex-shrink: 0;
 }
 
-/* Ideal For */
 .mod-ideal {
   background: var(--sage-pale);
   border-radius: 12px;
@@ -223,7 +180,6 @@
   line-height: 1.7;
 }
 
-/* Note */
 .mod-note {
   display: flex;
   align-items: flex-start;
@@ -239,7 +195,6 @@
   opacity: 0.6;
 }
 
-/* CTA Section */
 .mod-cta {
   background: var(--linen);
 }
@@ -255,34 +210,23 @@
   flex-wrap: wrap;
 }
 
-/* Responsive */
 @media (max-width: 900px) {
   .mod-layout,
   .mod-layout--reverse {
     grid-template-columns: 1fr;
     direction: ltr;
-    gap: 48px;
+    gap: 28px;
   }
 
-  .mod-visual {
-    aspect-ratio: 16/7;
+  .mod-photo {
     position: static;
   }
 
-  .mod-visual__emoji {
-    font-size: 64px;
+  .mod-photo__img {
+    max-height: min(520px, 60vh);
   }
 
-  /* Remove backdrop-filter on mobile — expensive inside overflow:hidden */
-  .mod-visual__pill {
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-    background: rgba(255,255,255,0.88);
-  }
-
-  /* No hover transform on touch devices */
-  .mod-visual:hover {
-    transform: none;
-    box-shadow: 0 16px 64px rgba(0,0,0,0.12);
+  .mod-hero {
+    padding: 48px 0 40px;
   }
 }

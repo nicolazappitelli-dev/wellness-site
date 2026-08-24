@@ -33,6 +33,7 @@ export async function submitLead(fields) {
         access_key: ACCESS_KEY,
         from_name: 'Elevate Cryo website',
         subject: payload._subject || 'Website submission',
+        ccemail: SITE_EMAIL,
         ...payload,
       }),
     })
