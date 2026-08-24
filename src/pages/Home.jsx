@@ -82,22 +82,19 @@ export default function Home() {
             />
           </picture>
         </div>
-        <div className="hero__veil" aria-hidden="true" />
-        <div className="container hero__shell">
-          <div className="hero__content">
-            <p className="hero__open fade-up">Now Open</p>
-            <h1 className="hero__title fade-up-1">
-              Recover.<br />
-              Restore.<br />
-              <em>Elevate.</em>
-            </h1>
-            <p className="hero__sub fade-up-2">
-              Cryotherapy, red light, sauna, and compression — now open in Concord, Ohio.
-            </p>
-            <div className="hero__ctas fade-up-3">
-              <Link to="/#inquiry" className="btn-primary">Request a Call</Link>
-              <Link to="/#hours" className="btn-secondary">See Hours</Link>
-            </div>
+        <p className="hero__open fade-up">Now Open</p>
+        <div className="hero__copy">
+          <h1 className="hero__title fade-up-1">
+            Recover.<br />
+            Restore.<br />
+            <em>Elevate.</em>
+          </h1>
+          <p className="hero__sub fade-up-2">
+            Cryotherapy, red light, sauna, and compression — now open in Concord, Ohio.
+          </p>
+          <div className="hero__ctas fade-up-3">
+            <Link to="/#inquiry" className="btn-primary">Request a Call</Link>
+            <Link to="/#hours" className="btn-secondary hero__hours-btn">See Hours</Link>
           </div>
         </div>
       </section>
