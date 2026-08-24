@@ -16,12 +16,12 @@ export default function Footer() {
               Cryotherapy, redlight bed therapy, sauna, and compression therapy — recovery elevated in Concord, Ohio.
             </p>
             <a
-              href="https://www.elevatecryoconcord.com"
+              href="https://elevatecryoconcord.com"
               className="footer__site"
               target="_blank"
               rel="noopener noreferrer"
             >
-              www.elevatecryoconcord.com
+              elevatecryoconcord.com
             </a>
           </div>
 
