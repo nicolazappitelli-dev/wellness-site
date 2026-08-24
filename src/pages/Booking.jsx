@@ -10,10 +10,10 @@ export default function Booking() {
       <div className="simple-page__hero">
         <div className="container">
           <span className="section-label fade-up">Book a Session</span>
-          <h1 className="simple-page__title fade-up-1">Booking opens soon.</h1>
+          <h1 className="simple-page__title fade-up-1">We're open — walk-ins welcome.</h1>
           <p className="simple-page__sub fade-up-2">
-            Online session booking launches when we open. Join the waitlist to get
-            first access and secure founding member pricing.
+            Online booking is launching soon. Stop by during open hours or join the waitlist
+            for founding member pricing and first access to the booking portal.
           </p>
         </div>
       </div>
@@ -49,14 +49,14 @@ export default function Booking() {
                 <path d="M9 16l2 2 4-4"/>
               </svg>
             </div>
-            <h2 className="bk-locked__title">Booking opens Summer 2026.</h2>
+            <h2 className="bk-locked__title">Online booking coming soon.</h2>
             <p className="bk-locked__sub">
-              Members will be able to reserve sessions up to 4 days ahead —
-              guaranteed time, guaranteed modality. Join the waitlist for first access.
+              Visit us Mon–Thu 8–7, Fri 8–5, Sat 10–4. Members will soon reserve sessions
+              up to 4 days ahead — guaranteed time, guaranteed modality.
             </p>
             <div className="bk-locked__ctas">
-              <Link to="/#waitlist" className="btn-primary">Join the Waitlist</Link>
-              <Link to="/modalities" className="btn-secondary">Explore Modalities</Link>
+              <Link to="/#hours" className="btn-primary">See Hours</Link>
+              <Link to="/#waitlist" className="btn-secondary">Join the Waitlist</Link>
             </div>
           </div>
         </div>
