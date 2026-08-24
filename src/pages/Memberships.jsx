@@ -3,36 +3,6 @@ import { Link } from 'react-router-dom'
 import Reveal from '../components/Reveal'
 import './Memberships.css'
 
-const plans = [
-  {
-    name: 'Everyday Wellness',
-    sessions: '1 modality a day · every day',
-    founding: '149.99',
-    standard: '169.99',
-    desc: 'One modality session per day — ideal for consistent recovery.',
-    includes: [
-      '1 modality session per day',
-      'Access to all four modalities',
-      'We will call you to get set up and scheduled',
-      'Founding rate locked for the first 50 members',
-    ],
-  },
-  {
-    name: 'Unlimited',
-    sessions: 'All modalities · unlimited access',
-    founding: '229.99',
-    standard: '249.99',
-    desc: 'Stack every modality in a single visit — maximum restoration.',
-    includes: [
-      'Unlimited modality access',
-      'Use all four modalities in one visit',
-      'We will call you to get set up and scheduled',
-      'Founding rate locked for the first 50 members',
-    ],
-    featured: true,
-  },
-]
-
 const faqs = [
   {
     q: 'What is the walk-in rate?',
@@ -60,6 +30,18 @@ const faqs = [
   },
 ]
 
+function PriceBlock({ label, amount, unit }) {
+  return (
+    <div className="price-block">
+      {label && <p className="price-block__label">{label}</p>}
+      <p className="price-block__amount">${amount}</p>
+      <p className="price-block__unit">{unit}</p>
+      <span className="price-block__rule" aria-hidden="true" />
+      <p className="price-block__tax">+ Tax</p>
+    </div>
+  )
+}
+
 export default function Memberships() {
   return (
     <main className="memberships-page">
@@ -71,55 +53,66 @@ export default function Memberships() {
             <em>Founding rates locked in.</em>
           </h1>
           <p className="memb-hero__sub fade-up-2">
-            Choose Everyday Wellness or Unlimited. The first 50 members lock in founding rates before standard pricing begins.
+            Walk-in, Everyday Wellness, or Unlimited. The first 50 members lock in founding rates before standard pricing begins.
           </p>
         </div>
       </section>
 
-      <div className="memb-notice">
-        <div className="container">
-          <div className="memb-notice__inner">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
-            <p>
-              <strong>Walk-in:</strong> $35 + tax per modality — no membership required.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <section className="section memb-plans">
+      <section className="section memb-plans" aria-label="Pricing">
         <div className="container">
           <div className="memb-plans__grid">
-            {plans.map((plan, i) => (
-              <Reveal key={plan.name} delay={i * 80}>
-                <div className={`memb-plan${plan.featured ? ' memb-plan--featured' : ''}`}>
-                  {plan.featured && <div className="memb-plan__badge">Most Popular</div>}
-                  <div className="memb-plan__name">{plan.name}</div>
-                  <div className="memb-plan__sessions">{plan.sessions}</div>
-                  <div className="memb-plan__price">
-                    <span className="memb-plan__amount">${plan.founding}</span>
-                    <span className="memb-plan__billing">+ tax / mo</span>
-                  </div>
-                  <p className="memb-plan__tagline">Founding members · first 50</p>
-                  <p className="memb-plan__standard">
-                    After first 50: <strong>${plan.standard}</strong> + tax / mo
-                  </p>
-                  <div className="memb-plan__divider" />
-                  <p className="memb-plan__desc">{plan.desc}</p>
-                  <ul className="memb-plan__includes">
-                    {plan.includes.map(item => (
-                      <li key={item} className="memb-plan__include-item">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20 6L9 17l-5-5"/></svg>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                  <Link to="/#inquiry" className={plan.featured ? 'btn-primary' : 'btn-secondary'}>
-                    Request a Call
-                  </Link>
+            <Reveal>
+              <article className="price-card price-card--walkin">
+                <h2 className="price-card__name">Walk-In</h2>
+                <span className="price-card__rule" aria-hidden="true" />
+                <PriceBlock amount="35" unit="Per modality" />
+              </article>
+            </Reveal>
+
+            <Reveal delay={80}>
+              <article className="price-card price-card--featured">
+                <p className="price-card__badge">Most Popular</p>
+                <h2 className="price-card__name">Everyday Wellness</h2>
+                <p className="price-card__sessions">1 modality a day • every day</p>
+                <div className="price-card__split">
+                  <PriceBlock
+                    label="First 50 members (founding members)"
+                    amount="149.99"
+                    unit="Per month"
+                  />
+                  <span className="price-card__split-rule" aria-hidden="true" />
+                  <PriceBlock
+                    label="After first 50 members"
+                    amount="169.99"
+                    unit="Per month"
+                  />
                 </div>
-              </Reveal>
-            ))}
+              </article>
+            </Reveal>
+
+            <Reveal delay={160}>
+              <article className="price-card">
+                <h2 className="price-card__name">Unlimited</h2>
+                <p className="price-card__sessions">All modalities • unlimited access</p>
+                <div className="price-card__split">
+                  <PriceBlock
+                    label="First 50 members (founding members)"
+                    amount="229.99"
+                    unit="Per month"
+                  />
+                  <span className="price-card__split-rule" aria-hidden="true" />
+                  <PriceBlock
+                    label="After first 50 members"
+                    amount="249.99"
+                    unit="Per month"
+                  />
+                </div>
+              </article>
+            </Reveal>
+          </div>
+
+          <div className="memb-plans__cta">
+            <Link to="/#inquiry" className="btn-primary">Request a Call</Link>
           </div>
           <p className="memb-plans__note">
             All prices + tax. Founding rates apply to the first 50 members only.
