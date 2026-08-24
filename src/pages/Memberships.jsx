@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Reveal from '../components/Reveal'
 import { CLOVER_BOOKING_URL, CLOVER_LOGIN_URL, cloverPayUrl } from '../lib/clover'
+import { SITE_PHONE, SITE_PHONE_HREF } from '../lib/site'
 import './Memberships.css'
 
 const plans = [
@@ -63,7 +64,7 @@ const faqs = [
   },
   {
     q: 'Is membership required to book online?',
-    a: "Yes. Online scheduling through the member portal is exclusive to active members. If you'd prefer not to commit to a plan, walk-ins are available at $25 + tax per modality on a first-come, first-served basis.",
+    a: "Yes. Call 440-667-9104 to start Essential or Unlimited. After the studio sets you up in Clover, you book online. Walk-ins are $25 + tax per modality, first-come, first-served — no account needed.",
   },
   {
     q: 'How far in advance can I book?',
@@ -102,8 +103,7 @@ export default function Memberships() {
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
             <div>
               <strong>Booking in Clover is members-only</strong> — sessions show $0 because they are included.
-              Activate Essential ($99/mo) or Unlimited ($129/mo) at the studio, then sign in to book.
-              <Link to="/#waitlist" className="memb-notice__link"> Join the waitlist</Link>
+              Call {SITE_PHONE} to start Essential ($99/mo) or Unlimited ($129/mo). Then sign in to Clover to book.
             </div>
           </div>
         </div>
@@ -151,13 +151,13 @@ export default function Memberships() {
                       Start {p.name} in Clover
                     </a>
                   ) : (
-                    <Link
-                      to="/contact"
+                    <a
+                      href={SITE_PHONE_HREF}
                       className={p.featured ? 'btn-primary' : 'btn-secondary'}
                       style={{ marginTop: 'auto', display: 'inline-flex', justifyContent: 'center' }}
                     >
-                      Ask about {p.name}
-                    </Link>
+                      Call to start {p.name}
+                    </a>
                   )}
                 </div>
               </Reveal>
@@ -244,11 +244,11 @@ export default function Memberships() {
         <div className="container">
           <Reveal>
             <div className="memb-cta__inner">
-              <h2 className="memb-cta__title">Be among the first.</h2>
-              <p className="memb-cta__sub">Join the waitlist for priority access and founding member pricing.</p>
+              <h2 className="memb-cta__title">Call to join. Then book in Clover.</h2>
+              <p className="memb-cta__sub">He will set up your membership. After that, sessions are included and you schedule online.</p>
               <div className="memb-cta__actions">
-                <Link to="/#waitlist" className="btn-primary">Join the Waitlist</Link>
-                <Link to="/contact" className="btn-secondary" style={{ borderColor: 'rgba(255,255,255,0.25)', color: 'rgba(255,255,255,0.7)' }}>Contact Us</Link>
+                <a href={SITE_PHONE_HREF} className="btn-primary">Call {SITE_PHONE}</a>
+                <Link to="/#waitlist" className="btn-secondary" style={{ borderColor: 'rgba(255,255,255,0.25)', color: 'rgba(255,255,255,0.7)' }}>Join the Waitlist</Link>
               </div>
             </div>
           </Reveal>

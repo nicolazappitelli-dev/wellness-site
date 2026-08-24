@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Reveal from '../components/Reveal'
 import Waitlist from '../components/Waitlist'
+import { SITE_PHONE, SITE_PHONE_HREF } from '../lib/site'
 import './Home.css'
 
 const modalities = [
@@ -130,8 +131,11 @@ export default function Home() {
             Cryotherapy, Sauna &amp; Recovery — Coming Soon to Concord, Ohio.
           </p>
           <div className="hero__ctas fade-up-3">
-            <p className="hero__founding-note">Be First In — Founding Members Get Exclusive Pricing</p>
-            <Link to="/#waitlist" className="btn-primary">Join the Waitlist</Link>
+            <p className="hero__founding-note">Call to start a membership — then book in Clover</p>
+            <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+              <a href={SITE_PHONE_HREF} className="btn-primary">Call {SITE_PHONE}</a>
+              <Link to="/#waitlist" className="btn-secondary">Join the Waitlist</Link>
+            </div>
           </div>
         </div>
         <div className="hero__scroll">
@@ -178,9 +182,9 @@ export default function Home() {
               <h2 className="opening-card__title">Opening Summer 2026.</h2>
               <p className="opening-card__subhead">Elevate Cryo &amp; Wellness is coming to Concord.</p>
               <p className="opening-card__body">
-                Join the waitlist for first access to memberships and opening specials.
+                Call to start Essential or Unlimited. After he sets you up in Clover, you book online.
               </p>
-              <Link to="/#waitlist" className="btn-primary opening-card__cta">Join the Waitlist</Link>
+              <a href={SITE_PHONE_HREF} className="btn-primary opening-card__cta">Call {SITE_PHONE}</a>
               <div className="opening-card__address">
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
                 8019 Crile Road, Concord, OH 44077
@@ -266,9 +270,9 @@ export default function Home() {
               <h2 className="founding-cta__title">Founding rates: $99 and $129.</h2>
               <p className="founding-cta__body">
                 Essential is $99/mo for one modality a day. Unlimited is $129/mo for every modality,
-                every visit. Walk-ins will be $25 + tax. Join the waitlist to lock these rates in.
+                every visit. Walk-ins are $25 + tax. Call to start, then book included sessions in Clover.
               </p>
-              <Link to="/#waitlist" className="btn-primary founding-cta__btn">Join the Waitlist</Link>
+              <a href={SITE_PHONE_HREF} className="btn-primary founding-cta__btn">Call {SITE_PHONE}</a>
             </div>
           </Reveal>
         </div>
