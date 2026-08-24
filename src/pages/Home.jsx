@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Reveal from '../components/Reveal'
 import Waitlist from '../components/Waitlist'
+import { STUDIO_HOURS } from '../lib/catalog'
+import { SITE_MAPS_HREF } from '../lib/site'
 import './Home.css'
 
 const modalities = [
@@ -33,8 +35,12 @@ const modalities = [
 
 const faqs = [
   {
-    q: 'When are you opening?',
-    a: "We're targeting Summer 2026 in Concord, Ohio. Request a call for opening updates and founding member pricing.",
+    q: 'Are you open?',
+    a: 'Yes. We are now open in Concord, Ohio. Leave your info and he will call you to help you get started.',
+  },
+  {
+    q: 'What are your hours?',
+    a: STUDIO_HOURS.map(row => `${row.days}: ${row.hours}`).join('. ') + '.',
   },
   {
     q: 'What modalities will you offer?',
@@ -62,19 +68,47 @@ export default function Home() {
           <div className="hero__gradient" />
         </div>
         <div className="container hero__content">
-          <h1 className="hero__title fade-up">
+          <span className="hero__now-open fade-up">Now Open — Concord, Ohio</span>
+          <h1 className="hero__title fade-up-1">
             Recover.<br />
             Restore.<br />
             <em>Elevate.</em>
           </h1>
-          <p className="hero__sub fade-up-1">
-            Cryotherapy, red light, sauna, and compression — coming soon to Concord, Ohio.
+          <p className="hero__sub fade-up-2">
+            Cryotherapy, red light, sauna, and compression in Concord.
+            Open daily, 11:00 AM – 8:00 PM.
           </p>
-          <div className="hero__ctas fade-up-2">
+          <div className="hero__ctas fade-up-3">
             <Link to="/#inquiry" className="btn-primary">Request a Call</Link>
+            <a href={SITE_MAPS_HREF} target="_blank" rel="noopener noreferrer" className="btn-secondary hero__hours-btn">
+              Get Directions
+            </a>
           </div>
         </div>
       </section>
+
+      <section className="visit-bar" aria-label="Hours and location">
+        <div className="container">
+          <div className="visit-bar__inner">
+            <div className="visit-bar__item">
+              <span className="visit-bar__label">Status</span>
+              <strong>Now Open</strong>
+            </div>
+            <div className="visit-bar__item">
+              <span className="visit-bar__label">Hours</span>
+              <strong>{STUDIO_HOURS[0].days}</strong>
+              <span>{STUDIO_HOURS[0].hours}</span>
+            </div>
+            <div className="visit-bar__item">
+              <span className="visit-bar__label">Visit</span>
+              <strong>8019 Crile Road</strong>
+              <span>Concord, OH 44077</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Waitlist />
 
       <section className="section modalities-preview">
         <div className="container">
@@ -124,8 +158,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <Waitlist />
     </main>
   )
 }

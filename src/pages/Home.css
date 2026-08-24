@@ -34,6 +34,42 @@
   margin-top: 48px;
 }
 
+.hero__now-open {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #FBF8F2;
+  background: rgba(26, 21, 16, 0.38);
+  border: 1px solid rgba(224, 200, 120, 0.45);
+  padding: 8px 14px;
+  border-radius: 100px;
+  margin-bottom: 22px;
+}
+
+.hero__now-open::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #C9A84C;
+  box-shadow: 0 0 0 4px rgba(201, 168, 76, 0.25);
+}
+
+.hero__hours-btn {
+  color: #FBF8F2;
+  border-color: rgba(251, 248, 242, 0.4);
+}
+
+.hero__hours-btn:hover {
+  background: rgba(251, 248, 242, 0.12);
+  color: #FBF8F2;
+  border-color: rgba(251, 248, 242, 0.7);
+}
+
 .hero__title {
   font-family: var(--font-heading);
   font-size: clamp(42px, 7vw, 80px);
@@ -64,6 +100,45 @@
   display: flex;
   gap: 14px;
   flex-wrap: wrap;
+}
+
+/* ───── Hours / visit strip ───── */
+.visit-bar {
+  background: var(--cream);
+  border-bottom: 1px solid var(--sand);
+  padding: 28px 0;
+}
+
+.visit-bar__inner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.visit-bar__item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.visit-bar__label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--sage);
+}
+
+.visit-bar__item strong {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--charcoal);
+}
+
+.visit-bar__item span:last-child {
+  font-size: 14px;
+  color: var(--charcoal-muted);
 }
 
 /* ───── Modalities ───── */
@@ -208,6 +283,13 @@
 
   .faq-section__left {
     position: static;
+  }
+}
+
+@media (max-width: 700px) {
+  .visit-bar__inner {
+    grid-template-columns: 1fr;
+    gap: 18px;
   }
 }
 
