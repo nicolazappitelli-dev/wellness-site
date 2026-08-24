@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { submitLead } from '../lib/submitLead'
+import { SITE_EMAIL } from '../lib/site'
 import './Waitlist.css'
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -120,7 +121,7 @@ export default function Waitlist() {
             <span className="section-label">Request a Call</span>
             <h2 className="waitlist__title">Tell us how to reach you.</h2>
             <p className="waitlist__sub">
-              Leave your name and number. He will call you to answer questions,
+              Leave your name and number. We will call you to answer questions,
               help you pick a plan, and get you scheduled when the studio opens.
             </p>
           </div>
@@ -133,8 +134,8 @@ export default function Waitlist() {
                 </div>
                 <p className="waitlist__done-msg">
                   {status === 'mailto'
-                    ? 'Send the email that just opened so he has your info and can call you.'
-                    : 'Got it. He will call you to help you get set up.'}
+                    ? 'Send the email that just opened so we have your info and can call you.'
+                    : 'Got it. We will call you to help you get set up.'}
                 </p>
               </div>
             ) : (
@@ -240,7 +241,7 @@ export default function Waitlist() {
                 {invalid && <p className="waitlist__hint waitlist__hint--error">{invalid}</p>}
                 {status === 'error' && (
                   <p className="waitlist__hint waitlist__hint--error">
-                    Something went wrong — please email elevatecryowellness@gmail.com directly.
+                    Something went wrong — please email {SITE_EMAIL} directly.
                   </p>
                 )}
 

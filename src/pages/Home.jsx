@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import Reveal from '../components/Reveal'
 import Waitlist from '../components/Waitlist'
 import { STUDIO_HOURS } from '../lib/catalog'
-import { SITE_MAPS_HREF } from '../lib/site'
 import './Home.css'
 
 const modalities = [
@@ -40,7 +39,7 @@ const modalities = [
 const faqs = [
   {
     q: 'Are you open?',
-    a: 'Yes. We are now open in Concord, Ohio. Leave your info and he will call you to help you get started.',
+    a: 'Yes. We are now open in Concord, Ohio. Leave your info and we will call you to help you get started.',
   },
   {
     q: 'What are your hours?',
@@ -72,46 +71,46 @@ export default function Home() {
           <div className="hero__gradient" />
         </div>
         <div className="container hero__content">
-          <span className="hero__now-open fade-up">Now Open — Concord, Ohio</span>
+          <p className="hero__open fade-up">Now Open</p>
           <h1 className="hero__title fade-up-1">
             Recover.<br />
             Restore.<br />
             <em>Elevate.</em>
           </h1>
           <p className="hero__sub fade-up-2">
-            Cryotherapy, red light, sauna, and compression in Concord.
-            Open now — see hours below.
+            Cryotherapy, red light, sauna, and compression — now open in Concord, Ohio.
           </p>
           <div className="hero__ctas fade-up-3">
             <Link to="/#inquiry" className="btn-primary">Request a Call</Link>
-            <a href={SITE_MAPS_HREF} target="_blank" rel="noopener noreferrer" className="btn-secondary hero__hours-btn">
-              Get Directions
-            </a>
+            <Link to="/#hours" className="btn-secondary hero__hours-btn">See Hours</Link>
           </div>
         </div>
       </section>
 
-      <section className="visit-bar" aria-label="Hours and location">
+      <section id="hours" className="section hours-section" aria-label="Hours">
         <div className="container">
-          <div className="visit-bar__inner">
-            <div className="visit-bar__item">
-              <span className="visit-bar__label">Status</span>
-              <strong>Now Open</strong>
-            </div>
-            <div className="visit-bar__item visit-bar__item--hours">
-              <span className="visit-bar__label">Hours</span>
-              {STUDIO_HOURS.map(row => (
-                <span key={row.days} className="visit-bar__hours-row">
-                  <strong>{row.days}</strong>
-                  <em>{row.hours}</em>
-                </span>
-              ))}
-            </div>
-            <div className="visit-bar__item">
-              <span className="visit-bar__label">Visit</span>
-              <strong>8019 Crile Road</strong>
-              <span>Concord, OH 44077</span>
-            </div>
+          <div className="hours-section__inner">
+            <Reveal>
+              <div className="hours-section__intro">
+                <span className="section-label">Visit Us</span>
+                <h2 className="section-title">Hours</h2>
+                <p className="section-subtitle">
+                  Walk-ins welcome. Founding memberships still available for the first 50.
+                </p>
+              </div>
+            </Reveal>
+            <Reveal delay={80}>
+              <ul className="hours-list">
+                {STUDIO_HOURS.map(row => (
+                  <li key={row.days} className="hours-list__row">
+                    <span className="hours-list__days">{row.days}</span>
+                    <span className={`hours-list__time${row.hours === 'Closed' ? ' hours-list__time--closed' : ''}`}>
+                      {row.hours}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
           </div>
         </div>
       </section>
