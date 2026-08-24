@@ -14,21 +14,21 @@ const modalities = [
     desc: 'Ultra-cold dry air to accelerate recovery, reduce inflammation, and leave you sharp.',
   },
   {
-    name: 'Red Light Therapy',
+    name: 'Redlight Bed Therapy',
     slug: 'red-light',
-    duration: '20 min',
+    duration: '15 min',
     image: '/red-light-bed.jpg',
     desc: 'Red and near-infrared light to support repair, collagen, and recovery from within.',
   },
   {
     name: 'Infrared Sauna',
     slug: 'sauna',
-    duration: '40 min',
+    duration: '25 min',
     image: '/sauna.jpg',
     desc: 'Deep heat to ease sore muscles, support detox, and settle the nervous system.',
   },
   {
-    name: 'Compression',
+    name: 'Compression Therapy',
     slug: 'compression',
     duration: '30 min',
     image: '/compression-boots.jpg',
@@ -46,8 +46,8 @@ const faqs = [
     a: STUDIO_HOURS.map(row => `${row.days}: ${row.hours}`).join('. ') + '.',
   },
   {
-    q: 'What modalities will you offer?',
-    a: 'Whole-body cryotherapy, red light bed therapy, infrared sauna, and compression therapy.',
+    q: 'What modalities do you offer?',
+    a: 'Whole-body cryotherapy, redlight bed therapy, infrared sauna, and compression therapy.',
   },
   {
     q: 'How much does it cost?',
@@ -90,11 +90,37 @@ export default function Home() {
             <em>Elevate.</em>
           </h1>
           <p className="hero__sub fade-up-2">
-            Cryotherapy, red light, sauna, and compression — now open in Concord, Ohio.
+            Cryotherapy, redlight bed therapy (15 min), sauna (25 min), and compression therapy — now open in Concord, Ohio.
           </p>
           <div className="hero__ctas fade-up-3">
             <Link to="/#inquiry" className="btn-primary">Request a Call</Link>
             <Link to="/#hours" className="btn-secondary hero__hours-btn">See Hours</Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="section modalities-preview">
+        <div className="container">
+          <Reveal>
+            <div className="modalities-preview__header">
+              <span className="section-label">Modalities</span>
+              <h2 className="section-title">Four ways to restore.</h2>
+              <p className="section-subtitle">
+                A focused recovery protocol — each modality precise on its own, stronger together.
+              </p>
+            </div>
+          </Reveal>
+          <div className="modalities-preview__grid">
+            {modalities.map((m, i) => (
+              <Reveal key={m.name} delay={i * 70}>
+                <Link to={`/modalities#${m.slug}`} className="mod-card">
+                  <img src={m.image} alt="" className="mod-card__photo" />
+                  <div className="mod-card__duration">{m.duration}</div>
+                  <h3 className="mod-card__name">{m.name}</h3>
+                  <p className="mod-card__desc">{m.desc}</p>
+                </Link>
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>
@@ -128,32 +154,6 @@ export default function Home() {
       </section>
 
       <Waitlist />
-
-      <section className="section modalities-preview">
-        <div className="container">
-          <Reveal>
-            <div className="modalities-preview__header">
-              <span className="section-label">Modalities</span>
-              <h2 className="section-title">Four ways to restore.</h2>
-              <p className="section-subtitle">
-                A focused recovery protocol — each modality precise on its own, stronger together.
-              </p>
-            </div>
-          </Reveal>
-          <div className="modalities-preview__grid">
-            {modalities.map((m, i) => (
-              <Reveal key={m.name} delay={i * 70}>
-                <Link to={`/modalities#${m.slug}`} className="mod-card">
-                  <img src={m.image} alt="" className="mod-card__photo" />
-                  <div className="mod-card__duration">{m.duration}</div>
-                  <h3 className="mod-card__name">{m.name}</h3>
-                  <p className="mod-card__desc">{m.desc}</p>
-                </Link>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
 
       <section className="section faq-section">
         <div className="container">
