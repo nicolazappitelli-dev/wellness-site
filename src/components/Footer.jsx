@@ -22,7 +22,7 @@ export default function Footer() {
               <Link to="/">Home</Link>
               <Link to="/modalities">Modalities</Link>
               <Link to="/memberships">Memberships</Link>
-              <Link to="/booking">Booking</Link>
+              <Link to="/#inquiry">Request a Call</Link>
               <Link to="/policies">Policies</Link>
               <Link to="/contact">Contact</Link>
             </nav>

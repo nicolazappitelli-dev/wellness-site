@@ -1,8 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Reveal from '../components/Reveal'
-import { CLOVER_BOOKING_URL, CLOVER_LOGIN_URL, cloverPayUrl } from '../lib/clover'
-import { SITE_PHONE, SITE_PHONE_HREF } from '../lib/site'
 import './Memberships.css'
 
 const plans = [
@@ -17,8 +15,7 @@ const plans = [
     includes: [
       'One modality session per calendar day',
       'Choose from Cryo, Red Light, Sauna, or Compression',
-      'Full member portal access for online scheduling',
-      'Advance online booking up to 4 days ahead',
+      'We will call you to get set up and scheduled',
       'Cancel or pause anytime',
     ],
     featured: false,
@@ -34,8 +31,7 @@ const plans = [
     includes: [
       'Unlimited modality sessions per calendar day',
       'Stack Cryo, Red Light, Sauna, and Compression in one visit',
-      'Full member portal access for online scheduling',
-      'Advance online booking up to 4 days ahead',
+      'We will call you to get set up and scheduled',
       'Cancel or pause anytime',
     ],
     featured: true,
@@ -48,27 +44,26 @@ const comparisons = [
   { feature: 'Red Light Bed Therapy', essential: true, unlimited: true },
   { feature: 'Infrared Sauna', essential: true, unlimited: true },
   { feature: 'Compression Therapy', essential: true, unlimited: true },
-  { feature: 'Advance booking window', essential: '4 days', unlimited: '4 days' },
-  { feature: 'Online scheduling portal', essential: true, unlimited: true },
+  { feature: 'We help you get scheduled', essential: true, unlimited: true },
   { feature: 'Cancel / pause anytime', essential: true, unlimited: true },
 ]
 
 const faqs = [
   {
     q: 'When are you opening?',
-    a: "We're targeting Summer 2026 in Concord, Ohio. Join the waitlist to be first notified and to lock in founding member pricing before public rates change.",
+    a: "We're targeting Summer 2026 in Concord, Ohio. Request a call so we can help you lock in founding member pricing before public rates change.",
   },
   {
     q: 'Can I visit without a membership?',
-    a: 'Yes. Walk-ins will be welcome at $25 + tax per modality — no membership, no booking, no commitment. Membership is only required for online booking.',
+    a: 'Yes. Walk-ins will be welcome at $25 + tax per modality — no membership and no commitment. First-come, first-served during operating hours.',
   },
   {
-    q: 'Is membership required to book online?',
-    a: "Yes. Call 440-667-9104 to start Essential or Unlimited. After the studio sets you up in Clover, you book online. Walk-ins are $25 + tax per modality, first-come, first-served — no account needed.",
+    q: 'How do I get started?',
+    a: 'Leave your name and number on the site. He will call you to answer questions, help you pick Essential or Unlimited, and schedule you when the studio opens.',
   },
   {
-    q: 'How far in advance can I book?',
-    a: 'Members can book sessions up to 4 days in advance through the portal. The booking window rolls forward daily.',
+    q: 'How does scheduling work?',
+    a: 'For now, he will call you after you request a callback and help you find a time. Online booking is not on the site yet.',
   },
   {
     q: 'Can I pause or cancel my membership?',
@@ -102,8 +97,8 @@ export default function Memberships() {
           <div className="memb-notice__inner">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
             <div>
-              <strong>Booking in Clover is members-only</strong> — sessions show $0 because they are included.
-              Call {SITE_PHONE} to start Essential ($99/mo) or Unlimited ($129/mo). Then sign in to Clover to book.
+              <strong>Request a call to get started.</strong> Leave your name and number and he will
+              reach out to help you join Essential ($99/mo) or Unlimited ($129/mo) and get scheduled.
             </div>
           </div>
         </div>
@@ -140,35 +135,20 @@ export default function Memberships() {
                     ))}
                   </ul>
 
-                  {cloverPayUrl(p.id) ? (
-                    <a
-                      className={p.featured ? 'btn-primary' : 'btn-secondary'}
-                      style={{ marginTop: 'auto', display: 'inline-flex', justifyContent: 'center' }}
-                      href={cloverPayUrl(p.id)}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Start {p.name} in Clover
-                    </a>
-                  ) : (
-                    <a
-                      href={SITE_PHONE_HREF}
-                      className={p.featured ? 'btn-primary' : 'btn-secondary'}
-                      style={{ marginTop: 'auto', display: 'inline-flex', justifyContent: 'center' }}
-                    >
-                      Call to start {p.name}
-                    </a>
-                  )}
+                  <Link
+                    to="/#inquiry"
+                    className={p.featured ? 'btn-primary' : 'btn-secondary'}
+                    style={{ marginTop: 'auto', display: 'inline-flex', justifyContent: 'center' }}
+                  >
+                    Request a call for {p.name}
+                  </Link>
                 </div>
               </Reveal>
             ))}
           </div>
           <p className="memb-plans__note">
-            Memberships are started at the studio, then you book in Clover. Subject to our <Link to="/policies">Terms &amp; Policies</Link>.
-            Already a member?{' '}
-            <a href={CLOVER_LOGIN_URL} target="_blank" rel="noopener noreferrer">Sign in</a>
-            {' '}or{' '}
-            <a href={CLOVER_BOOKING_URL} target="_blank" rel="noopener noreferrer">book a session</a>.
+            Memberships are started with a call — leave your info and he will help you get set up.
+            Subject to our <Link to="/policies">Terms &amp; Policies</Link>.
           </p>
 
           <Reveal delay={100}>
@@ -177,7 +157,7 @@ export default function Memberships() {
               <div className="walkin-info-box__main">
                 <div className="walkin-info-box__text">
                   <strong>Walk-ins welcome — $25 + tax per modality.</strong>
-                  <span> No membership, no booking, no account required. First-come, first-served during operating hours.</span>
+                  <span> No membership and no account required. First-come, first-served during operating hours.</span>
                 </div>
                 <Link to="/contact" className="walkin-info-box__link">
                   Contact us
@@ -244,11 +224,11 @@ export default function Memberships() {
         <div className="container">
           <Reveal>
             <div className="memb-cta__inner">
-              <h2 className="memb-cta__title">Call to join. Then book in Clover.</h2>
-              <p className="memb-cta__sub">He will set up your membership. After that, sessions are included and you schedule online.</p>
+              <h2 className="memb-cta__title">Request a call to get started.</h2>
+              <p className="memb-cta__sub">Leave your name and number. He will call you to help you join and get scheduled.</p>
               <div className="memb-cta__actions">
-                <a href={SITE_PHONE_HREF} className="btn-primary">Call {SITE_PHONE}</a>
-                <Link to="/#waitlist" className="btn-secondary" style={{ borderColor: 'rgba(255,255,255,0.25)', color: 'rgba(255,255,255,0.7)' }}>Join the Waitlist</Link>
+                <Link to="/#inquiry" className="btn-primary">Request a Call</Link>
+                <Link to="/contact" className="btn-secondary" style={{ borderColor: 'rgba(255,255,255,0.25)', color: 'rgba(255,255,255,0.7)' }}>Ask a Question</Link>
               </div>
             </div>
           </Reveal>

@@ -16,10 +16,10 @@ const sections = [
   {
     title: 'Booking & Cancellation Policy',
     content: [
-      { heading: 'Advance Booking', text: 'All members (Essential and Unlimited) may book sessions up to 4 days in advance through the online member portal. The booking window is a rolling 4-day window that refreshes daily. Online booking is available to active members only.' },
-      { heading: 'Walk-In Access', text: 'Walk-in access details and pricing will be available when we open. No membership is required to walk in. Walk-in access is first-come, first-served and subject to availability.' },
-      { heading: 'Cancellation Window', text: 'Sessions must be cancelled at least 4 hours prior to the scheduled start time. Late cancellations (under 4 hours) and no-shows will be counted as a used session under the Essential plan. Repeated no-shows may result in temporary booking restrictions.' },
-      { heading: 'Rescheduling', text: 'Sessions may be rescheduled through the member portal up to 4 hours before the scheduled time, subject to availability.' },
+      { heading: 'Scheduling', text: 'When the studio opens, the team will help you schedule sessions by phone or in person. Online booking is not available on this website yet.' },
+      { heading: 'Walk-In Access', text: 'Walk-ins will be welcome at $25 + tax per modality. No membership is required to walk in. Walk-in access is first-come, first-served and subject to availability.' },
+      { heading: 'Cancellation Window', text: 'Please give at least 4 hours notice when you need to cancel. Late cancellations and no-shows may be counted as a used session under the Essential plan.' },
+      { heading: 'Rescheduling', text: 'Call the studio to reschedule. Please give at least 4 hours notice when possible, subject to availability.' },
     ],
   },
   {

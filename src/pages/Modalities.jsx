@@ -212,10 +212,10 @@ export default function Modalities() {
               <span className="section-label">Founding Members</span>
               <h2 className="section-title">Lock in $99 and $129 founding rates.</h2>
               <p className="section-subtitle">
-                Be one of the first to experience all four modalities. Join the waitlist for priority access and founding member pricing.
+                Be one of the first to experience all four modalities. Request a call for priority access and founding member pricing.
               </p>
               <div className="mod-cta__actions">
-                <Link to="/#waitlist" className="btn-primary">Join the Waitlist</Link>
+                <Link to="/#inquiry" className="btn-primary">Request a Call</Link>
                 <Link to="/contact" className="btn-secondary">Ask a Question</Link>
               </div>
             </div>

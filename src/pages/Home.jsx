@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Reveal from '../components/Reveal'
 import Waitlist from '../components/Waitlist'
-import { SITE_PHONE, SITE_PHONE_HREF } from '../lib/site'
 import './Home.css'
 
 const modalities = [
@@ -47,8 +46,8 @@ const modalities = [
 const steps = [
   {
     num: '1',
-    title: 'Join the waitlist for early access',
-    desc: 'Sign up to be among the first through our doors. Founding members lock in exclusive pricing before we open.',
+    title: 'Request a call',
+    desc: 'Leave your name and number. Tell us what you are interested in — a membership, a walk-in, or a specific modality.',
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
@@ -60,13 +59,11 @@ const steps = [
   },
   {
     num: '2',
-    title: 'Reserve your session',
-    desc: 'Book up to 4 days ahead through your member portal. Guaranteed time, guaranteed modality.',
+    title: 'He calls you to help',
+    desc: 'He will reach out to answer questions, help you pick a plan, and find a time that works when the studio opens.',
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="3" y="4" width="18" height="18" rx="2"/>
-        <path d="M16 2v4M8 2v4M3 10h18"/>
-        <path d="M9 16l2 2 4-4"/>
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12.1 19.79 19.79 0 0 1 1.61 3.5 2 2 0 0 1 3.59 1.32h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6.06 6.06l1.06-1.06a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
       </svg>
     ),
   },
@@ -86,7 +83,7 @@ const steps = [
 const faqs = [
   {
     q: 'When are you opening?',
-    a: "We're targeting Summer 2026 in Concord, Ohio. Join the waitlist to be the first to know and secure founding member pricing.",
+    a: "We're targeting Summer 2026 in Concord, Ohio. Request a call and we'll reach out to help you get started and lock in founding member pricing.",
   },
   {
     q: 'What is cryotherapy?',
@@ -106,7 +103,7 @@ const faqs = [
   },
   {
     q: 'How do founding memberships work?',
-    a: 'Join the waitlist now to secure founding member status. Founding rates are Essential at $99/mo and Unlimited at $129/mo, with walk-ins at $25 + tax per modality. Waitlist members get first access when we open.',
+    a: 'Request a call to secure founding member status. Founding rates are Essential at $99/mo and Unlimited at $129/mo, with walk-ins at $25 + tax per modality. He will call you to help you join and schedule when we open.',
   },
 ]
 
@@ -131,10 +128,10 @@ export default function Home() {
             Cryotherapy, Sauna &amp; Recovery — Coming Soon to Concord, Ohio.
           </p>
           <div className="hero__ctas fade-up-3">
-            <p className="hero__founding-note">Call to start a membership — then book in Clover</p>
+            <p className="hero__founding-note">Leave your info — he will call you to help you get started</p>
             <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-              <a href={SITE_PHONE_HREF} className="btn-primary">Call {SITE_PHONE}</a>
-              <Link to="/#waitlist" className="btn-secondary">Join the Waitlist</Link>
+              <Link to="/#inquiry" className="btn-primary">Request a Call</Link>
+              <Link to="/memberships" className="btn-secondary">See Memberships</Link>
             </div>
           </div>
         </div>
@@ -164,7 +161,7 @@ export default function Home() {
             <div className="trust-bar__sep" />
             <div className="trust-chip">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20 6L9 17l-5-5"/></svg>
-              Members-Only Booking
+              Founding Member Rates
             </div>
           </div>
         </div>
@@ -182,9 +179,9 @@ export default function Home() {
               <h2 className="opening-card__title">Opening Summer 2026.</h2>
               <p className="opening-card__subhead">Elevate Cryo &amp; Wellness is coming to Concord.</p>
               <p className="opening-card__body">
-                Call to start Essential or Unlimited. After he sets you up in Clover, you book online.
+                Request a call with your name and number. He will reach out to help you join Essential or Unlimited and get scheduled when we open.
               </p>
-              <a href={SITE_PHONE_HREF} className="btn-primary opening-card__cta">Call {SITE_PHONE}</a>
+              <Link to="/#inquiry" className="btn-primary opening-card__cta">Request a Call</Link>
               <div className="opening-card__address">
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
                 8019 Crile Road, Concord, OH 44077
@@ -270,9 +267,9 @@ export default function Home() {
               <h2 className="founding-cta__title">Founding rates: $99 and $129.</h2>
               <p className="founding-cta__body">
                 Essential is $99/mo for one modality a day. Unlimited is $129/mo for every modality,
-                every visit. Walk-ins are $25 + tax. Call to start, then book included sessions in Clover.
+                every visit. Walk-ins are $25 + tax. Request a call and he will help you get set up.
               </p>
-              <a href={SITE_PHONE_HREF} className="btn-primary founding-cta__btn">Call {SITE_PHONE}</a>
+              <Link to="/#inquiry" className="btn-primary founding-cta__btn">Request a Call</Link>
             </div>
           </Reveal>
         </div>

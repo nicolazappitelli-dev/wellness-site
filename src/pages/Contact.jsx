@@ -9,16 +9,25 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 const TOPICS = [
   'Membership Inquiry',
-  'Booking Help',
   'Modality Questions',
   'Health & Contraindications',
   'General Inquiry',
 ]
 
+function phoneDigits(value) {
+  return String(value || '').replace(/\D/g, '')
+}
+
+function isValidPhone(value) {
+  const digits = phoneDigits(value)
+  return digits.length === 10 || (digits.length === 11 && digits.startsWith('1'))
+}
+
 export default function Contact() {
   const [form, setForm] = useState({
     first: '',
     last: '',
+    phone: '',
     email: '',
     subject: '',
     message: '',
@@ -42,6 +51,10 @@ export default function Contact() {
       setInvalid('Please enter your first and last name.')
       return
     }
+    if (!isValidPhone(form.phone)) {
+      setInvalid('Please enter a phone number we can call you at.')
+      return
+    }
     if (!email || !EMAIL_RE.test(email)) {
       setInvalid('Please enter a valid email address.')
       return
@@ -62,6 +75,7 @@ export default function Contact() {
         name: `${form.first.trim()} ${form.last.trim()}`,
         first_name: form.first.trim(),
         last_name: form.last.trim(),
+        phone: form.phone.trim(),
         email,
         subject: form.subject,
         message,
@@ -101,7 +115,7 @@ export default function Contact() {
                     ? 'Send the email that just opened and we will get back to you within one business day.'
                     : 'Message sent. We typically reply within one business day.'}
                 </p>
-                <Link to="/#waitlist" className="btn-secondary">Join the Waitlist</Link>
+                <Link to="/#inquiry" className="btn-secondary">Request a Call</Link>
               </div>
             ) : (
               <form className="contact-form" onSubmit={handleSubmit} noValidate>
@@ -114,6 +128,10 @@ export default function Contact() {
                     <label className="auth-form__label" htmlFor="contact-last">Last Name</label>
                     <input id="contact-last" type="text" className="auth-form__input" placeholder="Last" value={form.last} onChange={update('last')} autoComplete="family-name" required />
                   </div>
+                </div>
+                <div className="auth-form__field">
+                  <label className="auth-form__label" htmlFor="contact-phone">Phone</label>
+                  <input id="contact-phone" type="tel" className="auth-form__input" placeholder="440-555-1234" value={form.phone} onChange={update('phone')} autoComplete="tel" inputMode="tel" required />
                 </div>
                 <div className="auth-form__field">
                   <label className="auth-form__label" htmlFor="contact-email">Email Address</label>
