@@ -27,7 +27,7 @@ const modalities = [
   {
     id: 'redlight',
     anchor: 'red-light',
-    name: 'Red Light Bed Therapy',
+    name: 'Redlight Bed Therapy',
     tagline: 'Heal from the inside out.',
     duration: '15 Minutes',
     image: '/red-light-bed',

@@ -13,7 +13,7 @@ export default function Footer() {
               <img src="/logo-nav-dark.svg" alt="Elevate Cryo" className="footer__logo-img" loading="lazy" />
             </div>
             <p className="footer__tagline">
-              Cryotherapy, red light, sauna, and compression — recovery elevated in Concord, Ohio.
+              Cryotherapy, redlight bed therapy, sauna, and compression therapy — recovery elevated in Concord, Ohio.
             </p>
             <a
               href="https://www.elevatecryoconcord.com"

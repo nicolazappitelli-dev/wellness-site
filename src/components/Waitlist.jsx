@@ -9,7 +9,7 @@ const INTERESTS = [
   'Unlimited ($229.99/mo founding)',
   'Walk-in / drop-in',
   'Cryotherapy',
-  'Red Light Bed Therapy',
+  'Redlight Bed Therapy',
   'Infrared Sauna',
   'Compression Therapy',
   'Not sure yet',
