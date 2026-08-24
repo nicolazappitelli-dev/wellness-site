@@ -11,24 +11,28 @@ const modalities = [
     name: 'Cryotherapy',
     slug: 'cryotherapy',
     duration: '10 min',
+    image: '/cryo-chamber.jpg',
     desc: 'Ultra-cold dry air to accelerate recovery, reduce inflammation, and leave you sharp.',
   },
   {
     name: 'Red Light Therapy',
     slug: 'red-light',
     duration: '20 min',
+    image: '/red-light-bed.jpg',
     desc: 'Red and near-infrared light to support repair, collagen, and recovery from within.',
   },
   {
     name: 'Infrared Sauna',
     slug: 'sauna',
     duration: '40 min',
+    image: '/sauna.jpg',
     desc: 'Deep heat to ease sore muscles, support detox, and settle the nervous system.',
   },
   {
     name: 'Compression',
     slug: 'compression',
     duration: '30 min',
+    image: '/compression-boots.jpg',
     desc: 'Sequential compression to move lactic acid, reduce swelling, and restore flow.',
   },
 ]
@@ -76,7 +80,7 @@ export default function Home() {
           </h1>
           <p className="hero__sub fade-up-2">
             Cryotherapy, red light, sauna, and compression in Concord.
-            Open daily, 11:00 AM – 8:00 PM.
+            Open now — see hours below.
           </p>
           <div className="hero__ctas fade-up-3">
             <Link to="/#inquiry" className="btn-primary">Request a Call</Link>
@@ -94,10 +98,14 @@ export default function Home() {
               <span className="visit-bar__label">Status</span>
               <strong>Now Open</strong>
             </div>
-            <div className="visit-bar__item">
+            <div className="visit-bar__item visit-bar__item--hours">
               <span className="visit-bar__label">Hours</span>
-              <strong>{STUDIO_HOURS[0].days}</strong>
-              <span>{STUDIO_HOURS[0].hours}</span>
+              {STUDIO_HOURS.map(row => (
+                <span key={row.days} className="visit-bar__hours-row">
+                  <strong>{row.days}</strong>
+                  <em>{row.hours}</em>
+                </span>
+              ))}
             </div>
             <div className="visit-bar__item">
               <span className="visit-bar__label">Visit</span>
@@ -125,6 +133,7 @@ export default function Home() {
             {modalities.map((m, i) => (
               <Reveal key={m.name} delay={i * 70}>
                 <Link to={`/modalities#${m.slug}`} className="mod-card">
+                  <img src={m.image} alt="" className="mod-card__photo" />
                   <div className="mod-card__duration">{m.duration}</div>
                   <h3 className="mod-card__name">{m.name}</h3>
                   <p className="mod-card__desc">{m.desc}</p>

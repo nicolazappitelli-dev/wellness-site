@@ -111,8 +111,9 @@
 
 .visit-bar__inner {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 0.7fr 1.5fr 1fr;
   gap: 24px;
+  align-items: start;
 }
 
 .visit-bar__item {
@@ -141,6 +142,24 @@
   color: var(--charcoal-muted);
 }
 
+.visit-bar__hours-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 14px;
+}
+
+.visit-bar__hours-row strong {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.visit-bar__hours-row em {
+  font-style: normal;
+  color: var(--charcoal-muted);
+}
+
 /* ───── Modalities ───── */
 .modalities-preview {
   background: var(--warm-white);
@@ -163,14 +182,22 @@
 .mod-card {
   display: flex;
   flex-direction: column;
-  padding: 32px 28px;
+  padding: 0 0 24px;
   background: var(--linen);
   border: 1px solid var(--sand);
   border-radius: 16px;
   text-decoration: none;
+  overflow: hidden;
   transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
   min-height: 220px;
   box-shadow: 0 4px 20px rgba(42, 36, 28, 0.04);
+}
+
+.mod-card__photo {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  margin-bottom: 18px;
 }
 
 .mod-card:hover {
@@ -179,13 +206,20 @@
   box-shadow: 0 10px 28px rgba(42, 36, 28, 0.08);
 }
 
+.mod-card__duration,
+.mod-card__name,
+.mod-card__desc {
+  padding-left: 22px;
+  padding-right: 22px;
+}
+
 .mod-card__duration {
   font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--sage);
-  margin-bottom: 14px;
+  margin-bottom: 10px;
 }
 
 .mod-card__name {
