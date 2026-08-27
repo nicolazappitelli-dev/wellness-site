@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { BrowserRouter, Routes, Route, Link, Navigate, useLocation } from 'react-router-dom'
 import Nav from './components/Nav'
 import Footer from './components/Footer'
+import PageMeta from './components/PageMeta'
 import Home from './pages/Home'
 import Modalities from './pages/Modalities'
 import Memberships from './pages/Memberships'
@@ -69,6 +70,7 @@ function App() {
     <BrowserRouter>
       <ScrollToTop />
       <HashScrollHandler />
+      <PageMeta />
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />

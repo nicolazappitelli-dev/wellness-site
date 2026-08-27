@@ -12,6 +12,66 @@
     <meta property="og:url" content="https://elevatecryoconcord.com/" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Elevate Cryo" />
+    <!-- Local business details for Google's rich results and map listings -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "HealthAndBeautyBusiness",
+        "name": "Elevate Cryo & Wellness",
+        "description": "Cryotherapy, redlight bed therapy, infrared sauna, and compression therapy in Concord, Ohio.",
+        "url": "https://elevatecryoconcord.com/",
+        "image": "https://elevatecryoconcord.com/lobby.jpg",
+        "logo": "https://elevatecryoconcord.com/logo-nav.png",
+        "telephone": "+1-440-754-2912",
+        "email": "elevatecryoconcord@gmail.com",
+        "priceRange": "$$",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "8019 Crile Road",
+          "addressLocality": "Concord",
+          "addressRegion": "OH",
+          "postalCode": "44077",
+          "addressCountry": "US"
+        },
+        "areaServed": [
+          { "@type": "City", "name": "Concord" },
+          { "@type": "City", "name": "Painesville" },
+          { "@type": "City", "name": "Mentor" },
+          { "@type": "City", "name": "Willoughby" }
+        ],
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
+            "opens": "08:00",
+            "closes": "19:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Friday",
+            "opens": "08:00",
+            "closes": "17:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Saturday",
+            "opens": "10:00",
+            "closes": "16:00"
+          }
+        ],
+        "sameAs": ["https://www.instagram.com/elevatecryo/"],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Recovery Modalities",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Whole Body Cryotherapy" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Redlight Bed Therapy" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Infrared Sauna" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Compression Therapy" } }
+          ]
+        }
+      }
+    </script>
     <!-- Preload hero background for faster LCP -->
     <link rel="preload" as="image" href="/lobby.jpg" fetchpriority="high" />
     <!-- Non-blocking fonts: Syne + Outfit -->
