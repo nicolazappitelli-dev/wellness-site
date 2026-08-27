@@ -5,18 +5,6 @@
       "has": [{ "type": "host", "value": "www.elevatecryoconcord.com" }],
       "destination": "https://elevatecryoconcord.com/:path*",
       "permanent": true
-    },
-    {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": "elevatecryowellness.com" }],
-      "destination": "https://elevatecryoconcord.com/:path*",
-      "permanent": true
-    },
-    {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": "www.elevatecryowellness.com" }],
-      "destination": "https://elevatecryoconcord.com/:path*",
-      "permanent": true
     }
   ],
   "rewrites": [
