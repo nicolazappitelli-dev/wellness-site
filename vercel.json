@@ -1,6 +1,12 @@
 {
   "redirects": [
     {
+      "source": "/",
+      "has": [{ "type": "host", "value": "www.elevatecryoconcord.com" }],
+      "destination": "https://elevatecryoconcord.com/",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [{ "type": "host", "value": "www.elevatecryoconcord.com" }],
       "destination": "https://elevatecryoconcord.com/:path*",
