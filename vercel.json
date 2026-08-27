@@ -17,12 +17,6 @@
       "has": [{ "type": "host", "value": "www.elevatecryowellness.com" }],
       "destination": "https://elevatecryoconcord.com/:path*",
       "permanent": true
-    },
-    {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": "wellness-site-kappa.vercel.app" }],
-      "destination": "https://elevatecryoconcord.com/:path*",
-      "permanent": true
     }
   ],
   "rewrites": [
