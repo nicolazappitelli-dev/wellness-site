@@ -1,46 +1,35 @@
 import { useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import Reveal from '../components/Reveal'
+import { HEADLINE, OFFERS, TAGLINE, modalityBySlug } from '../lib/catalog'
 import './Modalities.css'
 
 const modalities = [
   {
     id: 'cryo',
     anchor: 'cryotherapy',
-    name: 'Cryotherapy',
+    name: modalityBySlug('cryotherapy').name,
     tagline: 'The power of cold. Redefined.',
     duration: '10 Minutes',
     image: '/cryo-chamber',
     imageW: 948,
     imageH: 1100,
     intro: `Experience ultra-cold, dry air in our advanced electric cryotherapy chamber—engineered to accelerate recovery, reduce inflammation, and leave you energized.`,
-    benefits: [
-      'Dramatically reduces systemic inflammation and joint pain',
-      'Accelerates athletic recovery and reduces DOMS',
-      'Activates the sympathetic nervous system for lasting energy',
-      'Boosts mood via endorphin and norepinephrine release',
-      'Supports metabolism and body composition goals',
-    ],
+    benefits: modalityBySlug('cryotherapy').benefits,
     ideal: 'Athletes, high-performers, those managing chronic inflammation or pain, and anyone seeking an immediate energy and mood reset.',
     note: 'Clients are advised to remove all metal jewelry and moisture from skin before entering the chamber. A minimum 18-year age requirement applies.',
   },
   {
     id: 'redlight',
     anchor: 'red-light',
-    name: 'Redlight Bed Therapy',
-    tagline: 'Heal from the inside out.',
+    name: modalityBySlug('red-light').name,
+    tagline: 'Up to 940nm.',
     duration: '15 Minutes',
     image: '/red-light-bed',
     imageW: 981,
     imageH: 1100,
     intro: `Red and near-infrared wavelengths (630–660nm and up to 940nm) penetrate deep into tissue to support cellular repair, reduce inflammation, and enhance recovery.`,
-    benefits: [
-      'Stimulates collagen production for smoother, firmer skin',
-      'Accelerates wound healing and tissue repair',
-      'Reduces inflammation and oxidative stress',
-      'Enhances mitochondrial energy output (ATP synthesis)',
-      'Supports improved sleep quality and circadian rhythm',
-    ],
+    benefits: modalityBySlug('red-light').benefits,
     ideal: 'Those seeking skin rejuvenation, enhanced recovery, improved energy, or a targeted approach to reducing inflammation. Pairs beautifully with cryotherapy.',
     note: 'Sessions are performed with protective eyewear. No photosensitizing medications or topicals within 24 hours prior.',
   },
@@ -54,13 +43,7 @@ const modalities = [
     imageW: 1200,
     imageH: 800,
     intro: `Our infrared sauna uses far-infrared wavelengths to penetrate 1.5 to 2 inches beneath the skin's surface—reaching muscle tissue, joints, and deep organs in a way traditional steam saunas cannot. The result is a deeper, more intentional sweat at a more comfortable ambient temperature, ideal for extended, therapeutic sessions.`,
-    benefits: [
-      'Deep detoxification through profuse, metabolically active sweating',
-      'Relieves chronic muscle soreness, stiffness, and joint pain',
-      'Activates parasympathetic recovery and deep relaxation',
-      'Supports cardiovascular health and mimics moderate aerobic effort',
-      'Promotes clearer skin through enhanced circulation',
-    ],
+    benefits: modalityBySlug('sauna').benefits,
     ideal: 'Anyone experiencing chronic stress, muscular tension, toxin burden, or those seeking a deeply meditative, restorative session.',
     note: 'We recommend hydrating well before and after. A plush towel and water are provided. Avoid sauna use immediately after vigorous training.',
   },
@@ -74,13 +57,7 @@ const modalities = [
     imageW: 1200,
     imageH: 900,
     intro: `Sequential compression therapy uses dynamic air pressure—applied via specialized sleeves to the legs, hips, and arms—to replicate and amplify the natural pumping action of your lymphatic system. The result is dramatically improved circulation, accelerated metabolic waste removal, and a profound sense of lightness in tired limbs.`,
-    benefits: [
-      'Accelerates lactic acid clearance after intense training',
-      'Reduces swelling, puffiness, and post-travel heaviness',
-      'Enhances lymphatic drainage for immune and recovery support',
-      'Improves venous blood return and peripheral circulation',
-      'Provides immediate relief from sore, fatigued legs',
-    ],
+    benefits: modalityBySlug('compression').benefits,
     ideal: 'Endurance athletes, frequent travelers, those who stand for long periods, and anyone recovering from lower-body soreness or swelling. An exceptional standalone session or complement to cryo.',
     note: 'Compression sleeves are single-use sterile liners over reusable systems. Contraindicated with active DVT or acute lower-extremity injury.',
   },
@@ -123,12 +100,11 @@ export default function Modalities() {
         <div className="container">
           <span className="section-label fade-up">Our Services</span>
           <h1 className="mod-hero__title fade-up-1">
-            Four modalities.<br />
-            <em>One complete recovery.</em>
+            {HEADLINE.split('. ')[0]}.<br />
+            <em>{HEADLINE.split('. ')[1]}</em>
           </h1>
           <p className="mod-hero__sub fade-up-2">
-            Each treatment is independently powerful. Together, they form a comprehensive,
-            science-backed protocol for recovery, performance, and longevity.
+            {TAGLINE} Cryotherapy, infrared sauna, red light therapy bed, and compression therapy.
           </p>
         </div>
       </section>
@@ -202,7 +178,7 @@ export default function Modalities() {
               <span className="section-label">Memberships</span>
               <h2 className="section-title">Founding rates for the first 50.</h2>
               <p className="section-subtitle">
-                Everyday Wellness from $149.99/mo or Unlimited from $229.99/mo (+ tax). Walk-ins $35 per modality.
+                {`Everyday Wellness from $${OFFERS.everyday.founding}/mo or Unlimited from $${OFFERS.unlimited.founding}/mo for the first 50, plus tax. Elevate Essential is $${OFFERS.essential.price}/mo plus tax. Walk-ins are $${OFFERS.walkIn.price} per modality plus tax.`}
               </p>
               <div className="mod-cta__actions">
                 <Link to="/memberships" className="btn-primary">View Pricing</Link>

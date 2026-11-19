@@ -1,4 +1,7 @@
+import { OFFERS } from '../lib/catalog'
 import './SimplePages.css'
+
+const { walkIn, essential, everyday, unlimited, weekPass, addOn } = OFFERS
 
 const sections = [
   {
@@ -8,16 +11,27 @@ const sections = [
       { heading: 'Minor Clients', text: 'Clients must be at least 16 years of age to use any services at Elevate Cryo. Clients under the age of 18 must have a parent or legal guardian present to sign a consent form prior to receiving services. A parent or guardian may be required to remain on-site during the session at the discretion of staff.' },
       { heading: 'Right to Refuse', text: 'Elevate Cryo reserves the right to request valid identification and to refuse service if age or consent requirements are not met.' },
       { heading: 'Waiver & Health Screening', text: 'All clients are required to complete a waiver and health screening prior to participation. Certain services may not be suitable for individuals with specific medical conditions.' },
-      { heading: 'Billing & Renewal', text: 'Memberships are billed monthly on the activation date and renew automatically. All rates are subject to applicable sales tax. Elevate reserves the right to update pricing with 30 days written notice to members.' },
+      { heading: 'Billing & Renewal', text: 'Memberships are billed monthly on the activation date and renew automatically. Walk-in sessions and monthly memberships are plus tax. Elevate reserves the right to update pricing with 30 days written notice to members.' },
       { heading: 'Cancellation', text: 'Members may cancel at any time with no cancellation fee. Cancellations take effect at the end of the current billing period. No partial refunds are issued for unused days within a billing cycle.' },
       { heading: 'Pausing Membership', text: 'Members may pause their membership for up to 60 consecutive days per calendar year. Sessions cannot be booked during a paused period. Pauses take effect at the start of the next billing cycle when requested mid-cycle.' },
+    ],
+  },
+  {
+    title: 'Published Rates',
+    content: [
+      { heading: 'Walk-In', text: `Walk-in sessions are $${walkIn.price} per modality, plus tax.` },
+      { heading: 'Elevate Essential', text: `Elevate Essential is $${essential.price} per month, plus tax, and includes 1 modality a week.` },
+      { heading: 'Everyday Wellness', text: `Everyday Wellness includes 1 modality a day, every day. The first 50 members (founding members) pay $${everyday.founding} per month, plus tax. After the first 50, the rate is $${everyday.standard} per month, plus tax.` },
+      { heading: 'Unlimited', text: `Unlimited includes all modalities with unlimited access. The first 50 members (founding members) pay $${unlimited.founding} per month, plus tax. After the first 50, the rate is $${unlimited.standard} per month, plus tax.` },
+      { heading: 'Unlimited Week Pass', text: `The Unlimited Week Pass is $${weekPass.price} for 7 days of unlimited access.` },
+      { heading: 'Member Add-On', text: `Members on the Everyday Wellness or Elevate Essential plan may add an additional modality the same day for $${addOn.price}.` },
     ],
   },
   {
     title: 'Booking & Cancellation Policy',
     content: [
       { heading: 'Scheduling', text: 'The team will help you schedule sessions by phone or in person. Online booking is not available on this website yet.' },
-      { heading: 'Walk-In Access', text: 'Walk-ins are welcome at $35 + tax per modality with no membership required. Walk-in access is first-come, first-served and subject to availability.' },
+      { heading: 'Walk-In Access', text: `Walk-ins are welcome at $${walkIn.price} + tax per modality with no membership required. Walk-in access is first-come, first-served and subject to availability.` },
       { heading: 'Cancellation Window', text: 'Sessions must be cancelled at least 4 hours prior to the scheduled start time. Late cancellations (under 4 hours) and no-shows will be counted as a used session under the Everyday Wellness plan. Repeated no-shows may result in temporary booking restrictions.' },
       { heading: 'Rescheduling', text: 'Call the studio to reschedule. Please give at least 4 hours notice when possible, subject to availability.' },
     ],
@@ -93,7 +107,7 @@ export default function Policies() {
               </section>
             ))}
             <div className="policies-updated">
-              <p>Last updated: January 2026. Elevate Cryo reserves the right to update these policies at any time. Members will be notified of material changes via email.</p>
+              <p>Last updated: November 2026. Elevate Cryo reserves the right to update these policies at any time. Members will be notified of material changes via email.</p>
             </div>
           </div>
         </div>
