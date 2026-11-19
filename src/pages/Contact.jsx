@@ -1,7 +1,16 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { submitLead } from '../lib/submitLead'
-import { SITE_EMAIL, SITE_PHONE, SITE_PHONE_HREF, SITE_MAPS_HREF } from '../lib/site'
+import {
+  SITE_EMAIL,
+  SITE_FACEBOOK_HANDLE,
+  SITE_FACEBOOK_URL,
+  SITE_INSTAGRAM_HANDLE,
+  SITE_INSTAGRAM_URL,
+  SITE_MAPS_HREF,
+  SITE_PHONE,
+  SITE_PHONE_HREF,
+} from '../lib/site'
 import { STUDIO_HOURS } from '../lib/catalog'
 import './SimplePages.css'
 
@@ -189,6 +198,18 @@ export default function Contact() {
                     <span>{row.hours}</span>
                   </div>
                 ))}
+              </div>
+            </div>
+
+            <div className="contact-info__block">
+              <h3 className="contact-info__heading">Social</h3>
+              <div className="contact-info__links">
+                <a href={SITE_INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="contact-info__link">
+                  Instagram {SITE_INSTAGRAM_HANDLE}
+                </a>
+                <a href={SITE_FACEBOOK_URL} target="_blank" rel="noopener noreferrer" className="contact-info__link">
+                  Facebook {SITE_FACEBOOK_HANDLE}
+                </a>
               </div>
             </div>
 

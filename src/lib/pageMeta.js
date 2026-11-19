@@ -9,22 +9,22 @@ export const PAGE_META = {
   '/': {
     title: 'Cryotherapy in Concord, OH | Elevate Cryo & Wellness',
     description:
-      'Whole body cryotherapy, redlight bed therapy, infrared sauna, and compression therapy in Concord, Ohio. Now open at 8019 Crile Road — request a call to get started.',
+      'Recover faster. Feel better. Age better. Cryotherapy, infrared sauna, red light therapy bed, and compression therapy in Concord, Ohio.',
   },
   '/modalities': {
-    title: 'Cryotherapy, Sauna & Redlight | Elevate Cryo Concord',
+    title: 'Cryotherapy, Sauna & Red Light | Elevate Cryo Concord',
     description:
-      'Explore our recovery modalities in Concord, Ohio: 3-minute whole body cryotherapy, 15-minute redlight bed therapy, 25-minute infrared sauna, and compression therapy.',
+      '4 modalities for complete recovery in Concord, Ohio: cryotherapy, infrared sauna, red light therapy bed up to 940nm, and compression therapy.',
   },
   '/memberships': {
     title: 'Memberships & Pricing | Elevate Cryo Concord, OH',
     description:
-      'Walk-in sessions, Everyday Wellness, and Unlimited memberships at Elevate Cryo in Concord, Ohio. Founding member pricing available now.',
+      'Elevate Essential $99.99/mo, founding rates on Everyday Wellness and Unlimited, walk-ins $35, and a $99.99 Unlimited Week Pass. Concord, Ohio.',
   },
   '/contact': {
     title: 'Contact & Hours | Elevate Cryo Concord, OH',
     description:
-      'Visit Elevate Cryo at 8019 Crile Road, Concord, OH 44077. Open Monday through Saturday. Call (440) 754-2912 or request a call back.',
+      '8019 Crile Road, Concord, OH 44077. Mon–Thu 8 AM–7 PM, Fri 8 AM–5 PM, Sat 8 AM–2 PM. Closed Sunday. Call (440) 754-2912.',
   },
   '/policies': {
     title: 'Policies | Elevate Cryo Concord, OH',

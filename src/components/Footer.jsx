@@ -1,6 +1,14 @@
 import { Link } from 'react-router-dom'
-import { STUDIO_HOURS } from '../lib/catalog'
-import { SITE_EMAIL, SITE_PHONE, SITE_PHONE_HREF } from '../lib/site'
+import { STUDIO_HOURS, TAGLINE } from '../lib/catalog'
+import {
+  SITE_EMAIL,
+  SITE_FACEBOOK_HANDLE,
+  SITE_FACEBOOK_URL,
+  SITE_INSTAGRAM_HANDLE,
+  SITE_INSTAGRAM_URL,
+  SITE_PHONE,
+  SITE_PHONE_HREF,
+} from '../lib/site'
 import './Footer.css'
 
 export default function Footer() {
@@ -13,7 +21,7 @@ export default function Footer() {
               <img src="/logo-nav-dark.svg" alt="Elevate Cryo" className="footer__logo-img" loading="lazy" />
             </div>
             <p className="footer__tagline">
-              Cryotherapy, redlight bed therapy, sauna, and compression therapy — recovery elevated in Concord, Ohio.
+              {TAGLINE}
             </p>
             <a
               href="https://elevatecryoconcord.com"
@@ -73,8 +81,11 @@ export default function Footer() {
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
                 {SITE_EMAIL}
               </a>
-              <a href="https://www.instagram.com/elevatecryo/" target="_blank" rel="noopener noreferrer" className="footer__contact-item">
-                Instagram
+              <a href={SITE_INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="footer__contact-item">
+                Instagram {SITE_INSTAGRAM_HANDLE}
+              </a>
+              <a href={SITE_FACEBOOK_URL} target="_blank" rel="noopener noreferrer" className="footer__contact-item">
+                Facebook {SITE_FACEBOOK_HANDLE}
               </a>
             </div>
           </div>

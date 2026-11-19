@@ -2,39 +2,21 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Reveal from '../components/Reveal'
 import Waitlist from '../components/Waitlist'
-import { STUDIO_HOURS } from '../lib/catalog'
+import { HEADLINE, OFFERS, STUDIO_HOURS, TAGLINE, modalityBySlug, modalitySummary } from '../lib/catalog'
 import './Home.css'
 
-const modalities = [
-  {
-    name: 'Cryotherapy',
-    slug: 'cryotherapy',
-    duration: '10 min',
-    image: '/cryo-chamber.jpg',
-    desc: 'Ultra-cold dry air to accelerate recovery, reduce inflammation, and leave you sharp.',
-  },
-  {
-    name: 'Redlight Bed Therapy',
-    slug: 'red-light',
-    duration: '15 min',
-    image: '/red-light-bed.jpg',
-    desc: 'Red and near-infrared light to support repair, collagen, and recovery from within.',
-  },
-  {
-    name: 'Infrared Sauna',
-    slug: 'sauna',
-    duration: '25 min',
-    image: '/sauna.jpg',
-    desc: 'Deep heat to ease sore muscles, support detox, and settle the nervous system.',
-  },
-  {
-    name: 'Compression Therapy',
-    slug: 'compression',
-    duration: '30 min',
-    image: '/compression-boots.jpg',
-    desc: 'Sequential compression to move lactic acid, reduce swelling, and restore flow.',
-  },
+const modalityCards = [
+  { slug: 'cryotherapy', duration: '10 min', image: '/cryo-chamber.jpg' },
+  { slug: 'red-light', duration: '15 min', image: '/red-light-bed.jpg' },
+  { slug: 'sauna', duration: '25 min', image: '/sauna.jpg' },
+  { slug: 'compression', duration: '30 min', image: '/compression-boots.jpg' },
 ]
+
+const modalities = modalityCards.map(card => ({
+  ...card,
+  name: modalityBySlug(card.slug).name,
+  desc: modalitySummary(card.slug),
+}))
 
 const faqs = [
   {
@@ -47,15 +29,15 @@ const faqs = [
   },
   {
     q: 'What modalities do you offer?',
-    a: 'Whole-body cryotherapy, redlight bed therapy, infrared sauna, and compression therapy.',
+    a: 'Cryotherapy, infrared sauna, red light therapy bed (up to 940nm), and compression therapy.',
   },
   {
     q: 'How much does it cost?',
-    a: 'Walk-ins are $35 + tax per modality. Everyday Wellness is $149.99/mo founding (first 50) or $169.99/mo standard. Unlimited is $229.99/mo founding or $249.99/mo standard — all plus tax.',
+    a: `Walk-ins are $${OFFERS.walkIn.price} + tax per modality. Elevate Essential is $${OFFERS.essential.price}/month + tax for 1 modality a week. Everyday Wellness is 1 modality a day: $${OFFERS.everyday.founding}/month + tax for the first 50 members, then $${OFFERS.everyday.standard}/month + tax. Unlimited is all modalities, unlimited access: $${OFFERS.unlimited.founding}/month + tax for the first 50, then $${OFFERS.unlimited.standard}/month + tax. The Unlimited Week Pass is $${OFFERS.weekPass.price} for 7 days. Members on Essential or Everyday Wellness can add another modality the same day for $${OFFERS.addOn.price}.`,
   },
   {
     q: 'How do founding memberships work?',
-    a: 'The first 50 members lock in founding rates before standard pricing begins. Request a call to secure a founding spot.',
+    a: `The first 50 members lock in Everyday Wellness at $${OFFERS.everyday.founding}/month + tax and Unlimited at $${OFFERS.unlimited.founding}/month + tax. After the first 50, those plans are $${OFFERS.everyday.standard} and $${OFFERS.unlimited.standard} per month, plus tax.`,
   },
   {
     q: 'Are there health requirements?',
@@ -90,7 +72,7 @@ export default function Home() {
             <em>Elevate.</em>
           </h1>
           <p className="hero__sub fade-up-2">
-            Cryotherapy, redlight bed therapy, sauna, and compression therapy — now open in Concord, Ohio.
+            {TAGLINE}
           </p>
           <div className="hero__ctas fade-up-3">
             <Link to="/#inquiry" className="btn-primary">Request a Call</Link>
@@ -104,15 +86,15 @@ export default function Home() {
           <Reveal>
             <div className="modalities-preview__header">
               <span className="section-label">Modalities</span>
-              <h2 className="section-title">Four ways to restore.</h2>
+              <h2 className="section-title">{HEADLINE}</h2>
               <p className="section-subtitle">
-                A focused recovery protocol — each modality precise on its own, stronger together.
+                {TAGLINE} Cryotherapy, infrared sauna, red light therapy bed, and compression therapy.
               </p>
             </div>
           </Reveal>
           <div className="modalities-preview__grid">
             {modalities.map((m, i) => (
-              <Reveal key={m.name} delay={i * 70}>
+              <Reveal key={m.slug} delay={i * 70}>
                 <Link to={`/modalities#${m.slug}`} className="mod-card">
                   <img src={m.image} alt="" className="mod-card__photo" />
                   <div className="mod-card__duration">{m.duration}</div>

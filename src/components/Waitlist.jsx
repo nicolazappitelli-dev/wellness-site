@@ -1,19 +1,11 @@
 import { useState, useEffect, useRef } from 'react'
 import { submitLead } from '../lib/submitLead'
+import { INQUIRY_INTERESTS } from '../lib/catalog'
 import { SITE_EMAIL } from '../lib/site'
 import './Waitlist.css'
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-const INTERESTS = [
-  'Everyday Wellness ($149.99/mo founding)',
-  'Unlimited ($229.99/mo founding)',
-  'Walk-in / drop-in',
-  'Cryotherapy',
-  'Redlight Bed Therapy',
-  'Infrared Sauna',
-  'Compression Therapy',
-  'Not sure yet',
-]
+const INTERESTS = INQUIRY_INTERESTS
 
 function isValidPhone(value) {
   const digits = String(value || '').replace(/\D/g, '')
