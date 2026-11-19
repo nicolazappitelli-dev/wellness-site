@@ -18,7 +18,11 @@ export default function Footer() {
         <div className="footer__grid">
           <div className="footer__brand">
             <div className="footer__logo">
-              <img src="/logo-nav-dark.svg" alt="Elevate Cryo" className="footer__logo-img" loading="lazy" />
+              <img src="/logo-nav.png" alt="" className="footer__logo-img" loading="lazy" />
+              <span className="footer__logo-text">
+                <span className="footer__wordmark">Elevate Cryo</span>
+                <span className="footer__logo-place">Concord, Ohio</span>
+              </span>
             </div>
             <p className="footer__tagline">
               {TAGLINE}
